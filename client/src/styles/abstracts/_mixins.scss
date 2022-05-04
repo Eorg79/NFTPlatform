@@ -1,0 +1,143 @@
+/*padding mixins*/
+@mixin block-side-padding {  
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@mixin block-top-end-padding {
+    padding-block-start: 25px;
+    padding-block-end: 25px;
+}
+
+/*buttons mixins*/
+@mixin basic-button {
+    color: $color-secondary;
+    margin: 15px;
+    font: 800 1.1em "Roboto"; 
+    background-color: $color-primary;
+    border-radius: 8px;
+    border: hidden;
+    padding: 10px 20px 10px 20px;
+    box-shadow: 0 0 15px #aaaaaa;
+    cursor: pointer;
+    transition: all 400ms;     
+}
+
+@mixin small-button {
+    color:white;
+    margin: 15px;
+    font-size: 15px;
+    background-color: $color-primary;
+    border-radius: 5px;
+    border: hidden;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0 0 30px #6d6c6c;
+    cursor: pointer;
+    transition: all 400ms;     
+}
+
+
+@mixin button-animation {
+    opacity: 0.8;
+    box-shadow: 0 0 40px #2c2c2c;  
+}
+
+@mixin container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    min-width: 271px;
+    max-width: 1872px;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #ffffffa3;
+}
+
+@mixin form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: space-around;
+        flex-wrap: wrap;
+        margin: 15px;
+        min-height: 20vh;
+        border-radius: 8px;
+}
+
+@mixin large-flat-link-button($color:$background-color-medium, $background-color:white) {
+    border-radius: 20px;
+    background-color: $background-color;
+    box-shadow: 0 0 7px $color;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 400ms;
+}
+
+/*rounded card mixins*/
+@mixin rounded-card {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 200px;
+    min-height: 252px;
+    position: relative;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #dddddd;
+    transition: all 400ms;
+}
+@mixin auto-height-rounded-card {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 200px;
+    position: relative;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #dddddd;
+    transition: all 400ms;
+}
+
+@mixin rounded-card-img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+@mixin rounded-card-txt-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px 15px 15px;
+}
+
+@mixin rounded-card-text {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 1.1em;
+}
+
+@mixin rounded-card-comment {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    padding: 0.6em 1.2em 0.6em 1.2em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: darken($color-tertiary, 40%);
+    background-color: $color-tertiary;          
+}

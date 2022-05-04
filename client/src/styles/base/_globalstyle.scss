@@ -1,0 +1,164 @@
+/*global styles*/
+html {height: 100%;
+        }
+
+body {
+    height: 100%;
+    color: $color-secondary;
+    font-family: "Roboto", Arial, sans-serif;
+    min-width: 271px;
+    max-width: 1872px;
+    margin: auto;
+    .body-wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .body-container {
+            text-align: center;
+            background-color: $color-secondary;
+            .header {
+                color: white;
+            }
+            .container {
+                @include container;
+            
+            .card {
+                @include rounded-card;
+                }
+            }
+            .main {
+            margin-block-start: 185px;
+            margin-block-end: 150px;
+            }
+            
+        }
+    }
+
+}
+
+h1 {
+    color: white;
+    font-size: 45px;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+    margin-left: 10px;
+    width: 60%;
+    text-align: left;
+}
+
+li, th, td {
+    list-style-type: none;
+    padding: 3px;
+    border-top: 1px dotted $color-secondary-dark;
+    
+}
+
+label {
+    font-weight: bolder;
+    padding-right: 5px;
+}
+
+.cart-table-range-label {
+    background-color: $color-secondary;
+    color: white;
+    font-weight: 800;
+    
+}
+
+
+textarea {
+    padding: 10px;
+    margin: 10px 15px 0px 15px;
+}
+
+p, li {
+    font-size: 18px;
+    font-weight: 500;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-left: 10px;
+    margin-right: 10px;  
+}
+    
+.btn {
+    @include basic-button;
+    width: 200px;
+        &:hover {
+            @include button-animation;
+        }
+}
+
+.small-btn {
+    @include small-button;
+        &:hover {
+            @include button-animation;
+        }
+}
+
+
+.error-box {
+    color: rgb(238, 11, 11);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: end;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 20px;
+}
+
+.form-control {
+    margin-bottom: 20px;
+  }
+  
+.error {
+    color: red;
+  }
+
+
+table {
+    padding-block-start: 5px;
+    width: 85%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    color: black;
+
+    thead th:nth-child(1) {
+        width: 90%;
+    }
+      
+    thead th:nth-child(2) {
+        width: 10%;
+    }
+   
+    th,td {
+        padding: 10px;
+        box-shadow: 0 0 1px #6d6d6d;
+    }
+
+    td {
+        margin-left: 10px;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.img-wrapper {
+    width:fit-content;
+    height: fit-content;
+    margin: 15px;
+    img,.img {
+        max-width: 250px;
+        max-height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
