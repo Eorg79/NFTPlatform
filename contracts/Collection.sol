@@ -18,8 +18,8 @@ contract Collection is ERC721URIStorage, Ownable {
         string tokenURI;
     }
 
-    constructor () ERC721 ("name", "symbol") {}
-    //constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {}
+    constructor() ERC721("name", "symbol") {
+    }
     //function init(address _contractAddress, string memory _name, string memory _symbol) public {
     
 

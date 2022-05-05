@@ -5038,10 +5038,16 @@
       "links": {},
       "address": "0xD039D71bc3E5ad7FF1c4F169a66045772C203208",
       "transactionHash": "0x74789ca5527638add8c19d05ac88fe243c4fcbe29bc2b7e2b342edba6f46f544"
+    },
+    "1651765818263": {
+      "events": {},
+      "links": {},
+      "address": "0x429285A7a5674b67C4da9DA964c6B2042a154563",
+      "transactionHash": "0xfcc3828ad496ba9f099a862e736bcdc17da0dd4e7f06db2d092e85ee84220c5a"
     }
   },
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-05-04T13:23:09.897Z",
+  "updatedAt": "2022-05-05T15:52:23.830Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "If the contract is already deployed for an _artistName, it will revert.",
