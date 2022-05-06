@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*colors variables */
 /*padding mixins*/
 /*buttons mixins*/
@@ -7,12 +8,19 @@ html {
   height: 100%;
 }
 
+@font-face {
+  font-family: "raleway";
+  src: url(/../assets/Raleway/Raleway-VariableFont_wght.ttf);
+}
+
 body {
   height: 100%;
-  color: #3b3b3b;
-  font-family: "Roboto", Arial, sans-serif;
+  color: black;
+  font-family: "raleway", Arial, sans-serif;
   min-width: 271px;
   max-width: 1872px;
+  background: no-repeat center center fixed;
+  background-image: url("../assets/background.png");
   margin: auto;
 }
 
@@ -29,11 +37,6 @@ body .body-wrapper {
 
 body .body-wrapper .body-container {
   text-align: center;
-  background-color: #3b3b3b;
-}
-
-body .body-wrapper .body-container .header {
-  color: white;
 }
 
 body .body-wrapper .body-container .container {
@@ -58,6 +61,8 @@ body .body-wrapper .body-container .container {
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: #ffffffa3;
+  position: relative;
+  top: 180px;
 }
 
 body .body-wrapper .body-container .container .card {
@@ -96,13 +101,48 @@ body .body-wrapper .body-container .main {
           margin-block-end: 150px;
 }
 
+p {
+  padding: 0px 50px 25px 50px;
+  font-size: 1.2em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 h1 {
-  color: white;
-  font-size: 45px;
+  padding: 0px 25px 0 25px;
+  font-size: 35px;
+  font-weight: 300;
+  font-style: italic;
+  color: #13c8e0;
+}
+
+h2 {
+  padding-left: 25px;
+  font-size: 20px;
+}
+
+h4 {
+  padding-left: 25px;
+  font-size: 18px;
 }
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  color: #13c8e0;
+}
+
+a:active {
+  color: #13c8e0;
+}
+
+a:focus {
+  color: #13c8e0;
+  font-weight: bold;
 }
 
 ul {
@@ -115,7 +155,7 @@ ul {
 li, th, td {
   list-style-type: none;
   padding: 3px;
-  border-top: 1px dotted black;
+  border-top: 1px dotted rgba(255, 255, 255, 0.603);
 }
 
 label {
@@ -123,31 +163,16 @@ label {
   padding-right: 5px;
 }
 
-.cart-table-range-label {
-  background-color: #3b3b3b;
-  color: white;
-  font-weight: 800;
-}
-
 textarea {
   padding: 10px;
   margin: 10px 15px 0px 15px;
 }
 
-p, li {
-  font-size: 18px;
-  font-weight: 500;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 .btn {
-  color: #3b3b3b;
+  color: white;
   margin: 15px;
   font: 800 1.1em "Roboto";
-  background-color: white;
+  background-color: black;
   border-radius: 8px;
   border: hidden;
   padding: 10px 20px 10px 20px;
@@ -169,7 +194,7 @@ p, li {
   color: white;
   margin: 15px;
   font-size: 15px;
-  background-color: white;
+  background-color: black;
   border-radius: 5px;
   border: hidden;
   padding: 5px 10px 5px 10px;
@@ -251,5 +276,182 @@ table td {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+
+/*header*/
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  min-width: 271px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-padding-before: 5px;
+          padding-block-start: 5px;
+  -webkit-padding-after: 5px;
+          padding-block-end: 5px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 15px #aaaaaa;
+          box-shadow: 0 0 15px #aaaaaa;
+  /*apparence dynamique du menu*/
+}
+
+header .header__img-container {
+  padding-left: 15px;
+}
+
+header .header__img-container img {
+  width: auto;
+  height: 45px;
+}
+
+header a {
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+header nav {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 44px;
+}
+
+header nav .menu {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+}
+
+header nav .item_menu {
+  border-top: white solid 2px;
+  padding: 15px 30px 15px 30px;
+}
+
+header h1 {
+  padding-left: 50px;
+}
+
+header header p {
+  padding: 40px 30px 30px 30px;
+  margin: 0;
+  border-top: white solid 2px;
+  font-size: 1em;
+}
+
+header .wallet {
+  color: #13c8e0;
+  font-weight: bold;
+}
+
+header .item_menu:hover {
+  border-top: #13c8e0 solid 2px;
+}
+
+header .item_menu:focus {
+  border-top: #13c8e0 solid 2px;
+}
+
+header .wallet:hover {
+  text-decoration: underline;
+}
+
+header .wallet:focus {
+  color: black;
+  text-decoration: underline;
+}
+
+.banner {
+  position: fixed;
+  top: 85px;
+  width: 100%;
+  min-width: 271px;
+}
+
+/*footer*/
+.footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-padding-after: 20px;
+          padding-block-end: 20px;
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  min-width: 271px;
+  bottom: 0px;
+  color: white;
+  background-color: #13c8e0;
+  /* tous écrans à partir de 1136px */
+}
+
+@media screen and (min-width: 1136px) {
+  .footer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-padding-before: 20px;
+            padding-block-start: 20px;
+  }
+}
+
+.footer img {
+  width: 180px;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+@media screen and (min-width: 1136px) {
+  .footer ul {
+    padding-left: 10%;
+  }
+}
+
+.footer li {
+  margin-bottom: 5px;
+}
+
+.footer .fas.fa-hands-helping {
+  padding-right: 15px;
+}
+
+.footer .fas.fa-utensils {
+  padding-right: 20px;
 }
 /*# sourceMappingURL=main.css.map */

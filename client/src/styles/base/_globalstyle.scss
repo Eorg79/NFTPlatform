@@ -2,12 +2,20 @@
 html {height: 100%;
         }
 
+@font-face {
+    font-family: "raleway";
+    src: url(/../assets/Raleway/Raleway-VariableFont_wght.ttf);
+    }
+
 body {
     height: 100%;
-    color: $color-secondary;
-    font-family: "Roboto", Arial, sans-serif;
+    color: $color-primary;
+    font-family: "raleway", Arial, sans-serif;
     min-width: 271px;
     max-width: 1872px;
+    background: no-repeat center center fixed;
+    background-image: url('../assets/background.png');
+    
     margin: auto;
     .body-wrapper {
         height: 100%;
@@ -15,13 +23,10 @@ body {
         flex-direction: column;
         .body-container {
             text-align: center;
-            background-color: $color-secondary;
-            .header {
-                color: white;
-            }
             .container {
                 @include container;
-            
+                position: relative;
+                top: 180px;
             .card {
                 @include rounded-card;
                 }
@@ -36,15 +41,53 @@ body {
 
 }
 
-h1 {
-    color: white;
-    font-size: 45px;
-    
+p{
+    padding: 0px 50px 25px 50px;
+    font-size: 1.2em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-left: 10px;
+    margin-right: 10px;  
 }
+
+h1{
+    padding: 0px 25px 0 25px;
+    font-size: 35px;
+    font-weight: 300;
+    font-style: italic;
+    color: $color-tertiary;
+}
+
+h2{
+    padding-left: 25px;
+    font-size: 20px;
+
+}
+
+h4{
+    padding-left: 25px;
+    font-size: 18px;
+}
+
 
 a {
     text-decoration: none;
 }
+
+a:hover {
+    color: $color-tertiary;
+}
+
+a:active{
+    color: $color-tertiary;
+}
+
+a:focus{
+    color: $color-tertiary;
+    font-weight: bold;
+}
+
+
 
 ul {
     padding-left: 0;
@@ -65,27 +108,11 @@ label {
     padding-right: 5px;
 }
 
-.cart-table-range-label {
-    background-color: $color-secondary;
-    color: white;
-    font-weight: 800;
-    
-}
-
-
 textarea {
     padding: 10px;
     margin: 10px 15px 0px 15px;
 }
 
-p, li {
-    font-size: 18px;
-    font-weight: 500;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    margin-left: 10px;
-    margin-right: 10px;  
-}
     
 .btn {
     @include basic-button;

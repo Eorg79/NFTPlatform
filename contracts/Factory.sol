@@ -18,7 +18,13 @@ contract Factory {
       * @return collectionAddress the address of the created collection contract
       */
     
-    function createCollection(string memory _artistName, string memory _artistSymbol) external returns (address collectionAddress) {
+    function createCollection(string memory name, string memory symbol) public returns (address collectionAddress) {
+        Collection collection = new Collection(name, symbol);
+        emit CollectionCreated(name, collectionAddress, block.timestamp);
+        return address(collection);
+    }
+}
+        /*
         // Import the bytecode of the contract to deploy
         bytes memory collectionBytecode = type(Collection).creationCode;
 				// Make a random salt based on the artist name
@@ -33,9 +39,7 @@ contract Factory {
         }
         // Initialize the collection contract with the artist settings
         //Collection(collectionAddress).init(_artistName, _artistSymbol);
- 
-        emit CollectionCreated(_artistName, collectionAddress, block.timestamp);
-    }
+      
+        emit CollectionCreated(_artistName, collectionAddress, block.timestamp);*/
 
 
-}

@@ -1,0 +1,81 @@
+/*header*/
+    header {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        min-width: 271px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-block-start: 5px;
+        padding-block-end: 5px;
+        background-color: white;
+        box-shadow: 0 0 15px #aaaaaa;
+
+        .header__img-container {
+            padding-left: 15px;
+            img {
+                width: auto;
+                height: 45px;
+            }
+        }
+
+        a {
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+        }
+        
+        nav {
+            flex: auto;
+            display: flex;
+            min-height: 44px; 
+          
+            .menu {
+            flex:auto;
+            display: flex;
+            justify-content: flex-end;
+            padding-inline-start: 0px;
+            }
+
+            .item_menu {
+            border-top: white solid 2px;
+            padding: 15px 30px 15px 30px;
+            }
+
+        }  
+        h1 {
+            padding-left: 50px;
+        }
+        header p{
+            padding: 40px 30px 30px 30px;
+            margin: 0;
+            border-top: white solid 2px;
+            font-size: 1em;
+        }
+     
+        .wallet{
+            color: $color-tertiary;
+            font-weight: bold;
+        }
+
+      /*apparence dynamique du menu*/
+
+        .item_menu:hover{
+            border-top: $color-tertiary solid 2px;
+        }
+
+        .item_menu:focus{
+            border-top: $color-tertiary solid 2px;
+        }
+
+        .wallet:hover{
+            text-decoration: underline;
+        }
+
+        .wallet:focus{ 
+            color: black;
+            text-decoration: underline;
+        }
+   
+    }
