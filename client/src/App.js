@@ -3,7 +3,7 @@ import { ContractContext } from './utils/ContractContext';
 import FactoryContract from "./contracts/Factory.json";
 import getWeb3 from "./getWeb3";
 import Router from "./components/Router";
-import headerLogo from'./assets/headerLogo.png';
+import headerLogo from'./assets/9XNFT.png';
 
 import "./styles/main.css";
 
@@ -51,15 +51,24 @@ const App = () => {
     
     <div className="body-container">
       <ContractContext.Provider value={{ web3, setWeb3, accounts, setAccounts, contract, setContract }}>
-          <div className="header">
+          <header className="header">
             <div className="header__img-container">
-                    <img className="header__logo" src={headerLogo} alt="logo 9XNFT" />
-            </div>
-            <h1>The best NFT trading platform</h1>
-            <div>connected wallet: {accounts[0]}</div>
+                    <img src={headerLogo} alt="logo 9XNFT" />
+            </div> 
+            <nav>
+                <div className="menu">
+                    <div className="item_menu"><a>Créer</a></div>
+                    <div className="item_menu"><a>Explorer</a></div>
+                    <div className="item_menu wallet"><a>Wallet</a></div>
+                </div>
+            </nav>
+          </header>
+          <div className="banner">
+            <h1>The largest NFT trading platform</h1>
           </div>
         {web3 ? 
           (<div className="container">
+            <div>connected wallet: {accounts[0]}</div>
             <Router />
           </div>
           ) :

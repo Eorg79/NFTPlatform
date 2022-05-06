@@ -1,8 +1,7 @@
-var Marketplace = artifacts.require("./Marketplace.sol");
 var Collection = artifacts.require("./Collection.sol");
+var Factory = artifacts.require("./Factory.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Collection)
-  deployer.deploy(Marketplace)
+  deployer.deploy(Factory);
+  //.then(() => deployer.deploy(Factory, Collection.address));
 };
-

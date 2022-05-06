@@ -1,0 +1,45 @@
+
+/*footer*/
+.footer {
+    @include block-side-padding;
+    padding-block-end: 20px;
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    min-width: 271px;
+    bottom: 0px;
+    color: white;
+    background-color: $color-tertiary;
+    /* tous écrans à partir de 1136px */
+    @media screen and (min-width: 1136px) {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-block-start: 20px;
+    }
+        img {
+            width: 180px;
+        }       
+        a {
+        color: white;
+
+        }
+        ul {
+            padding-inline-start: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            @media screen and (min-width: 1136px) {
+               padding-left: 10%;
+            }
+        }
+        li{
+            margin-bottom: 5px;
+        }
+        .fas.fa-hands-helping {
+            padding-right: 15px;
+        }
+        .fas.fa-utensils {
+            padding-right: 20px;
+        }      
+}
