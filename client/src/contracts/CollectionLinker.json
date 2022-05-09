@@ -2120,7 +2120,7 @@
                 }
               ]
             },
-            "name": "abi_encode_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_to_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_fromStack",
+            "name": "abi_encode_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_to_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_fromStack",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -2210,7 +2210,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "abi_encode_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_to_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_fromStack",
+                      "name": "abi_encode_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_to_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
                       "src": "4144:125:18"
                     },
@@ -2222,7 +2222,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_struct$_hasCollectionLinkResult_$2408_memory_ptr__to_t_struct$_hasCollectionLinkResult_$2408_memory_ptr__fromStack_reversed",
+            "name": "abi_encode_tuple_t_struct$_hasCollectionLinkResult_$2483_memory_ptr__to_t_struct$_hasCollectionLinkResult_$2483_memory_ptr__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -3804,7 +3804,7 @@
           }
         ]
       },
-      "contents": "{\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function validator_revert_t_address(value) {\n        if iszero(eq(value, cleanup_t_address(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_address(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_address(value)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_addresst_uint256(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_address_to_t_address_fromStack(value, pos) {\n        mstore(pos, cleanup_t_address(value))\n    }\n\n    function cleanup_t_bool(value) -> cleaned {\n        cleaned := iszero(iszero(value))\n    }\n\n    function abi_encode_t_bool_to_t_bool_fromStack(value, pos) {\n        mstore(pos, cleanup_t_bool(value))\n    }\n\n    function abi_encode_tuple_t_address_t_bool__to_t_address_t_bool__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_bool_to_t_bool_fromStack(value1,  add(headStart, 32))\n\n    }\n\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_decode_tuple_t_addresst_address(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_bool_to_t_bool(value, pos) {\n        mstore(pos, cleanup_t_bool(value))\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    // struct CollectionLinker.hasCollectionLinkResult -> struct CollectionLinker.hasCollectionLinkResult\n    function abi_encode_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_to_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_fromStack(value, pos)  {\n        let tail := add(pos, 0x40)\n\n        {\n            // hasLink\n\n            let memberValue0 := mload(add(value, 0x00))\n            abi_encode_t_bool_to_t_bool(memberValue0, add(pos, 0x00))\n        }\n\n        {\n            // linkIndex\n\n            let memberValue0 := mload(add(value, 0x20))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x20))\n        }\n\n    }\n\n    function abi_encode_tuple_t_struct$_hasCollectionLinkResult_$2408_memory_ptr__to_t_struct$_hasCollectionLinkResult_$2408_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_to_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_decode_tuple_t_address(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe(memPtr) {\n\n        mstore(add(memPtr, 0), \"Ownable: caller is not the owner\")\n\n    }\n\n    function abi_encode_t_stringliteral_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 32)\n        store_literal_in_memory_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function panic_error_0x32() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n\n    function panic_error_0x11() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n\n    function checked_sub_t_uint256(x, y) -> diff {\n        x := cleanup_t_uint256(x)\n        y := cleanup_t_uint256(y)\n\n        if lt(x, y) { panic_error_0x11() }\n\n        diff := sub(x, y)\n    }\n\n    function panic_error_0x31() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x31)\n        revert(0, 0x24)\n    }\n\n    function increment_t_uint256(value) -> ret {\n        value := cleanup_t_uint256(value)\n        if eq(value, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n\n    function store_literal_in_memory_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe(memPtr) {\n\n        mstore(add(memPtr, 0), \"Ownable: new owner is the zero a\")\n\n        mstore(add(memPtr, 32), \"ddress\")\n\n    }\n\n    function abi_encode_t_stringliteral_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 38)\n        store_literal_in_memory_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n}\n",
+      "contents": "{\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function validator_revert_t_address(value) {\n        if iszero(eq(value, cleanup_t_address(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_address(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_address(value)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_addresst_uint256(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_address_to_t_address_fromStack(value, pos) {\n        mstore(pos, cleanup_t_address(value))\n    }\n\n    function cleanup_t_bool(value) -> cleaned {\n        cleaned := iszero(iszero(value))\n    }\n\n    function abi_encode_t_bool_to_t_bool_fromStack(value, pos) {\n        mstore(pos, cleanup_t_bool(value))\n    }\n\n    function abi_encode_tuple_t_address_t_bool__to_t_address_t_bool__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_bool_to_t_bool_fromStack(value1,  add(headStart, 32))\n\n    }\n\n    function abi_encode_tuple_t_address__to_t_address__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_decode_tuple_t_addresst_address(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_bool_to_t_bool(value, pos) {\n        mstore(pos, cleanup_t_bool(value))\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    // struct CollectionLinker.hasCollectionLinkResult -> struct CollectionLinker.hasCollectionLinkResult\n    function abi_encode_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_to_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_fromStack(value, pos)  {\n        let tail := add(pos, 0x40)\n\n        {\n            // hasLink\n\n            let memberValue0 := mload(add(value, 0x00))\n            abi_encode_t_bool_to_t_bool(memberValue0, add(pos, 0x00))\n        }\n\n        {\n            // linkIndex\n\n            let memberValue0 := mload(add(value, 0x20))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x20))\n        }\n\n    }\n\n    function abi_encode_tuple_t_struct$_hasCollectionLinkResult_$2483_memory_ptr__to_t_struct$_hasCollectionLinkResult_$2483_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_to_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_decode_tuple_t_address(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe(memPtr) {\n\n        mstore(add(memPtr, 0), \"Ownable: caller is not the owner\")\n\n    }\n\n    function abi_encode_t_stringliteral_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 32)\n        store_literal_in_memory_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_9924ebdf1add33d25d4ef888e16131f0a5687b0580a36c21b5c301a6c462effe_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function panic_error_0x32() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n\n    function panic_error_0x11() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n\n    function checked_sub_t_uint256(x, y) -> diff {\n        x := cleanup_t_uint256(x)\n        y := cleanup_t_uint256(y)\n\n        if lt(x, y) { panic_error_0x11() }\n\n        diff := sub(x, y)\n    }\n\n    function panic_error_0x31() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x31)\n        revert(0, 0x24)\n    }\n\n    function increment_t_uint256(value) -> ret {\n        value := cleanup_t_uint256(value)\n        if eq(value, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n\n    function store_literal_in_memory_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe(memPtr) {\n\n        mstore(add(memPtr, 0), \"Ownable: new owner is the zero a\")\n\n        mstore(add(memPtr, 32), \"ddress\")\n\n    }\n\n    function abi_encode_t_stringliteral_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 38)\n        store_literal_in_memory_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_245f15ff17f551913a7a18385165551503906a406f905ac1c2437281a7cd0cfe_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n}\n",
       "id": 18,
       "language": "Yul",
       "name": "#utility.yul"
@@ -3813,12 +3813,12 @@
   "sourceMap": "111:1625:16:-:0;;;;;;;;;;;;;921:32:0;940:12;:10;;;:12;;:::i;:::-;921:18;;;:32;;:::i;:::-;111:1625:16;;640:96:9;693:7;719:10;712:17;;640:96;:::o;2270:187:0:-;2343:16;2362:6;;;;;;;;;;;2343:25;;2387:8;2378:6;;:17;;;;;;;;;;;;;;;;;;2441:8;2410:40;;2431:8;2410:40;;;;;;;;;;;;2333:124;2270:187;:::o;111:1625:16:-;;;;;;;",
   "deployedSourceMap": "111:1625:16:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;359:62;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;1668:101:0;;;:::i;:::-;;1036:85;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;626:662:16;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;428:192;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1294:435;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1918:198:0;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;359:62:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1668:101:0:-;1259:12;:10;:12::i;:::-;1248:23;;:7;:5;:7::i;:::-;:23;;;1240:68;;;;;;;;;;;;:::i;:::-;;;;;;;;;1732:30:::1;1759:1;1732:18;:30::i;:::-;1668:101::o:0;1036:85::-;1082:7;1108:6;;;;;;;;;;;1101:13;;1036:85;:::o;626:662:16:-;1259:12:0;:10;:12::i;:::-;1248:23;;:7;:5;:7::i;:::-;:23;;;1240:68;;;;;;;;;;;;:::i;:::-;;;;;;;;;736:37:16::1;776:49;794:17;813:11;776:17;:49::i;:::-;736:89;;838:6;:14;;;835:447;;;867:40;910:20;:33;931:11;910:33;;;;;;;;;;;;;;;944:6;:16;;;910:51;;;;;;;;:::i;:::-;;;;;;;;;867:94;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;1029:20;:33;1050:11;1029:33;;;;;;;;;;;;;;;1104:1;1063:20:::0;:33:::1;1084:11;1063:33;;;;;;;;;;;;;;;:40;;;;:42;;;;:::i;:::-;1029:77;;;;;;;;:::i;:::-;;;;;;;;;975:20;:33;996:11;975:33;;;;;;;;;;;;;;;1009:6;:16;;;975:51;;;;;;;;:::i;:::-;;;;;;;;;:131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1200:18;1120:20;:33;1141:11;1120:33;;;;;;;;;;;;;;;1195:1;1154:20:::0;:33:::1;1175:11;1154:33;;;;;;;;;;;;;;;:40;;;;:42;;;;:::i;:::-;1120:77;;;;;;;;:::i;:::-;;;;;;;;;:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1232:20;:33;1253:11;1232:33;;;;;;;;;;;;;;;:39;;;;;;;:::i;:::-;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;853:429;835:447;726:562;626:662:::0;;:::o;428:192::-;1259:12:0;:10;:12::i;:::-;1248:23;;:7;:5;:7::i;:::-;:23;;;1240:68;;;;;;;;;;;;:::i;:::-;;;;;;;;;535:20:16::1;:33;556:11;535:33;;;;;;;;;;;;;;;574:38;;;;;;;;589:17;574:38;;;;;;607:4;574:38;;;;::::0;535:78:::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;428:192:::0;;:::o;1294:435::-;1389:30;;:::i;:::-;1435:6;1431:244;1447:20;:33;1468:11;1447:33;;;;;;;;;;;;;;;:40;;;;1445:1;:42;1431:244;;;1576:17;1510:83;;:20;:33;1531:11;1510:33;;;;;;;;;;;;;;;1544:1;1510:36;;;;;;;;:::i;:::-;;;;;;;;;:62;;;;;;;;;;;;:83;;;1507:158;;1619:31;;;;;;;;1643:4;1619:31;;;;;;1648:1;1619:31;;;1612:38;;;;;1507:158;1489:3;;;;;:::i;:::-;;;;1431:244;;;;1690:32;;;;;;;;1714:5;1690:32;;;;;;1720:1;1690:32;;;1683:39;;1294:435;;;;;:::o;1918:198:0:-;1259:12;:10;:12::i;:::-;1248:23;;:7;:5;:7::i;:::-;:23;;;1240:68;;;;;;;;;;;;:::i;:::-;;;;;;;;;2026:1:::1;2006:22;;:8;:22;;::::0;1998:73:::1;;;;;;;;;;;;:::i;:::-;;;;;;;;;2081:28;2100:8;2081:18;:28::i;:::-;1918:198:::0;:::o;640:96:9:-;693:7;719:10;712:17;;640:96;:::o;2270:187:0:-;2343:16;2362:6;;;;;;;;;;;2343:25;;2387:8;2378:6;;:17;;;;;;;;;;;;;;;;;;2441:8;2410:40;;2431:8;2410:40;;;;;;;;;;;;2333:124;2270:187;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;:::o;88:117:18:-;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:139::-;742:5;780:6;767:20;758:29;;796:33;823:5;796:33;:::i;:::-;696:139;;;;:::o;841:77::-;878:7;907:5;896:16;;841:77;;;:::o;924:122::-;997:24;1015:5;997:24;:::i;:::-;990:5;987:35;977:63;;1036:1;1033;1026:12;977:63;924:122;:::o;1052:139::-;1098:5;1136:6;1123:20;1114:29;;1152:33;1179:5;1152:33;:::i;:::-;1052:139;;;;:::o;1197:474::-;1265:6;1273;1322:2;1310:9;1301:7;1297:23;1293:32;1290:119;;;1328:79;;:::i;:::-;1290:119;1448:1;1473:53;1518:7;1509:6;1498:9;1494:22;1473:53;:::i;:::-;1463:63;;1419:117;1575:2;1601:53;1646:7;1637:6;1626:9;1622:22;1601:53;:::i;:::-;1591:63;;1546:118;1197:474;;;;;:::o;1677:118::-;1764:24;1782:5;1764:24;:::i;:::-;1759:3;1752:37;1677:118;;:::o;1801:90::-;1835:7;1878:5;1871:13;1864:21;1853:32;;1801:90;;;:::o;1897:109::-;1978:21;1993:5;1978:21;:::i;:::-;1973:3;1966:34;1897:109;;:::o;2012:320::-;2127:4;2165:2;2154:9;2150:18;2142:26;;2178:71;2246:1;2235:9;2231:17;2222:6;2178:71;:::i;:::-;2259:66;2321:2;2310:9;2306:18;2297:6;2259:66;:::i;:::-;2012:320;;;;;:::o;2338:222::-;2431:4;2469:2;2458:9;2454:18;2446:26;;2482:71;2550:1;2539:9;2535:17;2526:6;2482:71;:::i;:::-;2338:222;;;;:::o;2566:474::-;2634:6;2642;2691:2;2679:9;2670:7;2666:23;2662:32;2659:119;;;2697:79;;:::i;:::-;2659:119;2817:1;2842:53;2887:7;2878:6;2867:9;2863:22;2842:53;:::i;:::-;2832:63;;2788:117;2944:2;2970:53;3015:7;3006:6;2995:9;2991:22;2970:53;:::i;:::-;2960:63;;2915:118;2566:474;;;;;:::o;3046:99::-;3117:21;3132:5;3117:21;:::i;:::-;3112:3;3105:34;3046:99;;:::o;3151:108::-;3228:24;3246:5;3228:24;:::i;:::-;3223:3;3216:37;3151:108;;:::o;3371:541::-;3550:4;3545:3;3541:14;3640:4;3633:5;3629:16;3623:23;3659:57;3710:4;3705:3;3701:14;3687:12;3659:57;:::i;:::-;3565:161;3813:4;3806:5;3802:16;3796:23;3832:63;3889:4;3884:3;3880:14;3866:12;3832:63;:::i;:::-;3736:169;3519:393;3371:541;;:::o;3918:386::-;4093:4;4131:2;4120:9;4116:18;4108:26;;4144:153;4294:1;4283:9;4279:17;4270:6;4144:153;:::i;:::-;3918:386;;;;:::o;4310:329::-;4369:6;4418:2;4406:9;4397:7;4393:23;4389:32;4386:119;;;4424:79;;:::i;:::-;4386:119;4544:1;4569:53;4614:7;4605:6;4594:9;4590:22;4569:53;:::i;:::-;4559:63;;4515:117;4310:329;;;;:::o;4645:169::-;4729:11;4763:6;4758:3;4751:19;4803:4;4798:3;4794:14;4779:29;;4645:169;;;;:::o;4820:182::-;4960:34;4956:1;4948:6;4944:14;4937:58;4820:182;:::o;5008:366::-;5150:3;5171:67;5235:2;5230:3;5171:67;:::i;:::-;5164:74;;5247:93;5336:3;5247:93;:::i;:::-;5365:2;5360:3;5356:12;5349:19;;5008:366;;;:::o;5380:419::-;5546:4;5584:2;5573:9;5569:18;5561:26;;5633:9;5627:4;5623:20;5619:1;5608:9;5604:17;5597:47;5661:131;5787:4;5661:131;:::i;:::-;5653:139;;5380:419;;;:::o;5805:180::-;5853:77;5850:1;5843:88;5950:4;5947:1;5940:15;5974:4;5971:1;5964:15;5991:180;6039:77;6036:1;6029:88;6136:4;6133:1;6126:15;6160:4;6157:1;6150:15;6177:191;6217:4;6237:20;6255:1;6237:20;:::i;:::-;6232:25;;6271:20;6289:1;6271:20;:::i;:::-;6266:25;;6310:1;6307;6304:8;6301:34;;;6315:18;;:::i;:::-;6301:34;6360:1;6357;6353:9;6345:17;;6177:191;;;;:::o;6374:180::-;6422:77;6419:1;6412:88;6519:4;6516:1;6509:15;6543:4;6540:1;6533:15;6560:233;6599:3;6622:24;6640:5;6622:24;:::i;:::-;6613:33;;6668:66;6661:5;6658:77;6655:103;;6738:18;;:::i;:::-;6655:103;6785:1;6778:5;6774:13;6767:20;;6560:233;;;:::o;6799:225::-;6939:34;6935:1;6927:6;6923:14;6916:58;7008:8;7003:2;6995:6;6991:15;6984:33;6799:225;:::o;7030:366::-;7172:3;7193:67;7257:2;7252:3;7193:67;:::i;:::-;7186:74;;7269:93;7358:3;7269:93;:::i;:::-;7387:2;7382:3;7378:12;7371:19;;7030:366;;;:::o;7402:419::-;7568:4;7606:2;7595:9;7591:18;7583:26;;7655:9;7649:4;7645:20;7641:1;7630:9;7626:17;7619:47;7683:131;7809:4;7683:131;:::i;:::-;7675:139;;7402:419;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.13;\n\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\n\ncontract CollectionLinker is Ownable {\n\n    struct collectionLink{\n        address collectionContractAddress;\n        bool hasBalanceInCollection;\n    }\n\n    struct hasCollectionLinkResult{\n        bool hasLink; \n        uint linkIndex;\n    }\n\n    mapping(address=>collectionLink[]) public usersCollectionLinks;\n\n    function addCollectionToAddress(address collectionAddress, address userAddress) public onlyOwner {\n        usersCollectionLinks[userAddress].push(collectionLink(collectionAddress,true));\n    }\n\n    function removeCollectionToAddress(address collectionAddress, address userAddress) public onlyOwner {\n        hasCollectionLinkResult memory result = hasCollectionLink(collectionAddress, userAddress);\n        if(result.hasLink){\n            collectionLink memory tempcollectionLink = usersCollectionLinks[userAddress][result.linkIndex];\n            usersCollectionLinks[userAddress][result.linkIndex] = usersCollectionLinks[userAddress][usersCollectionLinks[userAddress].length-1];\n            usersCollectionLinks[userAddress][usersCollectionLinks[userAddress].length-1] = tempcollectionLink;\n            usersCollectionLinks[userAddress].pop();\n        }\n    }\n\n    function hasCollectionLink(address collectionAddress, address userAddress) public view returns(hasCollectionLinkResult memory) {\n        for(uint i=0; i<usersCollectionLinks[userAddress].length; i++){\n            if(usersCollectionLinks[userAddress][i].collectionContractAddress == collectionAddress){\n                return hasCollectionLinkResult(true,i);\n            }\n        }\n       return hasCollectionLinkResult(false,0);\n    }\n    \n}",
-  "sourcePath": "/home/ludo/github/NFTPlatform/contracts/CollectionLinker.sol",
+  "sourcePath": "/home/erika/NFTPlatform/contracts/CollectionLinker.sol",
   "ast": {
     "absolutePath": "project:/contracts/CollectionLinker.sol",
     "exportedSymbols": {
       "CollectionLinker": [
-        2550
+        2625
       ],
       "Context": [
         1945
@@ -3827,12 +3827,12 @@
         104
       ]
     },
-    "id": 2551,
+    "id": 2626,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2395,
+        "id": 2470,
         "literals": [
           "solidity",
           "0.8",
@@ -3844,10 +3844,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
         "file": "@openzeppelin/contracts/access/Ownable.sol",
-        "id": 2396,
+        "id": 2471,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 2551,
+        "scope": 2626,
         "sourceUnit": 105,
         "src": "57:52:16",
         "symbolAliases": [],
@@ -3858,13 +3858,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 2397,
+              "id": 2472,
               "name": "Ownable",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 104,
               "src": "140:7:16"
             },
-            "id": 2398,
+            "id": 2473,
             "nodeType": "InheritanceSpecifier",
             "src": "140:7:16"
           }
@@ -3873,9 +3873,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2550,
+        "id": 2625,
         "linearizedBaseContracts": [
-          2550,
+          2625,
           104,
           1945
         ],
@@ -3885,16 +3885,16 @@
         "nodes": [
           {
             "canonicalName": "CollectionLinker.collectionLink",
-            "id": 2403,
+            "id": 2478,
             "members": [
               {
                 "constant": false,
-                "id": 2400,
+                "id": 2475,
                 "mutability": "mutable",
                 "name": "collectionContractAddress",
                 "nameLocation": "194:25:16",
                 "nodeType": "VariableDeclaration",
-                "scope": 2403,
+                "scope": 2478,
                 "src": "186:33:16",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3903,7 +3903,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 2399,
+                  "id": 2474,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "186:7:16",
@@ -3917,12 +3917,12 @@
               },
               {
                 "constant": false,
-                "id": 2402,
+                "id": 2477,
                 "mutability": "mutable",
                 "name": "hasBalanceInCollection",
                 "nameLocation": "234:22:16",
                 "nodeType": "VariableDeclaration",
-                "scope": 2403,
+                "scope": 2478,
                 "src": "229:27:16",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3931,7 +3931,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 2401,
+                  "id": 2476,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "229:4:16",
@@ -3946,22 +3946,22 @@
             "name": "collectionLink",
             "nameLocation": "162:14:16",
             "nodeType": "StructDefinition",
-            "scope": 2550,
+            "scope": 2625,
             "src": "155:108:16",
             "visibility": "public"
           },
           {
             "canonicalName": "CollectionLinker.hasCollectionLinkResult",
-            "id": 2408,
+            "id": 2483,
             "members": [
               {
                 "constant": false,
-                "id": 2405,
+                "id": 2480,
                 "mutability": "mutable",
                 "name": "hasLink",
                 "nameLocation": "314:7:16",
                 "nodeType": "VariableDeclaration",
-                "scope": 2408,
+                "scope": 2483,
                 "src": "309:12:16",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3970,7 +3970,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 2404,
+                  "id": 2479,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "309:4:16",
@@ -3983,12 +3983,12 @@
               },
               {
                 "constant": false,
-                "id": 2407,
+                "id": 2482,
                 "mutability": "mutable",
                 "name": "linkIndex",
                 "nameLocation": "337:9:16",
                 "nodeType": "VariableDeclaration",
-                "scope": 2408,
+                "scope": 2483,
                 "src": "332:14:16",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -3997,7 +3997,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2406,
+                  "id": 2481,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "332:4:16",
@@ -4012,30 +4012,30 @@
             "name": "hasCollectionLinkResult",
             "nameLocation": "276:23:16",
             "nodeType": "StructDefinition",
-            "scope": 2550,
+            "scope": 2625,
             "src": "269:84:16",
             "visibility": "public"
           },
           {
             "constant": false,
             "functionSelector": "3bc5df34",
-            "id": 2414,
+            "id": 2489,
             "mutability": "mutable",
             "name": "usersCollectionLinks",
             "nameLocation": "401:20:16",
             "nodeType": "VariableDeclaration",
-            "scope": 2550,
+            "scope": 2625,
             "src": "359:62:16",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
               "typeString": "mapping(address => struct CollectionLinker.collectionLink[])"
             },
             "typeName": {
-              "id": 2413,
+              "id": 2488,
               "keyType": {
-                "id": 2409,
+                "id": 2484,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "367:7:16",
@@ -4047,32 +4047,32 @@
               "nodeType": "Mapping",
               "src": "359:34:16",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                 "typeString": "mapping(address => struct CollectionLinker.collectionLink[])"
               },
               "valueType": {
                 "baseType": {
-                  "id": 2411,
+                  "id": 2486,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 2410,
+                    "id": 2485,
                     "name": "collectionLink",
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 2403,
+                    "referencedDeclaration": 2478,
                     "src": "376:14:16"
                   },
-                  "referencedDeclaration": 2403,
+                  "referencedDeclaration": 2478,
                   "src": "376:14:16",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_collectionLink_$2403_storage_ptr",
+                    "typeIdentifier": "t_struct$_collectionLink_$2478_storage_ptr",
                     "typeString": "struct CollectionLinker.collectionLink"
                   }
                 },
-                "id": 2412,
+                "id": 2487,
                 "nodeType": "ArrayTypeName",
                 "src": "376:16:16",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr",
+                  "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr",
                   "typeString": "struct CollectionLinker.collectionLink[]"
                 }
               }
@@ -4081,7 +4081,7 @@
           },
           {
             "body": {
-              "id": 2433,
+              "id": 2508,
               "nodeType": "Block",
               "src": "525:95:16",
               "statements": [
@@ -4091,11 +4091,11 @@
                       {
                         "arguments": [
                           {
-                            "id": 2428,
+                            "id": 2503,
                             "name": "collectionAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2416,
+                            "referencedDeclaration": 2491,
                             "src": "589:17:16",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -4104,7 +4104,7 @@
                           },
                           {
                             "hexValue": "74727565",
-                            "id": 2429,
+                            "id": 2504,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -4130,18 +4130,18 @@
                               "typeString": "bool"
                             }
                           ],
-                          "id": 2427,
+                          "id": 2502,
                           "name": "collectionLink",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2403,
+                          "referencedDeclaration": 2478,
                           "src": "574:14:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_collectionLink_$2403_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_collectionLink_$2478_storage_ptr_$",
                             "typeString": "type(struct CollectionLinker.collectionLink storage pointer)"
                           }
                         },
-                        "id": 2430,
+                        "id": 2505,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4152,7 +4152,7 @@
                         "src": "574:38:16",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_collectionLink_$2403_memory_ptr",
+                          "typeIdentifier": "t_struct$_collectionLink_$2478_memory_ptr",
                           "typeString": "struct CollectionLinker.collectionLink memory"
                         }
                       }
@@ -4160,30 +4160,30 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_collectionLink_$2403_memory_ptr",
+                          "typeIdentifier": "t_struct$_collectionLink_$2478_memory_ptr",
                           "typeString": "struct CollectionLinker.collectionLink memory"
                         }
                       ],
                       "expression": {
                         "baseExpression": {
-                          "id": 2423,
+                          "id": 2498,
                           "name": "usersCollectionLinks",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2414,
+                          "referencedDeclaration": 2489,
                           "src": "535:20:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                             "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                           }
                         },
-                        "id": 2425,
+                        "id": 2500,
                         "indexExpression": {
-                          "id": 2424,
+                          "id": 2499,
                           "name": "userAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2418,
+                          "referencedDeclaration": 2493,
                           "src": "556:11:16",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -4197,11 +4197,11 @@
                         "nodeType": "IndexAccess",
                         "src": "535:33:16",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                           "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                         }
                       },
-                      "id": 2426,
+                      "id": 2501,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4210,11 +4210,11 @@
                       "nodeType": "MemberAccess",
                       "src": "535:38:16",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr_$_t_struct$_collectionLink_$2403_storage_$returns$__$bound_to$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr_$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr_$_t_struct$_collectionLink_$2478_storage_$returns$__$bound_to$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr_$",
                         "typeString": "function (struct CollectionLinker.collectionLink storage ref[] storage pointer,struct CollectionLinker.collectionLink storage ref)"
                       }
                     },
-                    "id": 2431,
+                    "id": 2506,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4229,22 +4229,22 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2432,
+                  "id": 2507,
                   "nodeType": "ExpressionStatement",
                   "src": "535:78:16"
                 }
               ]
             },
             "functionSelector": "b03413b2",
-            "id": 2434,
+            "id": 2509,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2421,
+                "id": 2496,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2420,
+                  "id": 2495,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 46,
@@ -4258,17 +4258,17 @@
             "nameLocation": "437:22:16",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2419,
+              "id": 2494,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2416,
+                  "id": 2491,
                   "mutability": "mutable",
                   "name": "collectionAddress",
                   "nameLocation": "468:17:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2434,
+                  "scope": 2509,
                   "src": "460:25:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4277,7 +4277,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2415,
+                    "id": 2490,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "460:7:16",
@@ -4291,12 +4291,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 2418,
+                  "id": 2493,
                   "mutability": "mutable",
                   "name": "userAddress",
                   "nameLocation": "495:11:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2434,
+                  "scope": 2509,
                   "src": "487:19:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4305,7 +4305,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2417,
+                    "id": 2492,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "487:7:16",
@@ -4321,12 +4321,12 @@
               "src": "459:48:16"
             },
             "returnParameters": {
-              "id": 2422,
+              "id": 2497,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "525:0:16"
             },
-            "scope": 2550,
+            "scope": 2625,
             "src": "428:192:16",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -4334,59 +4334,59 @@
           },
           {
             "body": {
-              "id": 2502,
+              "id": 2577,
               "nodeType": "Block",
               "src": "726:562:16",
               "statements": [
                 {
                   "assignments": [
-                    2445
+                    2520
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2445,
+                      "id": 2520,
                       "mutability": "mutable",
                       "name": "result",
                       "nameLocation": "767:6:16",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2502,
+                      "scope": 2577,
                       "src": "736:37:16",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                        "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                         "typeString": "struct CollectionLinker.hasCollectionLinkResult"
                       },
                       "typeName": {
-                        "id": 2444,
+                        "id": 2519,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 2443,
+                          "id": 2518,
                           "name": "hasCollectionLinkResult",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 2408,
+                          "referencedDeclaration": 2483,
                           "src": "736:23:16"
                         },
-                        "referencedDeclaration": 2408,
+                        "referencedDeclaration": 2483,
                         "src": "736:23:16",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_storage_ptr",
+                          "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_storage_ptr",
                           "typeString": "struct CollectionLinker.hasCollectionLinkResult"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2450,
+                  "id": 2525,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2447,
+                        "id": 2522,
                         "name": "collectionAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2436,
+                        "referencedDeclaration": 2511,
                         "src": "794:17:16",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -4394,11 +4394,11 @@
                         }
                       },
                       {
-                        "id": 2448,
+                        "id": 2523,
                         "name": "userAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2438,
+                        "referencedDeclaration": 2513,
                         "src": "813:11:16",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -4417,18 +4417,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2446,
+                      "id": 2521,
                       "name": "hasCollectionLink",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2549,
+                      "referencedDeclaration": 2624,
                       "src": "776:17:16",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_address_$returns$_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_address_$returns$_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_$",
                         "typeString": "function (address,address) view returns (struct CollectionLinker.hasCollectionLinkResult memory)"
                       }
                     },
-                    "id": 2449,
+                    "id": 2524,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4439,7 +4439,7 @@
                     "src": "776:49:16",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                       "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                     }
                   },
@@ -4449,101 +4449,101 @@
                 {
                   "condition": {
                     "expression": {
-                      "id": 2451,
+                      "id": 2526,
                       "name": "result",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2445,
+                      "referencedDeclaration": 2520,
                       "src": "838:6:16",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                        "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                         "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                       }
                     },
-                    "id": 2452,
+                    "id": 2527,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "hasLink",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 2405,
+                    "referencedDeclaration": 2480,
                     "src": "838:14:16",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2501,
+                  "id": 2576,
                   "nodeType": "IfStatement",
                   "src": "835:447:16",
                   "trueBody": {
-                    "id": 2500,
+                    "id": 2575,
                     "nodeType": "Block",
                     "src": "853:429:16",
                     "statements": [
                       {
                         "assignments": [
-                          2455
+                          2530
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 2455,
+                            "id": 2530,
                             "mutability": "mutable",
                             "name": "tempcollectionLink",
                             "nameLocation": "889:18:16",
                             "nodeType": "VariableDeclaration",
-                            "scope": 2500,
+                            "scope": 2575,
                             "src": "867:40:16",
                             "stateVariable": false,
                             "storageLocation": "memory",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_memory_ptr",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_memory_ptr",
                               "typeString": "struct CollectionLinker.collectionLink"
                             },
                             "typeName": {
-                              "id": 2454,
+                              "id": 2529,
                               "nodeType": "UserDefinedTypeName",
                               "pathNode": {
-                                "id": 2453,
+                                "id": 2528,
                                 "name": "collectionLink",
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 2403,
+                                "referencedDeclaration": 2478,
                                 "src": "867:14:16"
                               },
-                              "referencedDeclaration": 2403,
+                              "referencedDeclaration": 2478,
                               "src": "867:14:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_collectionLink_$2403_storage_ptr",
+                                "typeIdentifier": "t_struct$_collectionLink_$2478_storage_ptr",
                                 "typeString": "struct CollectionLinker.collectionLink"
                               }
                             },
                             "visibility": "internal"
                           }
                         ],
-                        "id": 2462,
+                        "id": 2537,
                         "initialValue": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 2456,
+                              "id": 2531,
                               "name": "usersCollectionLinks",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2414,
+                              "referencedDeclaration": 2489,
                               "src": "910:20:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                 "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                               }
                             },
-                            "id": 2458,
+                            "id": 2533,
                             "indexExpression": {
-                              "id": 2457,
+                              "id": 2532,
                               "name": "userAddress",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2438,
+                              "referencedDeclaration": 2513,
                               "src": "931:11:16",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -4557,32 +4557,32 @@
                             "nodeType": "IndexAccess",
                             "src": "910:33:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                               "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                             }
                           },
-                          "id": 2461,
+                          "id": 2536,
                           "indexExpression": {
                             "expression": {
-                              "id": 2459,
+                              "id": 2534,
                               "name": "result",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2445,
+                              "referencedDeclaration": 2520,
                               "src": "944:6:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                                "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                                 "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                               }
                             },
-                            "id": 2460,
+                            "id": 2535,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "linkIndex",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 2407,
+                            "referencedDeclaration": 2482,
                             "src": "944:16:16",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -4596,7 +4596,7 @@
                           "nodeType": "IndexAccess",
                           "src": "910:51:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                            "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                             "typeString": "struct CollectionLinker.collectionLink storage ref"
                           }
                         },
@@ -4605,7 +4605,7 @@
                       },
                       {
                         "expression": {
-                          "id": 2479,
+                          "id": 2554,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4613,24 +4613,24 @@
                           "leftHandSide": {
                             "baseExpression": {
                               "baseExpression": {
-                                "id": 2463,
+                                "id": 2538,
                                 "name": "usersCollectionLinks",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2414,
+                                "referencedDeclaration": 2489,
                                 "src": "975:20:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                 }
                               },
-                              "id": 2467,
+                              "id": 2542,
                               "indexExpression": {
-                                "id": 2464,
+                                "id": 2539,
                                 "name": "userAddress",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2438,
+                                "referencedDeclaration": 2513,
                                 "src": "996:11:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -4644,32 +4644,32 @@
                               "nodeType": "IndexAccess",
                               "src": "975:33:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                               }
                             },
-                            "id": 2468,
+                            "id": 2543,
                             "indexExpression": {
                               "expression": {
-                                "id": 2465,
+                                "id": 2540,
                                 "name": "result",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2445,
+                                "referencedDeclaration": 2520,
                                 "src": "1009:6:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                                  "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                                   "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                                 }
                               },
-                              "id": 2466,
+                              "id": 2541,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "linkIndex",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 2407,
+                              "referencedDeclaration": 2482,
                               "src": "1009:16:16",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -4683,7 +4683,7 @@
                             "nodeType": "IndexAccess",
                             "src": "975:51:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                               "typeString": "struct CollectionLinker.collectionLink storage ref"
                             }
                           },
@@ -4692,24 +4692,24 @@
                           "rightHandSide": {
                             "baseExpression": {
                               "baseExpression": {
-                                "id": 2469,
+                                "id": 2544,
                                 "name": "usersCollectionLinks",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2414,
+                                "referencedDeclaration": 2489,
                                 "src": "1029:20:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                 }
                               },
-                              "id": 2471,
+                              "id": 2546,
                               "indexExpression": {
-                                "id": 2470,
+                                "id": 2545,
                                 "name": "userAddress",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2438,
+                                "referencedDeclaration": 2513,
                                 "src": "1050:11:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -4723,17 +4723,17 @@
                               "nodeType": "IndexAccess",
                               "src": "1029:33:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                               }
                             },
-                            "id": 2478,
+                            "id": 2553,
                             "indexExpression": {
                               "commonType": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 2477,
+                              "id": 2552,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -4741,24 +4741,24 @@
                               "leftExpression": {
                                 "expression": {
                                   "baseExpression": {
-                                    "id": 2472,
+                                    "id": 2547,
                                     "name": "usersCollectionLinks",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2414,
+                                    "referencedDeclaration": 2489,
                                     "src": "1063:20:16",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                       "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                     }
                                   },
-                                  "id": 2474,
+                                  "id": 2549,
                                   "indexExpression": {
-                                    "id": 2473,
+                                    "id": 2548,
                                     "name": "userAddress",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2438,
+                                    "referencedDeclaration": 2513,
                                     "src": "1084:11:16",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_address",
@@ -4772,11 +4772,11 @@
                                   "nodeType": "IndexAccess",
                                   "src": "1063:33:16",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                    "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                     "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                                   }
                                 },
-                                "id": 2475,
+                                "id": 2550,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -4793,7 +4793,7 @@
                               "operator": "-",
                               "rightExpression": {
                                 "hexValue": "31",
-                                "id": 2476,
+                                "id": 2551,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -4820,23 +4820,23 @@
                             "nodeType": "IndexAccess",
                             "src": "1029:77:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                               "typeString": "struct CollectionLinker.collectionLink storage ref"
                             }
                           },
                           "src": "975:131:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                            "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                             "typeString": "struct CollectionLinker.collectionLink storage ref"
                           }
                         },
-                        "id": 2480,
+                        "id": 2555,
                         "nodeType": "ExpressionStatement",
                         "src": "975:131:16"
                       },
                       {
                         "expression": {
-                          "id": 2492,
+                          "id": 2567,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4844,24 +4844,24 @@
                           "leftHandSide": {
                             "baseExpression": {
                               "baseExpression": {
-                                "id": 2481,
+                                "id": 2556,
                                 "name": "usersCollectionLinks",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2414,
+                                "referencedDeclaration": 2489,
                                 "src": "1120:20:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                 }
                               },
-                              "id": 2489,
+                              "id": 2564,
                               "indexExpression": {
-                                "id": 2482,
+                                "id": 2557,
                                 "name": "userAddress",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2438,
+                                "referencedDeclaration": 2513,
                                 "src": "1141:11:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -4875,17 +4875,17 @@
                               "nodeType": "IndexAccess",
                               "src": "1120:33:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                               }
                             },
-                            "id": 2490,
+                            "id": 2565,
                             "indexExpression": {
                               "commonType": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 2488,
+                              "id": 2563,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -4893,24 +4893,24 @@
                               "leftExpression": {
                                 "expression": {
                                   "baseExpression": {
-                                    "id": 2483,
+                                    "id": 2558,
                                     "name": "usersCollectionLinks",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2414,
+                                    "referencedDeclaration": 2489,
                                     "src": "1154:20:16",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                       "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                     }
                                   },
-                                  "id": 2485,
+                                  "id": 2560,
                                   "indexExpression": {
-                                    "id": 2484,
+                                    "id": 2559,
                                     "name": "userAddress",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2438,
+                                    "referencedDeclaration": 2513,
                                     "src": "1175:11:16",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_address",
@@ -4924,11 +4924,11 @@
                                   "nodeType": "IndexAccess",
                                   "src": "1154:33:16",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                    "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                     "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                                   }
                                 },
-                                "id": 2486,
+                                "id": 2561,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -4945,7 +4945,7 @@
                               "operator": "-",
                               "rightExpression": {
                                 "hexValue": "31",
-                                "id": 2487,
+                                "id": 2562,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -4972,31 +4972,31 @@
                             "nodeType": "IndexAccess",
                             "src": "1120:77:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                               "typeString": "struct CollectionLinker.collectionLink storage ref"
                             }
                           },
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 2491,
+                            "id": 2566,
                             "name": "tempcollectionLink",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2455,
+                            "referencedDeclaration": 2530,
                             "src": "1200:18:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_memory_ptr",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_memory_ptr",
                               "typeString": "struct CollectionLinker.collectionLink memory"
                             }
                           },
                           "src": "1120:98:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                            "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                             "typeString": "struct CollectionLinker.collectionLink storage ref"
                           }
                         },
-                        "id": 2493,
+                        "id": 2568,
                         "nodeType": "ExpressionStatement",
                         "src": "1120:98:16"
                       },
@@ -5007,24 +5007,24 @@
                             "argumentTypes": [],
                             "expression": {
                               "baseExpression": {
-                                "id": 2494,
+                                "id": 2569,
                                 "name": "usersCollectionLinks",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2414,
+                                "referencedDeclaration": 2489,
                                 "src": "1232:20:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                 }
                               },
-                              "id": 2496,
+                              "id": 2571,
                               "indexExpression": {
-                                "id": 2495,
+                                "id": 2570,
                                 "name": "userAddress",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2438,
+                                "referencedDeclaration": 2513,
                                 "src": "1253:11:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -5038,11 +5038,11 @@
                               "nodeType": "IndexAccess",
                               "src": "1232:33:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                               }
                             },
-                            "id": 2497,
+                            "id": 2572,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -5051,11 +5051,11 @@
                             "nodeType": "MemberAccess",
                             "src": "1232:37:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_arraypop_nonpayable$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr_$returns$__$bound_to$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr_$",
+                              "typeIdentifier": "t_function_arraypop_nonpayable$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr_$returns$__$bound_to$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr_$",
                               "typeString": "function (struct CollectionLinker.collectionLink storage ref[] storage pointer)"
                             }
                           },
-                          "id": 2498,
+                          "id": 2573,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -5070,7 +5070,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2499,
+                        "id": 2574,
                         "nodeType": "ExpressionStatement",
                         "src": "1232:39:16"
                       }
@@ -5080,15 +5080,15 @@
               ]
             },
             "functionSelector": "949eecd7",
-            "id": 2503,
+            "id": 2578,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2441,
+                "id": 2516,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2440,
+                  "id": 2515,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 46,
@@ -5102,17 +5102,17 @@
             "nameLocation": "635:25:16",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2439,
+              "id": 2514,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2436,
+                  "id": 2511,
                   "mutability": "mutable",
                   "name": "collectionAddress",
                   "nameLocation": "669:17:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2503,
+                  "scope": 2578,
                   "src": "661:25:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5121,7 +5121,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2435,
+                    "id": 2510,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "661:7:16",
@@ -5135,12 +5135,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 2438,
+                  "id": 2513,
                   "mutability": "mutable",
                   "name": "userAddress",
                   "nameLocation": "696:11:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2503,
+                  "scope": 2578,
                   "src": "688:19:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5149,7 +5149,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2437,
+                    "id": 2512,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "688:7:16",
@@ -5165,12 +5165,12 @@
               "src": "660:48:16"
             },
             "returnParameters": {
-              "id": 2442,
+              "id": 2517,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "726:0:16"
             },
-            "scope": 2550,
+            "scope": 2625,
             "src": "626:662:16",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -5178,13 +5178,13 @@
           },
           {
             "body": {
-              "id": 2548,
+              "id": 2623,
               "nodeType": "Block",
               "src": "1421:308:16",
               "statements": [
                 {
                   "body": {
-                    "id": 2541,
+                    "id": 2616,
                     "nodeType": "Block",
                     "src": "1493:182:16",
                     "statements": [
@@ -5194,7 +5194,7 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 2533,
+                          "id": 2608,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -5203,24 +5203,24 @@
                             "expression": {
                               "baseExpression": {
                                 "baseExpression": {
-                                  "id": 2526,
+                                  "id": 2601,
                                   "name": "usersCollectionLinks",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2414,
+                                  "referencedDeclaration": 2489,
                                   "src": "1510:20:16",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                     "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                   }
                                 },
-                                "id": 2528,
+                                "id": 2603,
                                 "indexExpression": {
-                                  "id": 2527,
+                                  "id": 2602,
                                   "name": "userAddress",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2507,
+                                  "referencedDeclaration": 2582,
                                   "src": "1531:11:16",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_address",
@@ -5234,17 +5234,17 @@
                                 "nodeType": "IndexAccess",
                                 "src": "1510:33:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                  "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                   "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                                 }
                               },
-                              "id": 2530,
+                              "id": 2605,
                               "indexExpression": {
-                                "id": 2529,
+                                "id": 2604,
                                 "name": "i",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2514,
+                                "referencedDeclaration": 2589,
                                 "src": "1544:1:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -5258,18 +5258,18 @@
                               "nodeType": "IndexAccess",
                               "src": "1510:36:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                                "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref"
                               }
                             },
-                            "id": 2531,
+                            "id": 2606,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "collectionContractAddress",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 2400,
+                            "referencedDeclaration": 2475,
                             "src": "1510:62:16",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -5279,11 +5279,11 @@
                           "nodeType": "BinaryOperation",
                           "operator": "==",
                           "rightExpression": {
-                            "id": 2532,
+                            "id": 2607,
                             "name": "collectionAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2505,
+                            "referencedDeclaration": 2580,
                             "src": "1576:17:16",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -5296,11 +5296,11 @@
                             "typeString": "bool"
                           }
                         },
-                        "id": 2540,
+                        "id": 2615,
                         "nodeType": "IfStatement",
                         "src": "1507:158:16",
                         "trueBody": {
-                          "id": 2539,
+                          "id": 2614,
                           "nodeType": "Block",
                           "src": "1594:71:16",
                           "statements": [
@@ -5309,7 +5309,7 @@
                                 "arguments": [
                                   {
                                     "hexValue": "74727565",
-                                    "id": 2535,
+                                    "id": 2610,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -5324,11 +5324,11 @@
                                     "value": "true"
                                   },
                                   {
-                                    "id": 2536,
+                                    "id": 2611,
                                     "name": "i",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2514,
+                                    "referencedDeclaration": 2589,
                                     "src": "1648:1:16",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
@@ -5347,18 +5347,18 @@
                                       "typeString": "uint256"
                                     }
                                   ],
-                                  "id": 2534,
+                                  "id": 2609,
                                   "name": "hasCollectionLinkResult",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2408,
+                                  "referencedDeclaration": 2483,
                                   "src": "1619:23:16",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_struct$_hasCollectionLinkResult_$2408_storage_ptr_$",
+                                    "typeIdentifier": "t_type$_t_struct$_hasCollectionLinkResult_$2483_storage_ptr_$",
                                     "typeString": "type(struct CollectionLinker.hasCollectionLinkResult storage pointer)"
                                   }
                                 },
-                                "id": 2537,
+                                "id": 2612,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -5369,12 +5369,12 @@
                                 "src": "1619:31:16",
                                 "tryCall": false,
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                                  "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                                   "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                                 }
                               },
-                              "functionReturnParameters": 2512,
-                              "id": 2538,
+                              "functionReturnParameters": 2587,
+                              "id": 2613,
                               "nodeType": "Return",
                               "src": "1612:38:16"
                             }
@@ -5388,17 +5388,17 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2522,
+                    "id": 2597,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2517,
+                      "id": 2592,
                       "name": "i",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2514,
+                      "referencedDeclaration": 2589,
                       "src": "1445:1:16",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -5410,24 +5410,24 @@
                     "rightExpression": {
                       "expression": {
                         "baseExpression": {
-                          "id": 2518,
+                          "id": 2593,
                           "name": "usersCollectionLinks",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2414,
+                          "referencedDeclaration": 2489,
                           "src": "1447:20:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                             "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                           }
                         },
-                        "id": 2520,
+                        "id": 2595,
                         "indexExpression": {
-                          "id": 2519,
+                          "id": 2594,
                           "name": "userAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2507,
+                          "referencedDeclaration": 2582,
                           "src": "1468:11:16",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -5441,11 +5441,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1447:33:16",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                           "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                         }
                       },
-                      "id": 2521,
+                      "id": 2596,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5464,20 +5464,20 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2542,
+                  "id": 2617,
                   "initializationExpression": {
                     "assignments": [
-                      2514
+                      2589
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 2514,
+                        "id": 2589,
                         "mutability": "mutable",
                         "name": "i",
                         "nameLocation": "1440:1:16",
                         "nodeType": "VariableDeclaration",
-                        "scope": 2542,
+                        "scope": 2617,
                         "src": "1435:6:16",
                         "stateVariable": false,
                         "storageLocation": "default",
@@ -5486,7 +5486,7 @@
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 2513,
+                          "id": 2588,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
                           "src": "1435:4:16",
@@ -5498,10 +5498,10 @@
                         "visibility": "internal"
                       }
                     ],
-                    "id": 2516,
+                    "id": 2591,
                     "initialValue": {
                       "hexValue": "30",
-                      "id": 2515,
+                      "id": 2590,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -5520,7 +5520,7 @@
                   },
                   "loopExpression": {
                     "expression": {
-                      "id": 2524,
+                      "id": 2599,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5530,11 +5530,11 @@
                       "prefix": false,
                       "src": "1489:3:16",
                       "subExpression": {
-                        "id": 2523,
+                        "id": 2598,
                         "name": "i",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2514,
+                        "referencedDeclaration": 2589,
                         "src": "1489:1:16",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -5546,7 +5546,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 2525,
+                    "id": 2600,
                     "nodeType": "ExpressionStatement",
                     "src": "1489:3:16"
                   },
@@ -5558,7 +5558,7 @@
                     "arguments": [
                       {
                         "hexValue": "66616c7365",
-                        "id": 2544,
+                        "id": 2619,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -5574,7 +5574,7 @@
                       },
                       {
                         "hexValue": "30",
-                        "id": 2545,
+                        "id": 2620,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -5600,18 +5600,18 @@
                           "typeString": "int_const 0"
                         }
                       ],
-                      "id": 2543,
+                      "id": 2618,
                       "name": "hasCollectionLinkResult",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2408,
+                      "referencedDeclaration": 2483,
                       "src": "1690:23:16",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_hasCollectionLinkResult_$2408_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_hasCollectionLinkResult_$2483_storage_ptr_$",
                         "typeString": "type(struct CollectionLinker.hasCollectionLinkResult storage pointer)"
                       }
                     },
-                    "id": 2546,
+                    "id": 2621,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -5622,19 +5622,19 @@
                     "src": "1690:32:16",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                       "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                     }
                   },
-                  "functionReturnParameters": 2512,
-                  "id": 2547,
+                  "functionReturnParameters": 2587,
+                  "id": 2622,
                   "nodeType": "Return",
                   "src": "1683:39:16"
                 }
               ]
             },
             "functionSelector": "f26cab27",
-            "id": 2549,
+            "id": 2624,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -5642,17 +5642,17 @@
             "nameLocation": "1303:17:16",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2508,
+              "id": 2583,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2505,
+                  "id": 2580,
                   "mutability": "mutable",
                   "name": "collectionAddress",
                   "nameLocation": "1329:17:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2549,
+                  "scope": 2624,
                   "src": "1321:25:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5661,7 +5661,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2504,
+                    "id": 2579,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1321:7:16",
@@ -5675,12 +5675,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 2507,
+                  "id": 2582,
                   "mutability": "mutable",
                   "name": "userAddress",
                   "nameLocation": "1356:11:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2549,
+                  "scope": 2624,
                   "src": "1348:19:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -5689,7 +5689,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2506,
+                    "id": 2581,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1348:7:16",
@@ -5705,38 +5705,38 @@
               "src": "1320:48:16"
             },
             "returnParameters": {
-              "id": 2512,
+              "id": 2587,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2511,
+                  "id": 2586,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2549,
+                  "scope": 2624,
                   "src": "1389:30:16",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                    "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                     "typeString": "struct CollectionLinker.hasCollectionLinkResult"
                   },
                   "typeName": {
-                    "id": 2510,
+                    "id": 2585,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2509,
+                      "id": 2584,
                       "name": "hasCollectionLinkResult",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 2408,
+                      "referencedDeclaration": 2483,
                       "src": "1389:23:16"
                     },
-                    "referencedDeclaration": 2408,
+                    "referencedDeclaration": 2483,
                     "src": "1389:23:16",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_storage_ptr",
+                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_storage_ptr",
                       "typeString": "struct CollectionLinker.hasCollectionLinkResult"
                     }
                   },
@@ -5745,14 +5745,14 @@
               ],
               "src": "1388:32:16"
             },
-            "scope": 2550,
+            "scope": 2625,
             "src": "1294:435:16",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 2551,
+        "scope": 2626,
         "src": "111:1625:16",
         "usedErrors": []
       }
@@ -5763,7 +5763,7 @@
     "absolutePath": "project:/contracts/CollectionLinker.sol",
     "exportedSymbols": {
       "CollectionLinker": [
-        2550
+        2625
       ],
       "Context": [
         1945
@@ -5772,12 +5772,12 @@
         104
       ]
     },
-    "id": 2551,
+    "id": 2626,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2395,
+        "id": 2470,
         "literals": [
           "solidity",
           "0.8",
@@ -5789,10 +5789,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
         "file": "@openzeppelin/contracts/access/Ownable.sol",
-        "id": 2396,
+        "id": 2471,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 2551,
+        "scope": 2626,
         "sourceUnit": 105,
         "src": "57:52:16",
         "symbolAliases": [],
@@ -5803,13 +5803,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 2397,
+              "id": 2472,
               "name": "Ownable",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 104,
               "src": "140:7:16"
             },
-            "id": 2398,
+            "id": 2473,
             "nodeType": "InheritanceSpecifier",
             "src": "140:7:16"
           }
@@ -5818,9 +5818,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2550,
+        "id": 2625,
         "linearizedBaseContracts": [
-          2550,
+          2625,
           104,
           1945
         ],
@@ -5830,16 +5830,16 @@
         "nodes": [
           {
             "canonicalName": "CollectionLinker.collectionLink",
-            "id": 2403,
+            "id": 2478,
             "members": [
               {
                 "constant": false,
-                "id": 2400,
+                "id": 2475,
                 "mutability": "mutable",
                 "name": "collectionContractAddress",
                 "nameLocation": "194:25:16",
                 "nodeType": "VariableDeclaration",
-                "scope": 2403,
+                "scope": 2478,
                 "src": "186:33:16",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -5848,7 +5848,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 2399,
+                  "id": 2474,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "186:7:16",
@@ -5862,12 +5862,12 @@
               },
               {
                 "constant": false,
-                "id": 2402,
+                "id": 2477,
                 "mutability": "mutable",
                 "name": "hasBalanceInCollection",
                 "nameLocation": "234:22:16",
                 "nodeType": "VariableDeclaration",
-                "scope": 2403,
+                "scope": 2478,
                 "src": "229:27:16",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -5876,7 +5876,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 2401,
+                  "id": 2476,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "229:4:16",
@@ -5891,22 +5891,22 @@
             "name": "collectionLink",
             "nameLocation": "162:14:16",
             "nodeType": "StructDefinition",
-            "scope": 2550,
+            "scope": 2625,
             "src": "155:108:16",
             "visibility": "public"
           },
           {
             "canonicalName": "CollectionLinker.hasCollectionLinkResult",
-            "id": 2408,
+            "id": 2483,
             "members": [
               {
                 "constant": false,
-                "id": 2405,
+                "id": 2480,
                 "mutability": "mutable",
                 "name": "hasLink",
                 "nameLocation": "314:7:16",
                 "nodeType": "VariableDeclaration",
-                "scope": 2408,
+                "scope": 2483,
                 "src": "309:12:16",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -5915,7 +5915,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 2404,
+                  "id": 2479,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "309:4:16",
@@ -5928,12 +5928,12 @@
               },
               {
                 "constant": false,
-                "id": 2407,
+                "id": 2482,
                 "mutability": "mutable",
                 "name": "linkIndex",
                 "nameLocation": "337:9:16",
                 "nodeType": "VariableDeclaration",
-                "scope": 2408,
+                "scope": 2483,
                 "src": "332:14:16",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -5942,7 +5942,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2406,
+                  "id": 2481,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "332:4:16",
@@ -5957,30 +5957,30 @@
             "name": "hasCollectionLinkResult",
             "nameLocation": "276:23:16",
             "nodeType": "StructDefinition",
-            "scope": 2550,
+            "scope": 2625,
             "src": "269:84:16",
             "visibility": "public"
           },
           {
             "constant": false,
             "functionSelector": "3bc5df34",
-            "id": 2414,
+            "id": 2489,
             "mutability": "mutable",
             "name": "usersCollectionLinks",
             "nameLocation": "401:20:16",
             "nodeType": "VariableDeclaration",
-            "scope": 2550,
+            "scope": 2625,
             "src": "359:62:16",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
               "typeString": "mapping(address => struct CollectionLinker.collectionLink[])"
             },
             "typeName": {
-              "id": 2413,
+              "id": 2488,
               "keyType": {
-                "id": 2409,
+                "id": 2484,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "367:7:16",
@@ -5992,32 +5992,32 @@
               "nodeType": "Mapping",
               "src": "359:34:16",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                 "typeString": "mapping(address => struct CollectionLinker.collectionLink[])"
               },
               "valueType": {
                 "baseType": {
-                  "id": 2411,
+                  "id": 2486,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 2410,
+                    "id": 2485,
                     "name": "collectionLink",
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 2403,
+                    "referencedDeclaration": 2478,
                     "src": "376:14:16"
                   },
-                  "referencedDeclaration": 2403,
+                  "referencedDeclaration": 2478,
                   "src": "376:14:16",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_collectionLink_$2403_storage_ptr",
+                    "typeIdentifier": "t_struct$_collectionLink_$2478_storage_ptr",
                     "typeString": "struct CollectionLinker.collectionLink"
                   }
                 },
-                "id": 2412,
+                "id": 2487,
                 "nodeType": "ArrayTypeName",
                 "src": "376:16:16",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr",
+                  "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr",
                   "typeString": "struct CollectionLinker.collectionLink[]"
                 }
               }
@@ -6026,7 +6026,7 @@
           },
           {
             "body": {
-              "id": 2433,
+              "id": 2508,
               "nodeType": "Block",
               "src": "525:95:16",
               "statements": [
@@ -6036,11 +6036,11 @@
                       {
                         "arguments": [
                           {
-                            "id": 2428,
+                            "id": 2503,
                             "name": "collectionAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2416,
+                            "referencedDeclaration": 2491,
                             "src": "589:17:16",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -6049,7 +6049,7 @@
                           },
                           {
                             "hexValue": "74727565",
-                            "id": 2429,
+                            "id": 2504,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -6075,18 +6075,18 @@
                               "typeString": "bool"
                             }
                           ],
-                          "id": 2427,
+                          "id": 2502,
                           "name": "collectionLink",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2403,
+                          "referencedDeclaration": 2478,
                           "src": "574:14:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_collectionLink_$2403_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_collectionLink_$2478_storage_ptr_$",
                             "typeString": "type(struct CollectionLinker.collectionLink storage pointer)"
                           }
                         },
-                        "id": 2430,
+                        "id": 2505,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6097,7 +6097,7 @@
                         "src": "574:38:16",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_collectionLink_$2403_memory_ptr",
+                          "typeIdentifier": "t_struct$_collectionLink_$2478_memory_ptr",
                           "typeString": "struct CollectionLinker.collectionLink memory"
                         }
                       }
@@ -6105,30 +6105,30 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_collectionLink_$2403_memory_ptr",
+                          "typeIdentifier": "t_struct$_collectionLink_$2478_memory_ptr",
                           "typeString": "struct CollectionLinker.collectionLink memory"
                         }
                       ],
                       "expression": {
                         "baseExpression": {
-                          "id": 2423,
+                          "id": 2498,
                           "name": "usersCollectionLinks",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2414,
+                          "referencedDeclaration": 2489,
                           "src": "535:20:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                             "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                           }
                         },
-                        "id": 2425,
+                        "id": 2500,
                         "indexExpression": {
-                          "id": 2424,
+                          "id": 2499,
                           "name": "userAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2418,
+                          "referencedDeclaration": 2493,
                           "src": "556:11:16",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -6142,11 +6142,11 @@
                         "nodeType": "IndexAccess",
                         "src": "535:33:16",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                           "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                         }
                       },
-                      "id": 2426,
+                      "id": 2501,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6155,11 +6155,11 @@
                       "nodeType": "MemberAccess",
                       "src": "535:38:16",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr_$_t_struct$_collectionLink_$2403_storage_$returns$__$bound_to$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr_$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr_$_t_struct$_collectionLink_$2478_storage_$returns$__$bound_to$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr_$",
                         "typeString": "function (struct CollectionLinker.collectionLink storage ref[] storage pointer,struct CollectionLinker.collectionLink storage ref)"
                       }
                     },
-                    "id": 2431,
+                    "id": 2506,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6174,22 +6174,22 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2432,
+                  "id": 2507,
                   "nodeType": "ExpressionStatement",
                   "src": "535:78:16"
                 }
               ]
             },
             "functionSelector": "b03413b2",
-            "id": 2434,
+            "id": 2509,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2421,
+                "id": 2496,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2420,
+                  "id": 2495,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 46,
@@ -6203,17 +6203,17 @@
             "nameLocation": "437:22:16",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2419,
+              "id": 2494,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2416,
+                  "id": 2491,
                   "mutability": "mutable",
                   "name": "collectionAddress",
                   "nameLocation": "468:17:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2434,
+                  "scope": 2509,
                   "src": "460:25:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -6222,7 +6222,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2415,
+                    "id": 2490,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "460:7:16",
@@ -6236,12 +6236,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 2418,
+                  "id": 2493,
                   "mutability": "mutable",
                   "name": "userAddress",
                   "nameLocation": "495:11:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2434,
+                  "scope": 2509,
                   "src": "487:19:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -6250,7 +6250,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2417,
+                    "id": 2492,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "487:7:16",
@@ -6266,12 +6266,12 @@
               "src": "459:48:16"
             },
             "returnParameters": {
-              "id": 2422,
+              "id": 2497,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "525:0:16"
             },
-            "scope": 2550,
+            "scope": 2625,
             "src": "428:192:16",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -6279,59 +6279,59 @@
           },
           {
             "body": {
-              "id": 2502,
+              "id": 2577,
               "nodeType": "Block",
               "src": "726:562:16",
               "statements": [
                 {
                   "assignments": [
-                    2445
+                    2520
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2445,
+                      "id": 2520,
                       "mutability": "mutable",
                       "name": "result",
                       "nameLocation": "767:6:16",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2502,
+                      "scope": 2577,
                       "src": "736:37:16",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                        "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                         "typeString": "struct CollectionLinker.hasCollectionLinkResult"
                       },
                       "typeName": {
-                        "id": 2444,
+                        "id": 2519,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 2443,
+                          "id": 2518,
                           "name": "hasCollectionLinkResult",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 2408,
+                          "referencedDeclaration": 2483,
                           "src": "736:23:16"
                         },
-                        "referencedDeclaration": 2408,
+                        "referencedDeclaration": 2483,
                         "src": "736:23:16",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_storage_ptr",
+                          "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_storage_ptr",
                           "typeString": "struct CollectionLinker.hasCollectionLinkResult"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2450,
+                  "id": 2525,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2447,
+                        "id": 2522,
                         "name": "collectionAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2436,
+                        "referencedDeclaration": 2511,
                         "src": "794:17:16",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -6339,11 +6339,11 @@
                         }
                       },
                       {
-                        "id": 2448,
+                        "id": 2523,
                         "name": "userAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2438,
+                        "referencedDeclaration": 2513,
                         "src": "813:11:16",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -6362,18 +6362,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2446,
+                      "id": 2521,
                       "name": "hasCollectionLink",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2549,
+                      "referencedDeclaration": 2624,
                       "src": "776:17:16",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_address_$returns$_t_struct$_hasCollectionLinkResult_$2408_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_address_$_t_address_$returns$_t_struct$_hasCollectionLinkResult_$2483_memory_ptr_$",
                         "typeString": "function (address,address) view returns (struct CollectionLinker.hasCollectionLinkResult memory)"
                       }
                     },
-                    "id": 2449,
+                    "id": 2524,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6384,7 +6384,7 @@
                     "src": "776:49:16",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                       "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                     }
                   },
@@ -6394,101 +6394,101 @@
                 {
                   "condition": {
                     "expression": {
-                      "id": 2451,
+                      "id": 2526,
                       "name": "result",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2445,
+                      "referencedDeclaration": 2520,
                       "src": "838:6:16",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                        "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                         "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                       }
                     },
-                    "id": 2452,
+                    "id": 2527,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "hasLink",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 2405,
+                    "referencedDeclaration": 2480,
                     "src": "838:14:16",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2501,
+                  "id": 2576,
                   "nodeType": "IfStatement",
                   "src": "835:447:16",
                   "trueBody": {
-                    "id": 2500,
+                    "id": 2575,
                     "nodeType": "Block",
                     "src": "853:429:16",
                     "statements": [
                       {
                         "assignments": [
-                          2455
+                          2530
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 2455,
+                            "id": 2530,
                             "mutability": "mutable",
                             "name": "tempcollectionLink",
                             "nameLocation": "889:18:16",
                             "nodeType": "VariableDeclaration",
-                            "scope": 2500,
+                            "scope": 2575,
                             "src": "867:40:16",
                             "stateVariable": false,
                             "storageLocation": "memory",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_memory_ptr",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_memory_ptr",
                               "typeString": "struct CollectionLinker.collectionLink"
                             },
                             "typeName": {
-                              "id": 2454,
+                              "id": 2529,
                               "nodeType": "UserDefinedTypeName",
                               "pathNode": {
-                                "id": 2453,
+                                "id": 2528,
                                 "name": "collectionLink",
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 2403,
+                                "referencedDeclaration": 2478,
                                 "src": "867:14:16"
                               },
-                              "referencedDeclaration": 2403,
+                              "referencedDeclaration": 2478,
                               "src": "867:14:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_collectionLink_$2403_storage_ptr",
+                                "typeIdentifier": "t_struct$_collectionLink_$2478_storage_ptr",
                                 "typeString": "struct CollectionLinker.collectionLink"
                               }
                             },
                             "visibility": "internal"
                           }
                         ],
-                        "id": 2462,
+                        "id": 2537,
                         "initialValue": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 2456,
+                              "id": 2531,
                               "name": "usersCollectionLinks",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2414,
+                              "referencedDeclaration": 2489,
                               "src": "910:20:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                 "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                               }
                             },
-                            "id": 2458,
+                            "id": 2533,
                             "indexExpression": {
-                              "id": 2457,
+                              "id": 2532,
                               "name": "userAddress",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2438,
+                              "referencedDeclaration": 2513,
                               "src": "931:11:16",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -6502,32 +6502,32 @@
                             "nodeType": "IndexAccess",
                             "src": "910:33:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                               "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                             }
                           },
-                          "id": 2461,
+                          "id": 2536,
                           "indexExpression": {
                             "expression": {
-                              "id": 2459,
+                              "id": 2534,
                               "name": "result",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2445,
+                              "referencedDeclaration": 2520,
                               "src": "944:6:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                                "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                                 "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                               }
                             },
-                            "id": 2460,
+                            "id": 2535,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "linkIndex",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 2407,
+                            "referencedDeclaration": 2482,
                             "src": "944:16:16",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -6541,7 +6541,7 @@
                           "nodeType": "IndexAccess",
                           "src": "910:51:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                            "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                             "typeString": "struct CollectionLinker.collectionLink storage ref"
                           }
                         },
@@ -6550,7 +6550,7 @@
                       },
                       {
                         "expression": {
-                          "id": 2479,
+                          "id": 2554,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6558,24 +6558,24 @@
                           "leftHandSide": {
                             "baseExpression": {
                               "baseExpression": {
-                                "id": 2463,
+                                "id": 2538,
                                 "name": "usersCollectionLinks",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2414,
+                                "referencedDeclaration": 2489,
                                 "src": "975:20:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                 }
                               },
-                              "id": 2467,
+                              "id": 2542,
                               "indexExpression": {
-                                "id": 2464,
+                                "id": 2539,
                                 "name": "userAddress",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2438,
+                                "referencedDeclaration": 2513,
                                 "src": "996:11:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -6589,32 +6589,32 @@
                               "nodeType": "IndexAccess",
                               "src": "975:33:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                               }
                             },
-                            "id": 2468,
+                            "id": 2543,
                             "indexExpression": {
                               "expression": {
-                                "id": 2465,
+                                "id": 2540,
                                 "name": "result",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2445,
+                                "referencedDeclaration": 2520,
                                 "src": "1009:6:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                                  "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                                   "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                                 }
                               },
-                              "id": 2466,
+                              "id": 2541,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "linkIndex",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 2407,
+                              "referencedDeclaration": 2482,
                               "src": "1009:16:16",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -6628,7 +6628,7 @@
                             "nodeType": "IndexAccess",
                             "src": "975:51:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                               "typeString": "struct CollectionLinker.collectionLink storage ref"
                             }
                           },
@@ -6637,24 +6637,24 @@
                           "rightHandSide": {
                             "baseExpression": {
                               "baseExpression": {
-                                "id": 2469,
+                                "id": 2544,
                                 "name": "usersCollectionLinks",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2414,
+                                "referencedDeclaration": 2489,
                                 "src": "1029:20:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                 }
                               },
-                              "id": 2471,
+                              "id": 2546,
                               "indexExpression": {
-                                "id": 2470,
+                                "id": 2545,
                                 "name": "userAddress",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2438,
+                                "referencedDeclaration": 2513,
                                 "src": "1050:11:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -6668,17 +6668,17 @@
                               "nodeType": "IndexAccess",
                               "src": "1029:33:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                               }
                             },
-                            "id": 2478,
+                            "id": 2553,
                             "indexExpression": {
                               "commonType": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 2477,
+                              "id": 2552,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -6686,24 +6686,24 @@
                               "leftExpression": {
                                 "expression": {
                                   "baseExpression": {
-                                    "id": 2472,
+                                    "id": 2547,
                                     "name": "usersCollectionLinks",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2414,
+                                    "referencedDeclaration": 2489,
                                     "src": "1063:20:16",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                       "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                     }
                                   },
-                                  "id": 2474,
+                                  "id": 2549,
                                   "indexExpression": {
-                                    "id": 2473,
+                                    "id": 2548,
                                     "name": "userAddress",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2438,
+                                    "referencedDeclaration": 2513,
                                     "src": "1084:11:16",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_address",
@@ -6717,11 +6717,11 @@
                                   "nodeType": "IndexAccess",
                                   "src": "1063:33:16",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                    "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                     "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                                   }
                                 },
-                                "id": 2475,
+                                "id": 2550,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -6738,7 +6738,7 @@
                               "operator": "-",
                               "rightExpression": {
                                 "hexValue": "31",
-                                "id": 2476,
+                                "id": 2551,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -6765,23 +6765,23 @@
                             "nodeType": "IndexAccess",
                             "src": "1029:77:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                               "typeString": "struct CollectionLinker.collectionLink storage ref"
                             }
                           },
                           "src": "975:131:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                            "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                             "typeString": "struct CollectionLinker.collectionLink storage ref"
                           }
                         },
-                        "id": 2480,
+                        "id": 2555,
                         "nodeType": "ExpressionStatement",
                         "src": "975:131:16"
                       },
                       {
                         "expression": {
-                          "id": 2492,
+                          "id": 2567,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6789,24 +6789,24 @@
                           "leftHandSide": {
                             "baseExpression": {
                               "baseExpression": {
-                                "id": 2481,
+                                "id": 2556,
                                 "name": "usersCollectionLinks",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2414,
+                                "referencedDeclaration": 2489,
                                 "src": "1120:20:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                 }
                               },
-                              "id": 2489,
+                              "id": 2564,
                               "indexExpression": {
-                                "id": 2482,
+                                "id": 2557,
                                 "name": "userAddress",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2438,
+                                "referencedDeclaration": 2513,
                                 "src": "1141:11:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -6820,17 +6820,17 @@
                               "nodeType": "IndexAccess",
                               "src": "1120:33:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                               }
                             },
-                            "id": 2490,
+                            "id": 2565,
                             "indexExpression": {
                               "commonType": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 2488,
+                              "id": 2563,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -6838,24 +6838,24 @@
                               "leftExpression": {
                                 "expression": {
                                   "baseExpression": {
-                                    "id": 2483,
+                                    "id": 2558,
                                     "name": "usersCollectionLinks",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2414,
+                                    "referencedDeclaration": 2489,
                                     "src": "1154:20:16",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                       "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                     }
                                   },
-                                  "id": 2485,
+                                  "id": 2560,
                                   "indexExpression": {
-                                    "id": 2484,
+                                    "id": 2559,
                                     "name": "userAddress",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2438,
+                                    "referencedDeclaration": 2513,
                                     "src": "1175:11:16",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_address",
@@ -6869,11 +6869,11 @@
                                   "nodeType": "IndexAccess",
                                   "src": "1154:33:16",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                    "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                     "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                                   }
                                 },
-                                "id": 2486,
+                                "id": 2561,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -6890,7 +6890,7 @@
                               "operator": "-",
                               "rightExpression": {
                                 "hexValue": "31",
-                                "id": 2487,
+                                "id": 2562,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -6917,31 +6917,31 @@
                             "nodeType": "IndexAccess",
                             "src": "1120:77:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                               "typeString": "struct CollectionLinker.collectionLink storage ref"
                             }
                           },
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 2491,
+                            "id": 2566,
                             "name": "tempcollectionLink",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2455,
+                            "referencedDeclaration": 2530,
                             "src": "1200:18:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_collectionLink_$2403_memory_ptr",
+                              "typeIdentifier": "t_struct$_collectionLink_$2478_memory_ptr",
                               "typeString": "struct CollectionLinker.collectionLink memory"
                             }
                           },
                           "src": "1120:98:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                            "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                             "typeString": "struct CollectionLinker.collectionLink storage ref"
                           }
                         },
-                        "id": 2493,
+                        "id": 2568,
                         "nodeType": "ExpressionStatement",
                         "src": "1120:98:16"
                       },
@@ -6952,24 +6952,24 @@
                             "argumentTypes": [],
                             "expression": {
                               "baseExpression": {
-                                "id": 2494,
+                                "id": 2569,
                                 "name": "usersCollectionLinks",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2414,
+                                "referencedDeclaration": 2489,
                                 "src": "1232:20:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                 }
                               },
-                              "id": 2496,
+                              "id": 2571,
                               "indexExpression": {
-                                "id": 2495,
+                                "id": 2570,
                                 "name": "userAddress",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2438,
+                                "referencedDeclaration": 2513,
                                 "src": "1253:11:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -6983,11 +6983,11 @@
                               "nodeType": "IndexAccess",
                               "src": "1232:33:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                               }
                             },
-                            "id": 2497,
+                            "id": 2572,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6996,11 +6996,11 @@
                             "nodeType": "MemberAccess",
                             "src": "1232:37:16",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_arraypop_nonpayable$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr_$returns$__$bound_to$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_ptr_$",
+                              "typeIdentifier": "t_function_arraypop_nonpayable$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr_$returns$__$bound_to$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_ptr_$",
                               "typeString": "function (struct CollectionLinker.collectionLink storage ref[] storage pointer)"
                             }
                           },
-                          "id": 2498,
+                          "id": 2573,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7015,7 +7015,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2499,
+                        "id": 2574,
                         "nodeType": "ExpressionStatement",
                         "src": "1232:39:16"
                       }
@@ -7025,15 +7025,15 @@
               ]
             },
             "functionSelector": "949eecd7",
-            "id": 2503,
+            "id": 2578,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2441,
+                "id": 2516,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2440,
+                  "id": 2515,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 46,
@@ -7047,17 +7047,17 @@
             "nameLocation": "635:25:16",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2439,
+              "id": 2514,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2436,
+                  "id": 2511,
                   "mutability": "mutable",
                   "name": "collectionAddress",
                   "nameLocation": "669:17:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2503,
+                  "scope": 2578,
                   "src": "661:25:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7066,7 +7066,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2435,
+                    "id": 2510,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "661:7:16",
@@ -7080,12 +7080,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 2438,
+                  "id": 2513,
                   "mutability": "mutable",
                   "name": "userAddress",
                   "nameLocation": "696:11:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2503,
+                  "scope": 2578,
                   "src": "688:19:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7094,7 +7094,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2437,
+                    "id": 2512,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "688:7:16",
@@ -7110,12 +7110,12 @@
               "src": "660:48:16"
             },
             "returnParameters": {
-              "id": 2442,
+              "id": 2517,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "726:0:16"
             },
-            "scope": 2550,
+            "scope": 2625,
             "src": "626:662:16",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -7123,13 +7123,13 @@
           },
           {
             "body": {
-              "id": 2548,
+              "id": 2623,
               "nodeType": "Block",
               "src": "1421:308:16",
               "statements": [
                 {
                   "body": {
-                    "id": 2541,
+                    "id": 2616,
                     "nodeType": "Block",
                     "src": "1493:182:16",
                     "statements": [
@@ -7139,7 +7139,7 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 2533,
+                          "id": 2608,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7148,24 +7148,24 @@
                             "expression": {
                               "baseExpression": {
                                 "baseExpression": {
-                                  "id": 2526,
+                                  "id": 2601,
                                   "name": "usersCollectionLinks",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2414,
+                                  "referencedDeclaration": 2489,
                                   "src": "1510:20:16",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                                     "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                                   }
                                 },
-                                "id": 2528,
+                                "id": 2603,
                                 "indexExpression": {
-                                  "id": 2527,
+                                  "id": 2602,
                                   "name": "userAddress",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2507,
+                                  "referencedDeclaration": 2582,
                                   "src": "1531:11:16",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_address",
@@ -7179,17 +7179,17 @@
                                 "nodeType": "IndexAccess",
                                 "src": "1510:33:16",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                                  "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                                   "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                                 }
                               },
-                              "id": 2530,
+                              "id": 2605,
                               "indexExpression": {
-                                "id": 2529,
+                                "id": 2604,
                                 "name": "i",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2514,
+                                "referencedDeclaration": 2589,
                                 "src": "1544:1:16",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -7203,18 +7203,18 @@
                               "nodeType": "IndexAccess",
                               "src": "1510:36:16",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_collectionLink_$2403_storage",
+                                "typeIdentifier": "t_struct$_collectionLink_$2478_storage",
                                 "typeString": "struct CollectionLinker.collectionLink storage ref"
                               }
                             },
-                            "id": 2531,
+                            "id": 2606,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "collectionContractAddress",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 2400,
+                            "referencedDeclaration": 2475,
                             "src": "1510:62:16",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -7224,11 +7224,11 @@
                           "nodeType": "BinaryOperation",
                           "operator": "==",
                           "rightExpression": {
-                            "id": 2532,
+                            "id": 2607,
                             "name": "collectionAddress",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2505,
+                            "referencedDeclaration": 2580,
                             "src": "1576:17:16",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
@@ -7241,11 +7241,11 @@
                             "typeString": "bool"
                           }
                         },
-                        "id": 2540,
+                        "id": 2615,
                         "nodeType": "IfStatement",
                         "src": "1507:158:16",
                         "trueBody": {
-                          "id": 2539,
+                          "id": 2614,
                           "nodeType": "Block",
                           "src": "1594:71:16",
                           "statements": [
@@ -7254,7 +7254,7 @@
                                 "arguments": [
                                   {
                                     "hexValue": "74727565",
-                                    "id": 2535,
+                                    "id": 2610,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -7269,11 +7269,11 @@
                                     "value": "true"
                                   },
                                   {
-                                    "id": 2536,
+                                    "id": 2611,
                                     "name": "i",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2514,
+                                    "referencedDeclaration": 2589,
                                     "src": "1648:1:16",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
@@ -7292,18 +7292,18 @@
                                       "typeString": "uint256"
                                     }
                                   ],
-                                  "id": 2534,
+                                  "id": 2609,
                                   "name": "hasCollectionLinkResult",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2408,
+                                  "referencedDeclaration": 2483,
                                   "src": "1619:23:16",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_struct$_hasCollectionLinkResult_$2408_storage_ptr_$",
+                                    "typeIdentifier": "t_type$_t_struct$_hasCollectionLinkResult_$2483_storage_ptr_$",
                                     "typeString": "type(struct CollectionLinker.hasCollectionLinkResult storage pointer)"
                                   }
                                 },
-                                "id": 2537,
+                                "id": 2612,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -7314,12 +7314,12 @@
                                 "src": "1619:31:16",
                                 "tryCall": false,
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                                  "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                                   "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                                 }
                               },
-                              "functionReturnParameters": 2512,
-                              "id": 2538,
+                              "functionReturnParameters": 2587,
+                              "id": 2613,
                               "nodeType": "Return",
                               "src": "1612:38:16"
                             }
@@ -7333,17 +7333,17 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2522,
+                    "id": 2597,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2517,
+                      "id": 2592,
                       "name": "i",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2514,
+                      "referencedDeclaration": 2589,
                       "src": "1445:1:16",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -7355,24 +7355,24 @@
                     "rightExpression": {
                       "expression": {
                         "baseExpression": {
-                          "id": 2518,
+                          "id": 2593,
                           "name": "usersCollectionLinks",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2414,
+                          "referencedDeclaration": 2489,
                           "src": "1447:20:16",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage_$",
                             "typeString": "mapping(address => struct CollectionLinker.collectionLink storage ref[] storage ref)"
                           }
                         },
-                        "id": 2520,
+                        "id": 2595,
                         "indexExpression": {
-                          "id": 2519,
+                          "id": 2594,
                           "name": "userAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2507,
+                          "referencedDeclaration": 2582,
                           "src": "1468:11:16",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -7386,11 +7386,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1447:33:16",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_collectionLink_$2403_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_collectionLink_$2478_storage_$dyn_storage",
                           "typeString": "struct CollectionLinker.collectionLink storage ref[] storage ref"
                         }
                       },
-                      "id": 2521,
+                      "id": 2596,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7409,20 +7409,20 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 2542,
+                  "id": 2617,
                   "initializationExpression": {
                     "assignments": [
-                      2514
+                      2589
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 2514,
+                        "id": 2589,
                         "mutability": "mutable",
                         "name": "i",
                         "nameLocation": "1440:1:16",
                         "nodeType": "VariableDeclaration",
-                        "scope": 2542,
+                        "scope": 2617,
                         "src": "1435:6:16",
                         "stateVariable": false,
                         "storageLocation": "default",
@@ -7431,7 +7431,7 @@
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 2513,
+                          "id": 2588,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
                           "src": "1435:4:16",
@@ -7443,10 +7443,10 @@
                         "visibility": "internal"
                       }
                     ],
-                    "id": 2516,
+                    "id": 2591,
                     "initialValue": {
                       "hexValue": "30",
-                      "id": 2515,
+                      "id": 2590,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -7465,7 +7465,7 @@
                   },
                   "loopExpression": {
                     "expression": {
-                      "id": 2524,
+                      "id": 2599,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7475,11 +7475,11 @@
                       "prefix": false,
                       "src": "1489:3:16",
                       "subExpression": {
-                        "id": 2523,
+                        "id": 2598,
                         "name": "i",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2514,
+                        "referencedDeclaration": 2589,
                         "src": "1489:1:16",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -7491,7 +7491,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 2525,
+                    "id": 2600,
                     "nodeType": "ExpressionStatement",
                     "src": "1489:3:16"
                   },
@@ -7503,7 +7503,7 @@
                     "arguments": [
                       {
                         "hexValue": "66616c7365",
-                        "id": 2544,
+                        "id": 2619,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -7519,7 +7519,7 @@
                       },
                       {
                         "hexValue": "30",
-                        "id": 2545,
+                        "id": 2620,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -7545,18 +7545,18 @@
                           "typeString": "int_const 0"
                         }
                       ],
-                      "id": 2543,
+                      "id": 2618,
                       "name": "hasCollectionLinkResult",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2408,
+                      "referencedDeclaration": 2483,
                       "src": "1690:23:16",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_struct$_hasCollectionLinkResult_$2408_storage_ptr_$",
+                        "typeIdentifier": "t_type$_t_struct$_hasCollectionLinkResult_$2483_storage_ptr_$",
                         "typeString": "type(struct CollectionLinker.hasCollectionLinkResult storage pointer)"
                       }
                     },
-                    "id": 2546,
+                    "id": 2621,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -7567,19 +7567,19 @@
                     "src": "1690:32:16",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                       "typeString": "struct CollectionLinker.hasCollectionLinkResult memory"
                     }
                   },
-                  "functionReturnParameters": 2512,
-                  "id": 2547,
+                  "functionReturnParameters": 2587,
+                  "id": 2622,
                   "nodeType": "Return",
                   "src": "1683:39:16"
                 }
               ]
             },
             "functionSelector": "f26cab27",
-            "id": 2549,
+            "id": 2624,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -7587,17 +7587,17 @@
             "nameLocation": "1303:17:16",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2508,
+              "id": 2583,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2505,
+                  "id": 2580,
                   "mutability": "mutable",
                   "name": "collectionAddress",
                   "nameLocation": "1329:17:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2549,
+                  "scope": 2624,
                   "src": "1321:25:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7606,7 +7606,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2504,
+                    "id": 2579,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1321:7:16",
@@ -7620,12 +7620,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 2507,
+                  "id": 2582,
                   "mutability": "mutable",
                   "name": "userAddress",
                   "nameLocation": "1356:11:16",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2549,
+                  "scope": 2624,
                   "src": "1348:19:16",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7634,7 +7634,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2506,
+                    "id": 2581,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1348:7:16",
@@ -7650,38 +7650,38 @@
               "src": "1320:48:16"
             },
             "returnParameters": {
-              "id": 2512,
+              "id": 2587,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2511,
+                  "id": 2586,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2549,
+                  "scope": 2624,
                   "src": "1389:30:16",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_memory_ptr",
+                    "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_memory_ptr",
                     "typeString": "struct CollectionLinker.hasCollectionLinkResult"
                   },
                   "typeName": {
-                    "id": 2510,
+                    "id": 2585,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2509,
+                      "id": 2584,
                       "name": "hasCollectionLinkResult",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 2408,
+                      "referencedDeclaration": 2483,
                       "src": "1389:23:16"
                     },
-                    "referencedDeclaration": 2408,
+                    "referencedDeclaration": 2483,
                     "src": "1389:23:16",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2408_storage_ptr",
+                      "typeIdentifier": "t_struct$_hasCollectionLinkResult_$2483_storage_ptr",
                       "typeString": "struct CollectionLinker.hasCollectionLinkResult"
                     }
                   },
@@ -7690,14 +7690,14 @@
               ],
               "src": "1388:32:16"
             },
-            "scope": 2550,
+            "scope": 2625,
             "src": "1294:435:16",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 2551,
+        "scope": 2626,
         "src": "111:1625:16",
         "usedErrors": []
       }
@@ -7710,7 +7710,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-05-05T19:46:07.102Z",
+  "updatedAt": "2022-05-09T16:21:14.147Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
