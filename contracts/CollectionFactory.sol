@@ -6,7 +6,7 @@ import "./Collection.sol";
   * @notice Give the ability to deploy a contract to manage ERC-721 tokens for an Artist. 
   * @dev    If the contract is already deployed for an _artistName, it will revert.
   */
-contract Factory {
+contract CollectionFactory {
     event CollectionCreated(
         string _artistName,
         address _collectionAddress,

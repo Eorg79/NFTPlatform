@@ -1,7 +1,7 @@
 var Collection = artifacts.require("./Collection.sol");
-var Factory = artifacts.require("./Factory.sol");
+var CollectionFactory = artifacts.require("./CollectionFactory.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Factory);
+  deployer.deploy(CollectionFactory);
   //.then(() => deployer.deploy(Factory, Collection.address));
 };
