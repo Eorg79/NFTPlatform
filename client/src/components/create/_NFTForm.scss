@@ -1,0 +1,14 @@
+.NFTForm {
+    .img-wrapper {
+        width:fit-content;
+        height: fit-content;
+        img,.img {
+            max-width: 210px;
+            max-height: 210px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 30px #dddddd;
+            margin: 7px;
+        }
+    }
+}

@@ -2,10 +2,9 @@
 /*footer*/
 .footer {
     @include block-side-padding;
-    padding-block-end: 20px;
     position: fixed;
     width: 100%;
-    height: 200px;
+    height: 140px;
     min-width: 271px;
     bottom: 0px;
     color: white;
@@ -16,7 +15,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        padding-block-start: 20px;
     }
         img {
             width: 180px;
