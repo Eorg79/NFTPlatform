@@ -6,8 +6,9 @@ import "./Collection.sol";
   * @notice Give the ability to deploy a contract to manage ERC-721 tokens for an Artist. 
   * @dev    If the contract is already deployed for an _artistName, it will revert.
   */
-contract CollectionFactory {
+contract CollectionFactory is Ownable{
     event CollectionCreated(
+        address _owner,
         string _artistName,
         address _collectionAddress,
         uint _timestamp
@@ -15,13 +16,12 @@ contract CollectionFactory {
 
  /**
       * @notice Deploy the ERC-721 Collection contract of the artist caller to be able to create NFTs later
-      * @return collectionAddress the address of the created collection contract
+      * @return collection the address of the created collection contract
       */
     
-    function createCollection(string memory name, string memory symbol) public returns (address collectionAddress) {
-        Collection collection = new Collection(name, symbol);
-        emit CollectionCreated(name, collectionAddress, block.timestamp);
-        return address(collection);
+    function createCollectionFactory(string memory name, string memory symbol, address creatorAddress) internal returns (Collection collection) {
+        collection = new Collection(name, symbol);
+        emit CollectionCreated(creatorAddress, name, address(collection), block.timestamp);
     }
 }
         /*
