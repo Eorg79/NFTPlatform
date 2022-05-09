@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ContractContext } from './utils/ContractContext';
+import { useNavigate, Link } from "react-router-dom";
 import FactoryContract from "./contracts/Factory.json";
 import getWeb3 from "./getWeb3";
 import Router from "./components/Router";
@@ -12,6 +13,8 @@ const App = () => {
   const [accounts, setAccounts] = useState([]);
   const [contract, setContract] = useState([]);
   
+  //let navigate = useNavigate();
+
   useEffect(() => {
     const runInit = async () => {
       try {
@@ -49,30 +52,21 @@ const App = () => {
 
   return (
     
-    <div className="body-container">
-      <ContractContext.Provider value={{ web3, setWeb3, accounts, setAccounts, contract, setContract }}>
+      <ContractContext.Provider value={{ web3, setWeb3, accounts, setAccounts, contract, setContract }}> 
+        { web3 ? 
+        ( <Router /> ) 
+        : (
+          <>
           <header className="header">
-            <div className="header__img-container">
+                <div className="header__img-container">
                     <img src={headerLogo} alt="logo 9XNFT" />
-            </div> 
-            <nav>
-                <div className="menu">
-                    <div className="item_menu"><a>Créer</a></div>
-                    <div className="item_menu"><a>Explorer</a></div>
-                    <div className="item_menu wallet"><a>Wallet</a></div>
-                </div>
-            </nav>
+                </div> 
           </header>
+          <main>
           <div className="banner">
             <h1>The largest NFT trading platform</h1>
-          </div>
-        {web3 ? 
-          (<div className="container">
-            <div>connected wallet: {accounts[0]}</div>
-            <Router />
-          </div>
-          ) :
-          (<div className="container">
+          </div>         
+          <div className="container">
             <div className="card">
               <h2>Sorry, no web3 connexion.</h2>
               <p><strong>Please try again, by updating or reconnecting you wallet.</strong></p>
@@ -81,7 +75,9 @@ const App = () => {
               </div>
             </div>
           </div>
-          )}
+          </main>
+          </> )
+          }
           <footer className='footer'>
                 <ul>
                     <li><a href="#">About</a></li>  
@@ -91,10 +87,9 @@ const App = () => {
                 </ul>
             </footer>
       </ContractContext.Provider>
-    </div>
-    
+   
   );
 
-}
+};
 
 export default App;

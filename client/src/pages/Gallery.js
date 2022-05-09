@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ContractContext } from '../utils/ContractContext';
 
-const Home = () => {
+const Gallery = () => {
     const { web3, accounts, contract } = useContext(ContractContext);
 
     
@@ -10,7 +10,7 @@ const Home = () => {
 
         <div className='container'>
             <div className="card">
-                    <h2>Explore the largest NFT Collections</h2>
+                    <h2>Your NFT Gallery</h2>
                     
             </div>
         </div>
@@ -18,4 +18,4 @@ const Home = () => {
         );
 }; 
 
-export default Home;
+export default Gallery;

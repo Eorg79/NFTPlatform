@@ -35,11 +35,11 @@ body .body-wrapper {
           flex-direction: column;
 }
 
-body .body-wrapper .body-container {
+body .body-wrapper main {
   text-align: center;
 }
 
-body .body-wrapper .body-container .container {
+body .body-wrapper main .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,15 +57,12 @@ body .body-wrapper .body-container .container {
   max-width: 1872px;
   margin: 30px;
   padding: 20px;
-  border-radius: 10px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: #ffffffa3;
   position: relative;
-  top: 180px;
+  top: 160px;
+  padding-bottom: 200px;
 }
 
-body .body-wrapper .body-container .container .card {
+body .body-wrapper main .container .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,8 +80,7 @@ body .body-wrapper .body-container .container .card {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 15px;
   padding: 10px;
   background-color: white;
   border-radius: 10px;
@@ -92,13 +88,7 @@ body .body-wrapper .body-container .container .card {
           box-shadow: 0 0 30px #dddddd;
   -webkit-transition: all 400ms;
   transition: all 400ms;
-}
-
-body .body-wrapper .body-container .main {
-  -webkit-margin-before: 185px;
-          margin-block-start: 185px;
-  -webkit-margin-after: 150px;
-          margin-block-end: 150px;
+  width: 350px;
 }
 
 p {
@@ -115,7 +105,7 @@ h1 {
   font-size: 35px;
   font-weight: 300;
   font-style: italic;
-  color: #13c8e0;
+  color: #0a616d;
 }
 
 h2 {
@@ -172,16 +162,16 @@ textarea {
   color: white;
   margin: 15px;
   font: 800 1.1em "Roboto";
-  background-color: black;
-  border-radius: 8px;
+  background-color: #13c8e0;
+  border-radius: 25px;
   border: hidden;
-  padding: 10px 20px 10px 20px;
+  padding: 6px 15px 6px 15px;
   -webkit-box-shadow: 0 0 15px #aaaaaa;
           box-shadow: 0 0 15px #aaaaaa;
   cursor: pointer;
   -webkit-transition: all 400ms;
   transition: all 400ms;
-  width: 200px;
+  width: 160px;
 }
 
 .btn:hover {
@@ -222,7 +212,13 @@ textarea {
   height: 20px;
 }
 
-.form-control {
+form {
+  text-align: end;
+  color: #0a616d;
+  padding: 15px;
+}
+
+form .form-control {
   margin-bottom: 20px;
 }
 
@@ -316,6 +312,7 @@ header a {
   cursor: pointer;
   font-size: 1em;
   font-weight: 600;
+  color: black;
 }
 
 header nav {
@@ -326,6 +323,9 @@ header nav {
   display: -ms-flexbox;
   display: flex;
   min-height: 44px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 header nav .menu {
@@ -382,7 +382,7 @@ header .wallet:focus {
 
 .banner {
   position: fixed;
-  top: 85px;
+  top: 65px;
   width: 100%;
   min-width: 271px;
 }
@@ -391,11 +391,9 @@ header .wallet:focus {
 .footer {
   padding-left: 20px;
   padding-right: 20px;
-  -webkit-padding-after: 20px;
-          padding-block-end: 20px;
   position: fixed;
   width: 100%;
-  height: 200px;
+  height: 140px;
   min-width: 271px;
   bottom: 0px;
   color: white;
@@ -415,8 +413,6 @@ header .wallet:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-padding-before: 20px;
-            padding-block-start: 20px;
   }
 }
 
@@ -453,5 +449,25 @@ header .wallet:focus {
 
 .footer .fas.fa-utensils {
   padding-right: 20px;
+}
+
+.NFTForm .img-wrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.NFTForm .img-wrapper img, .NFTForm .img-wrapper .img {
+  max-width: 210px;
+  max-height: 210px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 30px #dddddd;
+          box-shadow: 0 0 30px #dddddd;
+  margin: 7px;
 }
 /*# sourceMappingURL=main.css.map */

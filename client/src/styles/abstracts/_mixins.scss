@@ -14,10 +14,10 @@
     color: $color-secondary;
     margin: 15px;
     font: 800 1.1em "Roboto"; 
-    background-color: $color-primary;
-    border-radius: 8px;
+    background-color: $color-tertiary;
+    border-radius: 25px;
     border: hidden;
-    padding: 10px 20px 10px 20px;
+    padding: 6px 15px 6px 15px;
     box-shadow: 0 0 15px #aaaaaa;
     cursor: pointer;
     transition: all 400ms;     
@@ -52,9 +52,8 @@
     max-width: 1872px;
     margin: 30px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: #ffffffa3;
+    
+    
 }
 
 @mixin form {
@@ -87,8 +86,7 @@
     min-height: 252px;
     position: relative;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 15px;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
