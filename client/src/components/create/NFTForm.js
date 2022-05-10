@@ -10,7 +10,7 @@ const NFTForm = () => {
       const [file, setFile] = useState('');
       const [IPFSHashFile, setIPFSHashFile] = useState('');
       const [IPFSHashJSON, setIPFSHashJSON] = useState('');
-      const [readyToMint, setReadyToMint] = useState(false);
+      const [minted, setMinted] = useState(false);
       
       const initialValues = {
         name: '',
@@ -21,6 +21,7 @@ const NFTForm = () => {
       const validationSchema = Yup.object({
         name: Yup.string().min(3, '3 caractères minimum').max(80, '80 caractères maximum').required('ce champ doit être complété'),
         description: Yup.string().min(3, '3 caractères minimum').max(80, '80 caractères maximum').required('ce champ doit être complété'),
+        
       }); 
           const key = process.env.REACT_APP_PINATA_KEY;
           const secret = process.env.REACT_APP_PINATA_SECRET;
@@ -49,8 +50,10 @@ const NFTForm = () => {
           
           const responseJSON = await axios.post(urlJSON, metadata, { maxContentLength: "Infinity", headers:{ "Content-Type": 'application/json', 'pinata_api_key': key, 'pinata_secret_api_key': secret}});  
           setIPFSHashJSON(responseJSON.data.IpfsHash);  
-          setReadyToMint(true);
-
+          const coll = await contract.methods.getAllCollectionsWithBalance(accounts[0]).call({from: accounts[0]}); 
+          console.log(coll);
+          await contract.methods.mintToken(accounts[0], IPFSHashJSON, formik.values.collection).send({from: accounts[0]}); 
+          setMinted(true);
           setImage(null);
           onSubmitProps.resetForm();
   };
@@ -62,7 +65,7 @@ const NFTForm = () => {
         <>
             <div className="card">
                     <h2>Create a new NFT</h2>
-                    {!readyToMint ?
+                    {!minted ?
                     (<form className="NFTForm" onSubmit={formik.handleSubmit}>
                         <div className="form-control">
                           <label htmlFor="name">name</label>
@@ -85,11 +88,10 @@ const NFTForm = () => {
                           </div>
                         <input aria-label="fichier image" type='file' id='file' name='file' accept='.jpg, .jpeg, .png, .gif' aria-required='false' onChange={(e) => imageChangeHandler(e)} />
                         </div>
-                          <button className="btn" type="submit">upload</button>
+                          <button className="btn" type="submit">create</button>
                     </form>)
                     : (
-                      <h3>Your NFT has been sucessfully uploaded on IPFS. You have to mint it to complete the creation process.</h3>
-
+                      <h3>Your NFT has been sucessfully minted. You can offer it to sell now.</h3>
                     )}
             </div>
         </>

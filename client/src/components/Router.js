@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ContractContext } from '../utils/ContractContext';
+import { DataContext } from '../utils/DataContext';
 import headerLogo from '../assets/9XNFT.png';
 import Navbar from './Navbar';
 import Home from '../pages/Home';
@@ -11,11 +12,13 @@ import Gallery from '../pages/Gallery';
 
 const Router = () => {
     const { accounts } = useContext(ContractContext);
-
+    const [collections, setCollections] = useState([]);
+    const [NFTs, setNFTs] = useState([]);
 
     return (
         
-        <BrowserRouter>
+     <BrowserRouter>
+        <DataContext.Provider value={{ collections, NFTs }}> 
             <header className="header">
                 <div className="header__img-container">
                     <img src={headerLogo} alt="logo 9XNFT" />
@@ -34,8 +37,9 @@ const Router = () => {
                 <Route path="/Gallery" element={<Gallery/>} />
             </Routes>
             </main>
+        </DataContext.Provider>
+     </BrowserRouter>
 
-        </BrowserRouter>
     );
 };
 

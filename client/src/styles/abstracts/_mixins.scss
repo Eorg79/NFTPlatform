@@ -13,12 +13,11 @@
 @mixin basic-button {
     color: $color-secondary;
     margin: 15px;
-    font: 800 1.1em "Roboto"; 
+    font: 600 1em "Roboto"; 
     background-color: $color-tertiary;
     border-radius: 25px;
     border: hidden;
     padding: 6px 15px 6px 15px;
-    box-shadow: 0 0 15px #aaaaaa;
     cursor: pointer;
     transition: all 400ms;     
 }
@@ -38,8 +37,8 @@
 
 
 @mixin button-animation {
-    opacity: 0.8;
-    box-shadow: 0 0 40px #2c2c2c;  
+    opacity: 0.6;
+    box-shadow: 0 0 20px #868686;  
 }
 
 @mixin container {
@@ -90,7 +89,7 @@
     padding: 10px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 30px #dddddd;
+    border: solid 0.4px $color-tertiary-dark-transp;
     transition: all 400ms;
 }
 @mixin auto-height-rounded-card {

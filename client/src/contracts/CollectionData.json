@@ -1,29 +1,29 @@
 {
   "contractName": "CollectionData",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CollectionData.sol\":\"CollectionData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CollectionData.sol\":{\"keccak256\":\"0x2a04592e61a82d7f58bf9d02825cf7d08ea23965b37bc105e676cfe846e8d5f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd0d745e8ba863aa0db091d8a72f21efd80b22d997a090666f5be81e2adb19a3\",\"dweb:/ipfs/QmXtQ5EGuVBhkeBfzYSm88EhNRd5p9XD9BcB6rehuyoZrH\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212200e235d1e2cdd86a9025ea291b78aa0e0ee74cad990c5769ca843bdfee616fde364736f6c634300080d0033",
-  "deployedBytecode": "0x6080604052600080fdfea26469706673582212200e235d1e2cdd86a9025ea291b78aa0e0ee74cad990c5769ca843bdfee616fde364736f6c634300080d0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CollectionData.sol\":\"CollectionData\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CollectionData.sol\":{\"keccak256\":\"0x2a04592e61a82d7f58bf9d02825cf7d08ea23965b37bc105e676cfe846e8d5f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd0d745e8ba863aa0db091d8a72f21efd80b22d997a090666f5be81e2adb19a3\",\"dweb:/ipfs/QmXtQ5EGuVBhkeBfzYSm88EhNRd5p9XD9BcB6rehuyoZrH\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220d81380f6029f1ee9d38570987eb8d50dadf950f1e56901019d6a3e4cb920566164736f6c634300080d0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220d81380f6029f1ee9d38570987eb8d50dadf950f1e56901019d6a3e4cb920566164736f6c634300080d0033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
   "sourceMap": "57:129:15:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "57:129:15:-:0;;;;;",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.13;\n\ncontract CollectionData{\n    struct tokenMetaData{\n        uint tokenId;\n        uint timeStamp;\n        string tokenURI;\n    }\n}",
-  "sourcePath": "/home/ludo/github/NFTPlatform/contracts/CollectionData.sol",
+  "sourcePath": "/home/erika/NFTPlatform/contracts/CollectionData.sol",
   "ast": {
     "absolutePath": "project:/contracts/CollectionData.sol",
     "exportedSymbols": {
       "CollectionData": [
-        2496
+        2463
       ]
     },
-    "id": 2497,
+    "id": 2464,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2488,
+        "id": 2455,
         "literals": [
           "solidity",
           "0.8",
@@ -39,9 +39,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2496,
+        "id": 2463,
         "linearizedBaseContracts": [
-          2496
+          2463
         ],
         "name": "CollectionData",
         "nameLocation": "66:14:15",
@@ -49,16 +49,16 @@
         "nodes": [
           {
             "canonicalName": "CollectionData.tokenMetaData",
-            "id": 2495,
+            "id": 2462,
             "members": [
               {
                 "constant": false,
-                "id": 2490,
+                "id": 2457,
                 "mutability": "mutable",
                 "name": "tokenId",
                 "nameLocation": "121:7:15",
                 "nodeType": "VariableDeclaration",
-                "scope": 2495,
+                "scope": 2462,
                 "src": "116:12:15",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -67,7 +67,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2489,
+                  "id": 2456,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "116:4:15",
@@ -80,12 +80,12 @@
               },
               {
                 "constant": false,
-                "id": 2492,
+                "id": 2459,
                 "mutability": "mutable",
                 "name": "timeStamp",
                 "nameLocation": "143:9:15",
                 "nodeType": "VariableDeclaration",
-                "scope": 2495,
+                "scope": 2462,
                 "src": "138:14:15",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -94,7 +94,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2491,
+                  "id": 2458,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "138:4:15",
@@ -107,12 +107,12 @@
               },
               {
                 "constant": false,
-                "id": 2494,
+                "id": 2461,
                 "mutability": "mutable",
                 "name": "tokenURI",
                 "nameLocation": "169:8:15",
                 "nodeType": "VariableDeclaration",
-                "scope": 2495,
+                "scope": 2462,
                 "src": "162:15:15",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -121,7 +121,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 2493,
+                  "id": 2460,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "162:6:15",
@@ -136,12 +136,12 @@
             "name": "tokenMetaData",
             "nameLocation": "93:13:15",
             "nodeType": "StructDefinition",
-            "scope": 2496,
+            "scope": 2463,
             "src": "86:98:15",
             "visibility": "public"
           }
         ],
-        "scope": 2497,
+        "scope": 2464,
         "src": "57:129:15",
         "usedErrors": []
       }
@@ -152,15 +152,15 @@
     "absolutePath": "project:/contracts/CollectionData.sol",
     "exportedSymbols": {
       "CollectionData": [
-        2496
+        2463
       ]
     },
-    "id": 2497,
+    "id": 2464,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2488,
+        "id": 2455,
         "literals": [
           "solidity",
           "0.8",
@@ -176,9 +176,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2496,
+        "id": 2463,
         "linearizedBaseContracts": [
-          2496
+          2463
         ],
         "name": "CollectionData",
         "nameLocation": "66:14:15",
@@ -186,16 +186,16 @@
         "nodes": [
           {
             "canonicalName": "CollectionData.tokenMetaData",
-            "id": 2495,
+            "id": 2462,
             "members": [
               {
                 "constant": false,
-                "id": 2490,
+                "id": 2457,
                 "mutability": "mutable",
                 "name": "tokenId",
                 "nameLocation": "121:7:15",
                 "nodeType": "VariableDeclaration",
-                "scope": 2495,
+                "scope": 2462,
                 "src": "116:12:15",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -204,7 +204,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2489,
+                  "id": 2456,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "116:4:15",
@@ -217,12 +217,12 @@
               },
               {
                 "constant": false,
-                "id": 2492,
+                "id": 2459,
                 "mutability": "mutable",
                 "name": "timeStamp",
                 "nameLocation": "143:9:15",
                 "nodeType": "VariableDeclaration",
-                "scope": 2495,
+                "scope": 2462,
                 "src": "138:14:15",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -231,7 +231,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2491,
+                  "id": 2458,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "138:4:15",
@@ -244,12 +244,12 @@
               },
               {
                 "constant": false,
-                "id": 2494,
+                "id": 2461,
                 "mutability": "mutable",
                 "name": "tokenURI",
                 "nameLocation": "169:8:15",
                 "nodeType": "VariableDeclaration",
-                "scope": 2495,
+                "scope": 2462,
                 "src": "162:15:15",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -258,7 +258,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 2493,
+                  "id": 2460,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "162:6:15",
@@ -273,12 +273,12 @@
             "name": "tokenMetaData",
             "nameLocation": "93:13:15",
             "nodeType": "StructDefinition",
-            "scope": 2496,
+            "scope": 2463,
             "src": "86:98:15",
             "visibility": "public"
           }
         ],
-        "scope": 2497,
+        "scope": 2464,
         "src": "57:129:15",
         "usedErrors": []
       }
@@ -291,7 +291,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-05-09T11:03:34.088Z",
+  "updatedAt": "2022-05-09T17:35:54.624Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

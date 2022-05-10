@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ContractContext } from './utils/ContractContext';
 import { useNavigate, Link } from "react-router-dom";
-import FactoryContract from "./contracts/Factory.json";
+import Contract from "./contracts/CollectionHandler.json";
 import getWeb3 from "./getWeb3";
 import Router from "./components/Router";
 import headerLogo from'./assets/9XNFT.png';
@@ -24,9 +24,9 @@ const App = () => {
         const accounts = await web3.eth.getAccounts();
         // Get the contract instance.
         const networkId = await web3.eth.net.getId();
-        const deployedNetwork = FactoryContract.networks[networkId];
+        const deployedNetwork = Contract.networks[networkId];
         const instance = new web3.eth.Contract(
-          FactoryContract.abi,
+          Contract.abi,
           deployedNetwork && deployedNetwork.address,
           );
           // Set web3, accounts, and contract to the state

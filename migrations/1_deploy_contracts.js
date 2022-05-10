@@ -1,5 +1,5 @@
 var CollectionHandler = artifacts.require("./CollectionHandler.sol");
-var Collection = artifacts.require("./Collection.sol");
+//var Collection = artifacts.require("./Collection.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(CollectionHandler);

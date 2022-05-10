@@ -16,7 +16,7 @@ html {
 body {
   height: 100%;
   color: black;
-  font-family: "raleway", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   min-width: 271px;
   max-width: 1872px;
   background: no-repeat center center fixed;
@@ -84,11 +84,9 @@ body .body-wrapper main .container .card {
   padding: 10px;
   background-color: white;
   border-radius: 10px;
-  -webkit-box-shadow: 0 0 30px #dddddd;
-          box-shadow: 0 0 30px #dddddd;
+  border: solid 0.4px rgba(46, 129, 139, 0.493);
   -webkit-transition: all 400ms;
   transition: all 400ms;
-  width: 350px;
 }
 
 p {
@@ -102,8 +100,8 @@ p {
 
 h1 {
   padding: 0px 25px 0 25px;
-  font-size: 35px;
-  font-weight: 300;
+  font-size: 36px;
+  font-weight: 600;
   font-style: italic;
   color: #0a616d;
 }
@@ -111,6 +109,7 @@ h1 {
 h2 {
   padding-left: 25px;
   font-size: 20px;
+  font-weight: 600;
 }
 
 h4 {
@@ -149,8 +148,21 @@ li, th, td {
 }
 
 label {
-  font-weight: bolder;
   padding-right: 5px;
+}
+
+input {
+  border-radius: 3px;
+  border: solid 0.2px #0a616d6c;
+  padding: 2px;
+}
+
+input#file {
+  border: none;
+}
+
+input#file-upload-button {
+  background-color: #0a616d6c;
 }
 
 textarea {
@@ -161,13 +173,11 @@ textarea {
 .btn {
   color: white;
   margin: 15px;
-  font: 800 1.1em "Roboto";
+  font: 600 1em "Roboto";
   background-color: #13c8e0;
   border-radius: 25px;
   border: hidden;
   padding: 6px 15px 6px 15px;
-  -webkit-box-shadow: 0 0 15px #aaaaaa;
-          box-shadow: 0 0 15px #aaaaaa;
   cursor: pointer;
   -webkit-transition: all 400ms;
   transition: all 400ms;
@@ -175,9 +185,9 @@ textarea {
 }
 
 .btn:hover {
-  opacity: 0.8;
-  -webkit-box-shadow: 0 0 40px #2c2c2c;
-          box-shadow: 0 0 40px #2c2c2c;
+  opacity: 0.6;
+  -webkit-box-shadow: 0 0 20px #868686;
+          box-shadow: 0 0 20px #868686;
 }
 
 .small-btn {
@@ -196,9 +206,9 @@ textarea {
 }
 
 .small-btn:hover {
-  opacity: 0.8;
-  -webkit-box-shadow: 0 0 40px #2c2c2c;
-          box-shadow: 0 0 40px #2c2c2c;
+  opacity: 0.6;
+  -webkit-box-shadow: 0 0 20px #868686;
+          box-shadow: 0 0 20px #868686;
 }
 
 .error-box {
@@ -224,6 +234,8 @@ form .form-control {
 
 .error {
   color: red;
+  font-size: smaller;
+  padding-top: 3px;
 }
 
 table {
@@ -294,8 +306,8 @@ header {
   -webkit-padding-after: 5px;
           padding-block-end: 5px;
   background-color: white;
-  -webkit-box-shadow: 0 0 15px #aaaaaa;
-          box-shadow: 0 0 15px #aaaaaa;
+  -webkit-box-shadow: 0 0 5px #aaaaaa;
+          box-shadow: 0 0 5px #aaaaaa;
   /*apparence dynamique du menu*/
 }
 
@@ -387,6 +399,10 @@ header .wallet:focus {
   min-width: 271px;
 }
 
+.banner div {
+  padding-bottom: 15px;
+}
+
 /*footer*/
 .footer {
   padding-left: 20px;
@@ -469,5 +485,52 @@ header .wallet:focus {
   -webkit-box-shadow: 0 0 30px #dddddd;
           box-shadow: 0 0 30px #dddddd;
   margin: 7px;
+}
+
+.NFTCard {
+  border-radius: 25px;
+  padding: 5px 5px 0px 5px;
+  height: 310px;
+  width: 280px;
+  -webkit-box-shadow: 0 0 30px #dddddd;
+          box-shadow: 0 0 30px #dddddd;
+  margin: 15px;
+}
+
+.NFTCard .wrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.NFTCard .wrapper img {
+  height: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.NFT-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */
