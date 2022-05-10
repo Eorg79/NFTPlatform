@@ -8,13 +8,6 @@ import "./CollectionFactory.sol";
 
 contract CollectionHandler is CollectionLinker, CollectionFactory {
 
-    event debug(
-        string log
-    );
-    event debug(
-        address log
-    );
-
     function createCollection(string memory name, string memory symbol, address creatorAddress) public returns (address){
         Collection newCollection = CollectionFactory.createCollectionFactory(name, symbol, creatorAddress);
         newCollection.setCollectionCreator(creatorAddress);
@@ -39,7 +32,6 @@ contract CollectionHandler is CollectionLinker, CollectionFactory {
 
     function mintToken(address _recipient, string memory _tokenURI, address collectionAddress) public{
         require(msg.sender == _collectionMap[collectionAddress].getCollectionCreator());
-        emit debug("Calling Mint Token");
         _collectionMap[collectionAddress].mintToken(_recipient,_tokenURI);
     }
 }

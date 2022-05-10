@@ -13,13 +13,6 @@ contract Collection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable, Coll
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds; 
 
-    event debug(
-        string log
-    );
-    event debug(
-        uint log
-    );
-
     address private collectionCreator;
     mapping(uint=>tokenMetaData) private tokenList;
 
@@ -29,18 +22,9 @@ contract Collection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable, Coll
         collectionCreator = creator;
     }
 
-    function gettokenIds() external view returns(uint){
-        return _tokenIds.current();
-    }
-
     function getCollectionCreator() external view returns(address){
         return collectionCreator;
     }
-
-    function callEvents(uint tokenId)external {
-        emit debug(tokenId);
-    }
-
 
     function getTokenMetaDataFromID(uint tokenId) external view returns(uint,uint,string memory){
         require(tokenId <= _tokenIds.current(),"This token ID hasnt been minted yet");
@@ -49,11 +33,11 @@ contract Collection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable, Coll
     
     function mintToken(address _recipient, string memory _tokenURI) external onlyOwner {
         require(owner()!= _recipient, "Recipient cannot be the owner of the contract");
-        _tokenIds.increment();
         uint newItemId = _tokenIds.current();
         _safeMint(_recipient, newItemId);
         tokenList[_tokenIds.current()] = tokenMetaData(newItemId, block.timestamp, "");
         _setTokenURI(newItemId, _tokenURI);
+        _tokenIds.increment();
     }
 
     function _beforeTokenTransfer(

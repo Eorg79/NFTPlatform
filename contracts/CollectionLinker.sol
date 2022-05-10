@@ -9,18 +9,24 @@ contract CollectionLinker is Ownable, CollectionData {
     //mapping from collection address to contracts
     mapping(address=>Collection) internal _collectionMap;
     Collection[] internal _collectionArray;
-
-    event debug(
-        uint log
-    );
-    function getAllCollectionsWithBalance(address userAddress) public view returns(Collection[] memory result){
+    
+    function getAllCollectionsWithBalance(address userAddress) public view returns(Collection[] memory){
         uint counter = 0 ;
+        Collection[] memory tempCollectionsWithBalance = new Collection[](_collectionArray.length);
+
         for(uint i=0; i < _collectionArray.length; i++){
            if(hasCollectionBalance(address(_collectionArray[i]), userAddress) > 0){
-               result[counter]=_collectionArray[i];
+               tempCollectionsWithBalance[counter] = _collectionArray[i];
                counter++;
            }
         }
+
+        Collection[] memory collectionsWithBalance = new Collection[](counter);
+        for(uint j=0; j < counter; j++){
+            collectionsWithBalance[j]=tempCollectionsWithBalance[j];
+        }
+
+        return collectionsWithBalance;
     }
 
     function hasCollectionBalance(address collectionAddress, address userAddress) public view returns(uint) {
@@ -33,8 +39,6 @@ contract CollectionLinker is Ownable, CollectionData {
 
         for(uint i=0; i < balance; i++){
             uint tokenId = _collectionMap[collectionAddress].tokenOfOwnerByIndex(userAddress,i);
-            /*emit debug(tokenId);
-            emit debug(_collectionMap[collectionAddress].gettokenIds());*/
             (uint metaDataTokenId, uint metaDataTimeStamp, string memory metaDataTokenURI) = _collectionMap[collectionAddress].getTokenMetaDataFromID(tokenId);
             ownedNFTsFromCollection[i] = tokenMetaData(metaDataTokenId,metaDataTimeStamp,metaDataTokenURI);
         }
