@@ -10,6 +10,9 @@ contract CollectionLinker is Ownable, CollectionData {
     mapping(address=>Collection) internal _collectionMap;
     Collection[] internal _collectionArray;
 
+    event debug(
+        uint log
+    );
     function getAllCollectionsWithBalance(address userAddress) public view returns(Collection[] memory result){
         uint counter = 0 ;
         for(uint i=0; i < _collectionArray.length; i++){
@@ -21,26 +24,19 @@ contract CollectionLinker is Ownable, CollectionData {
     }
 
     function hasCollectionBalance(address collectionAddress, address userAddress) public view returns(uint) {
-        for(uint i=0; i < _collectionArray.length; i++){
-           if(address(_collectionArray[i]) == collectionAddress){
-             return _collectionArray[i].getOwnershipRecord(userAddress).length;
-           }
-        }
-       return 0;
+        return _collectionMap[collectionAddress].balanceOf(userAddress);
     }
 
     function getAllTokensMetaDataOwnedFromCollection(address collectionAddress, address userAddress) external view returns(tokenMetaData[] memory ownedNFTsFromCollection) {
         uint balance = hasCollectionBalance(collectionAddress, userAddress);
         ownedNFTsFromCollection = new tokenMetaData[](balance);
-       
-        for(uint i=0; i < _collectionArray.length; i++){
-            if(address(_collectionArray[i]) == collectionAddress){
-                for(uint j=0; j < balance; j++){
-                    uint tokenId = _collectionArray[i].tokenOfOwnerByIndex(userAddress,j);
-                    (uint metaDataTokenId, uint metaDataTimeStamp, string memory metaDataTokenURI) = _collectionArray[i].getTokenMetaDataFromID(tokenId);
-                    ownedNFTsFromCollection[j] = tokenMetaData(metaDataTokenId,metaDataTimeStamp,metaDataTokenURI);
-                }
-            }
+
+        for(uint i=0; i < balance; i++){
+            uint tokenId = _collectionMap[collectionAddress].tokenOfOwnerByIndex(userAddress,i);
+            /*emit debug(tokenId);
+            emit debug(_collectionMap[collectionAddress].gettokenIds());*/
+            (uint metaDataTokenId, uint metaDataTimeStamp, string memory metaDataTokenURI) = _collectionMap[collectionAddress].getTokenMetaDataFromID(tokenId);
+            ownedNFTsFromCollection[i] = tokenMetaData(metaDataTokenId,metaDataTimeStamp,metaDataTokenURI);
         }
     }
 

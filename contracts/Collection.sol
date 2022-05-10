@@ -2,37 +2,57 @@
 pragma solidity 0.8.13;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "./CollectionData.sol";
 
-contract Collection is ERC721Enumerable, ERC721URIStorage, Ownable, CollectionData {
+contract Collection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable, CollectionData {
     using Counters for Counters.Counter;
-    Counters.Counter private _tokenIds;
-    
-    mapping(address=>tokenMetaData[]) private ownershipRecord;
+    Counters.Counter private _tokenIds; 
+
+    event debug(
+        string log
+    );
+    event debug(
+        uint log
+    );
+
+    address private collectionCreator;
     mapping(uint=>tokenMetaData) private tokenList;
 
     constructor (string memory name, string memory symbol) ERC721("name", "symbol") {}
 
-    function getOwnershipRecord(address userAddress) external view returns(tokenMetaData[] memory){
-           return ownershipRecord[userAddress];
+    function setCollectionCreator(address creator) external onlyOwner{
+        collectionCreator = creator;
     }
 
+    function gettokenIds() external view returns(uint){
+        return _tokenIds.current();
+    }
+
+    function getCollectionCreator() external view returns(address){
+        return collectionCreator;
+    }
+
+    function callEvents(uint tokenId)external {
+        emit debug(tokenId);
+    }
+
+
     function getTokenMetaDataFromID(uint tokenId) external view returns(uint,uint,string memory){
-        require(tokenId > _tokenIds.current(),"This token ID hasnt been minted yet");
+        require(tokenId <= _tokenIds.current(),"This token ID hasnt been minted yet");
         return (tokenList[tokenId].tokenId,tokenList[tokenId].timeStamp,tokenList[tokenId].tokenURI);
     }
     
     function mintToken(address _recipient, string memory _tokenURI) external onlyOwner {
-        //require(owner()!= _recipient, "Recipient cannot be the owner of the contract");
+        require(owner()!= _recipient, "Recipient cannot be the owner of the contract");
         _tokenIds.increment();
         uint newItemId = _tokenIds.current();
-        _safeMint(_recipient, newItemId);/*
-        ownershipRecord[_recipient].push(tokenMetaData(newItemId, block.timestamp, ""));
-        tokenList[_tokenIds.current()] = tokenMetaData(newItemId, block.timestamp, "");*/
+        _safeMint(_recipient, newItemId);
+        tokenList[_tokenIds.current()] = tokenMetaData(newItemId, block.timestamp, "");
         _setTokenURI(newItemId, _tokenURI);
     }
 
@@ -54,7 +74,5 @@ contract Collection is ERC721Enumerable, ERC721URIStorage, Ownable, CollectionDa
 
     function tokenURI(uint256 tokenId) public view virtual override (ERC721, ERC721URIStorage) returns (string memory) {
         return ERC721URIStorage.tokenURI(tokenId);
-    }
-
-    
+    } 
 }
