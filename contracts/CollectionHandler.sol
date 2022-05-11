@@ -31,7 +31,7 @@ contract CollectionHandler is CollectionLinker, CollectionFactory {
     }
 
     function mintToken(address _recipient, string memory _tokenURI, address collectionAddress) public{
-        require(msg.sender == _collectionMap[collectionAddress].getCollectionCreator());
+        require(msg.sender == _collectionMap[collectionAddress].getCollectionCreator(),"Access Denied : You are not the creator of this collection !");
         _collectionMap[collectionAddress].mintToken(_recipient,_tokenURI);
     }
 }

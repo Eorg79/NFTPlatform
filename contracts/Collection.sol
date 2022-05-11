@@ -12,7 +12,7 @@ import "./CollectionData.sol";
 contract Collection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable, CollectionData {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds; 
-
+    
     address private collectionCreator;
     mapping(uint=>tokenMetaData) private tokenList;
 
@@ -26,16 +26,16 @@ contract Collection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable, Coll
         return collectionCreator;
     }
 
-    function getTokenMetaDataFromID(uint tokenId) external view returns(uint,uint,string memory){
+    function getTokenMetaDataFromID(uint tokenId) external view returns(tokenMetaData memory){
         require(tokenId <= _tokenIds.current(),"This token ID hasnt been minted yet");
-        return (tokenList[tokenId].tokenId,tokenList[tokenId].timeStamp,tokenList[tokenId].tokenURI);
+        return tokenMetaData(tokenList[tokenId].tokenId,tokenList[tokenId].timeStamp,tokenList[tokenId].tokenURI);
     }
     
     function mintToken(address _recipient, string memory _tokenURI) external onlyOwner {
         require(owner()!= _recipient, "Recipient cannot be the owner of the contract");
         uint newItemId = _tokenIds.current();
         _safeMint(_recipient, newItemId);
-        tokenList[_tokenIds.current()] = tokenMetaData(newItemId, block.timestamp, "");
+        tokenList[_tokenIds.current()] = tokenMetaData(newItemId, block.timestamp, _tokenURI);
         _setTokenURI(newItemId, _tokenURI);
         _tokenIds.increment();
     }
