@@ -2,10 +2,11 @@
 pragma solidity 0.8.13;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import "./Collection.sol";
 import "./CollectionHandler.sol";
 
-contract SalesHandler is Ownable, CollectionHandler {
+contract SalesHandler is Ownable, CollectionHandler, IERC721Receiver {
     struct Listing {
         address seller;
         address tokenCollection;
@@ -13,28 +14,54 @@ contract SalesHandler is Ownable, CollectionHandler {
         uint price; // price in wei
     }
 
-    event debug(address log);
+    event TokenListed(
+        address seller,
+        address tokenCollection,
+        uint tokenId, 
+        uint price
+    );
+
+    event TokenSold(
+        address seller,
+        address buyer,
+        address tokenCollection,
+        uint tokenId, 
+        uint price
+    );
+
+    event ListingCanceled(
+        address seller,
+        address tokenCollection,
+        uint tokenId
+    );
+
+    event ClaimedSalesRevenue(
+        address userAdress,
+        uint amount
+    );
+
+    event ReceivedERC721(
+        address operator,
+        address from,
+        uint256 tokenId,
+        bytes data
+    );
 
     //collection to token id to listing
-    mapping(address => mapping(uint => Listing)) internal listingsMap;
+    mapping(address => mapping(uint => Listing)) public listingsMap;
+    Listing[] public listingsArray;
     mapping(address => uint) internal userUnclaimedSalesRevenueMap;
-    Listing[] internal listingsArray;
-
 
     //To call
     function listToken(uint tokenId, address collectionAddress, uint price) public {
-        /*require(_collectionMap[collectionAddress].ownerOf(tokenId) == msg.sender 
-        || _collectionMap[collectionAddress].getApproved(tokenId) == msg.sender,"You cant put for sale a token that you dont own or are approved to use as Owner");
-        */
-        emit debug(msg.sender);
-        emit debug(_collectionMap[collectionAddress].ownerOf(tokenId));
-        emit debug(_collectionMap[collectionAddress].getApproved(tokenId));
+        require(_collectionMap[collectionAddress].ownerOf(tokenId) == msg.sender,"You cant put for sale a token that you dont own");
+        require(_collectionMap[collectionAddress].ownerOf(tokenId) == address(this) 
+        || _collectionMap[collectionAddress].getApproved(tokenId) == address(this),"Please approve the contract for the token first");
 
-        _collectionMap[collectionAddress].approve(address(this), tokenId);
-        _collectionMap[collectionAddress].transferTokenFromSender(msg.sender,address(this),tokenId); 
-        Listing memory listing = Listing(_collectionMap[collectionAddress].ownerOf(tokenId),collectionAddress,tokenId,price);
+        _collectionMap[collectionAddress].safeTransferFrom(msg.sender,address(this),tokenId);
+        Listing memory listing = Listing(msg.sender,collectionAddress,tokenId,price);
         saveNewListing(listing);
-
+        emit TokenListed(msg.sender,collectionAddress,tokenId,price);
     }
 
     function cancelListing(address collectionAddress, uint tokenId) public {
@@ -42,32 +69,50 @@ contract SalesHandler is Ownable, CollectionHandler {
         
         _collectionMap[collectionAddress].safeTransferFrom(address(this), msg.sender, tokenId);
         removeListing(getListing(collectionAddress, tokenId));
+        emit ListingCanceled(msg.sender,collectionAddress,tokenId);
     }
 
     function buyListedToken(address collectionAddress, uint tokenId) public payable {
         Listing memory listing = getListing(collectionAddress, tokenId);
-        require(msg.value == listing.price);
+        require(listing.seller != msg.sender,"You cant buy your own listing");
+        require(msg.value == listing.price,"Price is wrong");
         
         
         _collectionMap[collectionAddress].safeTransferFrom(address(this), msg.sender, tokenId);
         userUnclaimedSalesRevenueMap[listing.seller] += listing.price;
-        removeListing(getListing(collectionAddress, tokenId));
-    }
-
-    function getUserUnclaimedSalesRevenue(address callerAddress) public view returns(uint){
-        return userUnclaimedSalesRevenueMap[callerAddress];
+        emit TokenSold(msg.sender,listing.seller,collectionAddress,tokenId,listing.price);
+        removeListing(listing);
     }
 
     function retrieveUserUnclaimedSales() public {
         require(userUnclaimedSalesRevenueMap[msg.sender]>0);
+        uint tempSalesRevenue = userUnclaimedSalesRevenueMap[msg.sender];
+
         userUnclaimedSalesRevenueMap[msg.sender] = 0;
-        payable(msg.sender).transfer(userUnclaimedSalesRevenueMap[msg.sender]);
+        payable(msg.sender).transfer(tempSalesRevenue);
+
+        emit ClaimedSalesRevenue(msg.sender, tempSalesRevenue);
+    }
+
+    function getUserUnclaimedSalesRevenue(address callerAddress) public view returns(uint){
+        require(msg.sender == callerAddress || msg.sender == owner(), "You cant view someone else's unclaimed sales revenue");
+        return userUnclaimedSalesRevenueMap[callerAddress];
     }
 
     function getListing(address collectionAddress, uint tokenId) public view returns(Listing memory){
         return listingsMap[collectionAddress][tokenId];
     }
     
+    function onERC721Received(
+        address operator,
+        address from,
+        uint256 tokenId,
+        bytes calldata data
+    ) external returns (bytes4){
+        emit ReceivedERC721(operator, from, tokenId, data);
+        return IERC721Receiver.onERC721Received.selector;
+    }
+
     //Private
     function saveNewListing(Listing memory listing) private {
         listingsArray.push(listing); 
