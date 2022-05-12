@@ -2,7 +2,7 @@
 pragma solidity 0.8.13;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./Collection.sol";
+import "../Collection.sol";
 import "./CollectionData.sol";
 
 contract CollectionLinker is Ownable, CollectionData {
@@ -33,10 +33,11 @@ contract CollectionLinker is Ownable, CollectionData {
     }
 
     function getMetadataFromToken(address collectionAddress, uint tokenId) external view returns(tokenMetaData memory){
-        return _collectionMap[collectionAddress].getTokenMetaDataFromID(tokenId);
+        //return _collectionMap[collectionAddress].getTokenMetaDataFromID(tokenId);
     }
 
     //UserBased
+    /*
     function getAllCollectionsWithBalance(address userAddress) external view returns(Collection[] memory){
         uint counter = 0 ;
         Collection[] memory tempCollectionsWithBalance = new Collection[](_collectionArray.length);
@@ -73,4 +74,8 @@ contract CollectionLinker is Ownable, CollectionData {
     function getCollectionOwner(address collectionAddress) external view returns(address owner){
        owner = _collectionMap[collectionAddress].owner();
     }
+
+    function getTokenOwner(address collectionAddress, uint tokenId) external view returns(address owner){
+       owner = _collectionMap[collectionAddress].ownerOf(tokenId);
+    }*/
 }
