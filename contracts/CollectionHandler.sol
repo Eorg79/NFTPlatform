@@ -8,8 +8,8 @@ import "./CollectionFactory.sol";
 contract CollectionHandler is CollectionFactory {
 
     //mapping from collection address to contracts
-    mapping(address=>Collection) internal _collectionMap;
-    Collection[] internal _collectionArray;
+    mapping(address=>Collection) public _collectionMap;
+    Collection[] public _collectionArray;
 
     function createCollection(string memory name, string memory symbol) public returns (address){
         Collection newCollection = CollectionFactory.createCollectionFactory(name, symbol, msg.sender);
