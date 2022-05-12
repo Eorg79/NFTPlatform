@@ -24,17 +24,16 @@ contract Collection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         string tokenURI
     );
 
-    address public collectionCreator;
-    mapping(uint=>tokenMetaData) public tokenMetaDataFromIdMap;
+    //address public collectionCreator;
+    mapping(uint=>tokenMetaData) public tokenMetaDataFromIdMap; 
 
     constructor (string memory name, string memory symbol) ERC721("name", "symbol") {}
 
-    function setCollectionCreator(address creator) external onlyOwner{
+    /*function setCollectionCreator(address creator) external onlyOwner{
         collectionCreator = creator;
-    }
+    }*/
 
     function mintToken(address recipient_, string memory tokenURI_) external onlyOwner {
-        require(owner()!= recipient_, "Recipient cannot be the owner of the contract");
         uint newTokenId = _tokenIds.current();
 
         _safeMint(recipient_, newTokenId);

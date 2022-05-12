@@ -13,7 +13,7 @@ contract CollectionHandler is CollectionFactory {
 
     function createCollection(string memory name, string memory symbol) public returns (address){
         Collection newCollection = CollectionFactory.createCollectionFactory(name, symbol, msg.sender);
-        newCollection.setCollectionCreator(msg.sender);
+        newCollection.transferOwnership(msg.sender);
         saveNewCollectionToStorage(newCollection);
         return address(newCollection);
     }
