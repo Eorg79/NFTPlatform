@@ -64,7 +64,18 @@ contract Collection is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         return ERC721URIStorage.tokenURI(tokenId);
     } 
 
-    /*
+/*
+
+   function getAllTokens() external view returns(tokenMetaData[] memory){
+        tokenMetaData[] memory allTokensMetaDataInCollection = new tokenMetaData[](totalSupply);
+
+        for(uint i=0; i<totalSupply; i++){
+            allTokensMetaDataInCollection[i] = getMetadataFromToken( _collectionMap[collectionAddress].tokenByIndex(i));
+        }
+
+        return allTokensMetaDataInCollection;
+    }
+
     function getCollectionCreator() external view returns(address){
         return collectionCreator;
     }

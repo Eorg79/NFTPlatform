@@ -3,7 +3,12 @@
     top: 65px;
     width: 100%;
     min-width: 271px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     div {
-        padding-bottom: 15px;
+        padding-right: 25px;
+        color:$color-tertiary-dark-transp;
+        font-weight: 600;
     }
 }

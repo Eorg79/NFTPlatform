@@ -16,7 +16,7 @@ const CollectionForm = () => {
               const name = formik.values.name;
               const symbol = formik.values.symbol;
               console.log(accounts[0]);
-              await contract.methods.createCollection(name, symbol, accounts[0]).send({from: accounts[0]});
+              await contract.methods.createCollection(name, symbol).send({from: accounts[0]});
               alert('Your collection has been created');
               onSubmitProps.resetForm();
       };

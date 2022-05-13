@@ -18,6 +18,10 @@ contract CollectionHandler is CollectionFactory {
         return address(newCollection);
     }
 
+      function gelAllCollectionsAddresses() external view returns (Collection[] memory)  {
+        return _collectionArray;
+    }
+
     /*function createCollectionAndMint(string memory name, string memory symbol, address creatorAddress) public returns (address){
         Collection newCollection = CollectionFactory.createCollectionFactory(name, symbol, creatorAddress);
         newCollection.setCollectionCreator(creatorAddress);
@@ -37,4 +41,6 @@ contract CollectionHandler is CollectionFactory {
         require(msg.sender == _collectionMap[collectionAddress].getCollectionCreator(),"Access Denied : You are not the creator of this collection !");
         _collectionMap[collectionAddress].mintToken(_recipient,_tokenURI);
     }*/
+
+
 }

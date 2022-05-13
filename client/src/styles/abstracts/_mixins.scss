@@ -13,7 +13,7 @@
 @mixin basic-button {
     color: $color-secondary;
     margin: 15px;
-    font: 600 1em "Roboto"; 
+    font: 600 1em "Poppins"; 
     background-color: $color-tertiary;
     border-radius: 25px;
     border: hidden;
@@ -24,13 +24,14 @@
 
 @mixin small-button {
     color:white;
-    margin: 15px;
-    font-size: 15px;
-    background-color: $color-primary;
-    border-radius: 5px;
+    margin: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Poppins";
+    background-color: $color-tertiary;
+    border-radius: 25px;
     border: hidden;
-    padding: 5px 10px 5px 10px;
-    box-shadow: 0 0 30px #6d6c6c;
+    padding: 2px 10px 2px 10px;
     cursor: pointer;
     transition: all 400ms;     
 }
@@ -43,7 +44,7 @@
 
 @mixin container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;

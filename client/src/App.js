@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ContractContext } from './utils/ContractContext';
-import { useNavigate, Link } from "react-router-dom";
-import Contract from "./contracts/CollectionHandler.json";
+import Contract from "./contracts/Marketplace.json";
 import getWeb3 from "./getWeb3";
 import Router from "./components/Router";
 import headerLogo from'./assets/9XNFT.png';
@@ -12,8 +11,6 @@ const App = () => {
   const [web3, setWeb3] = useState(undefined);
   const [accounts, setAccounts] = useState([]);
   const [contract, setContract] = useState([]);
-  
-  //let navigate = useNavigate();
 
   useEffect(() => {
     const runInit = async () => {
@@ -34,14 +31,33 @@ const App = () => {
         setAccounts(accounts);
         setContract(instance);
 
-        //subscription to CollectionCreated event
+        //subscription to events
         await instance.events.CollectionCreated()   
         .on('data', event => console.log(event))
         .on('changed', changed => console.log(changed))
         //.on('error', err => throw err)
-        .on('connected', str => console.log(str))
+        .on('connected', str => console.log(str));
 
+        await instance.events.TokenListed()   
+          .on('data', event => console.log(event))
+          .on('changed', changed => console.log(changed))
+          .on('connected', str => console.log(str));
 
+        await instance.events.TokenSold()   
+          .on('data', event => console.log(event))
+          .on('changed', changed => console.log(changed))
+          .on('connected', str => console.log(str));
+
+        await instance.events.ListingCanceled()   
+          .on('data', event => console.log(event))
+          .on('changed', changed => console.log(changed))
+          .on('connected', str => console.log(str));
+          
+        await instance.events.ClaimedSalesRevenue()   
+          .on('data', event => console.log(event))
+          .on('changed', changed => console.log(changed))
+          .on('connected', str => console.log(str));
+          
         } catch (error) {
           // Catch any errors for any of the above operations.
             console.error(error);
@@ -59,7 +75,7 @@ const App = () => {
           <>
           <header className="header">
                 <div className="header__img-container">
-                    <img src={headerLogo} alt="logo 9XNFT" />
+                <img src={headerLogo} alt="logo 9XNFT" />                   
                 </div> 
           </header>
           <main>

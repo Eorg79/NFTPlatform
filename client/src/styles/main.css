@@ -43,9 +43,9 @@ body .body-wrapper main .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -173,7 +173,7 @@ textarea {
 .btn {
   color: white;
   margin: 15px;
-  font: 600 1em "Roboto";
+  font: 600 1em "Poppins";
   background-color: #13c8e0;
   border-radius: 25px;
   border: hidden;
@@ -192,14 +192,14 @@ textarea {
 
 .small-btn {
   color: white;
-  margin: 15px;
-  font-size: 15px;
-  background-color: black;
-  border-radius: 5px;
+  margin: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Poppins";
+  background-color: #13c8e0;
+  border-radius: 25px;
   border: hidden;
-  padding: 5px 10px 5px 10px;
-  -webkit-box-shadow: 0 0 30px #6d6c6c;
-          box-shadow: 0 0 30px #6d6c6c;
+  padding: 2px 10px 2px 10px;
   cursor: pointer;
   -webkit-transition: all 400ms;
   transition: all 400ms;
@@ -397,10 +397,21 @@ header .wallet:focus {
   top: 65px;
   width: 100%;
   min-width: 271px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .banner div {
-  padding-bottom: 15px;
+  padding-right: 25px;
+  color: rgba(46, 129, 139, 0.493);
+  font-weight: 600;
 }
 
 /*footer*/
@@ -516,6 +527,64 @@ header .wallet:focus {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px 20px 0 0;
+}
+
+.NFTCard .wrapper .data-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.NFTCard .wrapper .text-container {
+  height: 20%;
+  margin: none;
+  text-align: left;
+  padding-top: 5px;
+}
+
+.NFTCard .wrapper .text-container h4, .NFTCard .wrapper .text-container p {
+  -webkit-margin-before: 3px;
+          margin-block-start: 3px;
+  -webkit-margin-after: 3px;
+          margin-block-end: 3px;
+  padding: 0 0 0 0;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.gallery-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  min-width: 200px;
+  min-height: 252px;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: solid 0.4px rgba(46, 129, 139, 0.493);
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  max-width: 673px;
 }
 
 .NFT-wrapper {

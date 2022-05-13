@@ -1,36 +1,36 @@
 {
   "contractName": "CollectionData",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CollectionData.sol\":\"CollectionData\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CollectionData.sol\":{\"keccak256\":\"0x2a04592e61a82d7f58bf9d02825cf7d08ea23965b37bc105e676cfe846e8d5f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd0d745e8ba863aa0db091d8a72f21efd80b22d997a090666f5be81e2adb19a3\",\"dweb:/ipfs/QmXtQ5EGuVBhkeBfzYSm88EhNRd5p9XD9BcB6rehuyoZrH\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220d81380f6029f1ee9d38570987eb8d50dadf950f1e56901019d6a3e4cb920566164736f6c634300080d0033",
-  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220d81380f6029f1ee9d38570987eb8d50dadf950f1e56901019d6a3e4cb920566164736f6c634300080d0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/NotUsed/CollectionData.sol\":\"CollectionData\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/NotUsed/CollectionData.sol\":{\"keccak256\":\"0x2a04592e61a82d7f58bf9d02825cf7d08ea23965b37bc105e676cfe846e8d5f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd0d745e8ba863aa0db091d8a72f21efd80b22d997a090666f5be81e2adb19a3\",\"dweb:/ipfs/QmXtQ5EGuVBhkeBfzYSm88EhNRd5p9XD9BcB6rehuyoZrH\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220ee577ef4b8245c8a6d3dd821616d4045be5c197866326819e3df258e4e675e4f64736f6c634300080d0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220ee577ef4b8245c8a6d3dd821616d4045be5c197866326819e3df258e4e675e4f64736f6c634300080d0033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "57:129:15:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "57:129:15:-:0;;;;;",
+  "sourceMap": "57:129:18:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "57:129:18:-:0;;;;;",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.13;\n\ncontract CollectionData{\n    struct tokenMetaData{\n        uint tokenId;\n        uint timeStamp;\n        string tokenURI;\n    }\n}",
-  "sourcePath": "/home/erika/NFTPlatform/contracts/CollectionData.sol",
+  "sourcePath": "/home/erika/NFTPlatform/contracts/NotUsed/CollectionData.sol",
   "ast": {
-    "absolutePath": "project:/contracts/CollectionData.sol",
+    "absolutePath": "project:/contracts/NotUsed/CollectionData.sol",
     "exportedSymbols": {
       "CollectionData": [
-        2463
+        2588
       ]
     },
-    "id": 2464,
+    "id": 2589,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2455,
+        "id": 2580,
         "literals": [
           "solidity",
           "0.8",
           ".13"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:15"
+        "src": "32:23:18"
       },
       {
         "abstract": false,
@@ -39,27 +39,27 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2463,
+        "id": 2588,
         "linearizedBaseContracts": [
-          2463
+          2588
         ],
         "name": "CollectionData",
-        "nameLocation": "66:14:15",
+        "nameLocation": "66:14:18",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "CollectionData.tokenMetaData",
-            "id": 2462,
+            "id": 2587,
             "members": [
               {
                 "constant": false,
-                "id": 2457,
+                "id": 2582,
                 "mutability": "mutable",
                 "name": "tokenId",
-                "nameLocation": "121:7:15",
+                "nameLocation": "121:7:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 2462,
-                "src": "116:12:15",
+                "scope": 2587,
+                "src": "116:12:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -67,10 +67,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2456,
+                  "id": 2581,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "116:4:15",
+                  "src": "116:4:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -80,13 +80,13 @@
               },
               {
                 "constant": false,
-                "id": 2459,
+                "id": 2584,
                 "mutability": "mutable",
                 "name": "timeStamp",
-                "nameLocation": "143:9:15",
+                "nameLocation": "143:9:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 2462,
-                "src": "138:14:15",
+                "scope": 2587,
+                "src": "138:14:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -94,10 +94,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2458,
+                  "id": 2583,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "138:4:15",
+                  "src": "138:4:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -107,13 +107,13 @@
               },
               {
                 "constant": false,
-                "id": 2461,
+                "id": 2586,
                 "mutability": "mutable",
                 "name": "tokenURI",
-                "nameLocation": "169:8:15",
+                "nameLocation": "169:8:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 2462,
-                "src": "162:15:15",
+                "scope": 2587,
+                "src": "162:15:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -121,10 +121,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 2460,
+                  "id": 2585,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "162:6:15",
+                  "src": "162:6:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -134,40 +134,40 @@
               }
             ],
             "name": "tokenMetaData",
-            "nameLocation": "93:13:15",
+            "nameLocation": "93:13:18",
             "nodeType": "StructDefinition",
-            "scope": 2463,
-            "src": "86:98:15",
+            "scope": 2588,
+            "src": "86:98:18",
             "visibility": "public"
           }
         ],
-        "scope": 2464,
-        "src": "57:129:15",
+        "scope": 2589,
+        "src": "57:129:18",
         "usedErrors": []
       }
     ],
-    "src": "32:154:15"
+    "src": "32:154:18"
   },
   "legacyAST": {
-    "absolutePath": "project:/contracts/CollectionData.sol",
+    "absolutePath": "project:/contracts/NotUsed/CollectionData.sol",
     "exportedSymbols": {
       "CollectionData": [
-        2463
+        2588
       ]
     },
-    "id": 2464,
+    "id": 2589,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2455,
+        "id": 2580,
         "literals": [
           "solidity",
           "0.8",
           ".13"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:15"
+        "src": "32:23:18"
       },
       {
         "abstract": false,
@@ -176,27 +176,27 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2463,
+        "id": 2588,
         "linearizedBaseContracts": [
-          2463
+          2588
         ],
         "name": "CollectionData",
-        "nameLocation": "66:14:15",
+        "nameLocation": "66:14:18",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "CollectionData.tokenMetaData",
-            "id": 2462,
+            "id": 2587,
             "members": [
               {
                 "constant": false,
-                "id": 2457,
+                "id": 2582,
                 "mutability": "mutable",
                 "name": "tokenId",
-                "nameLocation": "121:7:15",
+                "nameLocation": "121:7:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 2462,
-                "src": "116:12:15",
+                "scope": 2587,
+                "src": "116:12:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -204,10 +204,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2456,
+                  "id": 2581,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "116:4:15",
+                  "src": "116:4:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -217,13 +217,13 @@
               },
               {
                 "constant": false,
-                "id": 2459,
+                "id": 2584,
                 "mutability": "mutable",
                 "name": "timeStamp",
-                "nameLocation": "143:9:15",
+                "nameLocation": "143:9:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 2462,
-                "src": "138:14:15",
+                "scope": 2587,
+                "src": "138:14:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -231,10 +231,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2458,
+                  "id": 2583,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "138:4:15",
+                  "src": "138:4:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -244,13 +244,13 @@
               },
               {
                 "constant": false,
-                "id": 2461,
+                "id": 2586,
                 "mutability": "mutable",
                 "name": "tokenURI",
-                "nameLocation": "169:8:15",
+                "nameLocation": "169:8:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 2462,
-                "src": "162:15:15",
+                "scope": 2587,
+                "src": "162:15:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -258,10 +258,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 2460,
+                  "id": 2585,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "162:6:15",
+                  "src": "162:6:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -271,19 +271,19 @@
               }
             ],
             "name": "tokenMetaData",
-            "nameLocation": "93:13:15",
+            "nameLocation": "93:13:18",
             "nodeType": "StructDefinition",
-            "scope": 2463,
-            "src": "86:98:15",
+            "scope": 2588,
+            "src": "86:98:18",
             "visibility": "public"
           }
         ],
-        "scope": 2464,
-        "src": "57:129:15",
+        "scope": 2589,
+        "src": "57:129:18",
         "usedErrors": []
       }
     ],
-    "src": "32:154:15"
+    "src": "32:154:18"
   },
   "compiler": {
     "name": "solc",
@@ -291,7 +291,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-05-09T17:35:54.624Z",
+  "updatedAt": "2022-05-13T07:18:22.149Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

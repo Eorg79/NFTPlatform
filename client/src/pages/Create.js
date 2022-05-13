@@ -6,7 +6,7 @@ import NFTForm from '../components/create/NFTForm';
 
 const Create = () => {
     const { web3, accounts, contract } = useContext(ContractContext);
-
+    
     return (
 
         <div className='container'>

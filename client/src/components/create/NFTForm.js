@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
+import CollectionContract from '../../contracts/Collection.json';
 import { ContractContext } from '../../utils/ContractContext';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -8,8 +9,6 @@ const NFTForm = () => {
       const { web3, accounts, contract } = useContext(ContractContext);
       const [image, setImage] = useState(null);
       const [file, setFile] = useState('');
-      const [IPFSHashFile, setIPFSHashFile] = useState('');
-      const [IPFSHashJSON, setIPFSHashJSON] = useState('');
       const [minted, setMinted] = useState(false);
       
       const initialValues = {
@@ -35,27 +34,33 @@ const NFTForm = () => {
       const onSubmit =  async (values, onSubmitProps) => {
           const urlFile =  `https://api.pinata.cloud/pinning/pinFileToIPFS`;
           const urlJSON =  `https://api.pinata.cloud/pinning/pinJSONToIPFS`;
+          let IPFSHashFile = "";
+          let IPFSHashJSON = "";
           const formData = new FormData();
           formData.append('file', file);
 
           const responseFile = await axios.post(urlFile, formData, { maxContentLength: "Infinity", headers:{ "Content-Type": `multipart/form-data;boundary=${formData._boundary}`, 'pinata_api_key': key, 'pinata_secret_api_key': secret}});
           console.log(responseFile);
-          setIPFSHashFile(responseFile.data.IpfsHash);
+          IPFSHashFile = responseFile.data.IpfsHash;
           
           const metadata = {
               name: formik.values.name,
               image: IPFSHashFile,
               description : formik.values.description,
             }
-          
+          console.log(metadata);
           const responseJSON = await axios.post(urlJSON, metadata, { maxContentLength: "Infinity", headers:{ "Content-Type": 'application/json', 'pinata_api_key': key, 'pinata_secret_api_key': secret}});  
-          setIPFSHashJSON(responseJSON.data.IpfsHash);  
-          const coll = await contract.methods.getAllCollectionsWithBalance(accounts[0]).call({from: accounts[0]}); 
-          console.log(coll);
-          await contract.methods.mintToken(accounts[0], IPFSHashJSON, formik.values.collection).send({from: accounts[0]}); 
-          setMinted(true);
-          setImage(null);
-          onSubmitProps.resetForm();
+          console.log(responseJSON.data.IpfsHash); 
+          IPFSHashJSON = responseJSON.data.IpfsHash; 
+          
+          const mintToken = async () => {
+            const collectionContract = new web3.eth.Contract(CollectionContract.abi, formik.values.collection);
+            await collectionContract.methods.mintToken(accounts[0], `ipfs//${IPFSHashJSON}`).send({from: accounts[0]}); 
+            setMinted(true);
+            setImage(null);
+            onSubmitProps.resetForm();
+          };
+          mintToken();
   };
 
       const formik = useFormik({ initialValues, onSubmit, validationSchema });

@@ -8,8 +8,8 @@ import "./Collection.sol";
   */
 contract CollectionFactory is Ownable{
     event CollectionCreated(
-        address _owner,
-        string _artistName,
+        address _creator,
+        string _collectionName,
         address _collectionAddress,
         uint _timestamp
     );

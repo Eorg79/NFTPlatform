@@ -1,3 +1,8 @@
+.gallery-card {
+    @include rounded-card;
+    max-width: 673px;
+}
+
 .NFT-wrapper {
     display: flex;
     width: 100%;
