@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dc953f9bd16127f890492a99bc8eda6b",
+    "revision": "6db317da4d44a8ce2fd5ac62f6504788",
     "url": "/NFTPlatform/index.html"
   },
   {
-    "revision": "3559ce83f423adc98c69",
+    "revision": "69915b8fa5aae1b38cd2",
     "url": "/NFTPlatform/static/css/main.d341498a.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/NFTPlatform/static/js/2.e0fe09f2.chunk.js"
   },
   {
-    "revision": "3559ce83f423adc98c69",
-    "url": "/NFTPlatform/static/js/main.a95cd2c4.chunk.js"
+    "revision": "69915b8fa5aae1b38cd2",
+    "url": "/NFTPlatform/static/js/main.b42c4d88.chunk.js"
   },
   {
     "revision": "44ab174219779c5c5e33",
