@@ -8,11 +8,7 @@ import "./Collection.sol";
   */
 contract CollectionFactory is Ownable{
     event CollectionCreated(
-<<<<<<< Updated upstream
         address _creator,
-=======
-        address _owner,
->>>>>>> Stashed changes
         string _collectionName,
         address _collectionAddress,
         uint _timestamp

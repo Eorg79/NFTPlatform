@@ -31,25 +31,7 @@ contract CollectionHandler is CollectionFactory {
         newCollection.transferOwnership(msg.sender);
         saveNewCollectionToStorage(newCollection);
         return address(newCollection);
-<<<<<<< Updated upstream
-    }
-
-      function getAllCollectionsAddresses() external view returns (Collection[] memory)  {
-        return _collectionArray;
-    }
-
-    /*function createCollectionAndMint(string memory name, string memory symbol, address creatorAddress) public returns (address){
-        Collection newCollection = CollectionFactory.createCollectionFactory(name, symbol, creatorAddress);
-        newCollection.setCollectionCreator(creatorAddress);
-        saveNewCollectionToStorage(newCollection);
-        address _recipient = 0x8C18525fC1439F6754E314209A3B47353B5EaAA3; 
-        string memory _tokenURI = "ipfs://QmeheGfuzE6fNvrH7tGYbiNaVyxpLbxWY5fcnerMGtK2Ab";
-        mintToken(_recipient,_tokenURI,address(newCollection));
-        return address(newCollection);
-    }*/
-=======
     } 
->>>>>>> Stashed changes
 
     /**
       * @dev Store the Collection 'collectionToAdd' to '_collectionMap' and '_collectionArray' .
@@ -58,14 +40,4 @@ contract CollectionHandler is CollectionFactory {
         _collectionArray.push(collectionToAdd); 
         _collectionMap[address(collectionToAdd)]= collectionToAdd;
     }
-<<<<<<< Updated upstream
-
-    /*function mintToken(address _recipient, string memory _tokenURI, address collectionAddress) public{
-        require(msg.sender == _collectionMap[collectionAddress].getCollectionCreator(),"Access Denied : You are not the creator of this collection !");
-        _collectionMap[collectionAddress].mintToken(_recipient,_tokenURI);
-    }*/
-
-
-=======
->>>>>>> Stashed changes
 }

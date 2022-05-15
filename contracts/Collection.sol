@@ -88,28 +88,4 @@ contract Collection is ERC721Enumerable, ERC721URIStorage, Ownable {
     function tokenURI(uint256 tokenId) public view virtual override (ERC721, ERC721URIStorage) returns (string memory) {
         return ERC721URIStorage.tokenURI(tokenId);
     } 
-<<<<<<< Updated upstream
-
-/*
-
-   function getAllTokens() external view returns(tokenMetaData[] memory){
-        tokenMetaData[] memory allTokensMetaDataInCollection = new tokenMetaData[](totalSupply);
-
-        for(uint i=0; i<totalSupply; i++){
-            allTokensMetaDataInCollection[i] = getMetadataFromToken( _collectionMap[collectionAddress].tokenByIndex(i));
-        }
-
-        return allTokensMetaDataInCollection;
-    }
-
-    function getCollectionCreator() external view returns(address){
-        return collectionCreator;
-    }
-
-    function getTokenMetaDataFromID(uint tokenId) external view returns(tokenMetaData memory){
-        require(tokenId <= _tokenIds.current(),"This token ID hasnt been minted yet");
-        return tokenMetaData(tokenMetaDataFromIdMap[tokenId].tokenId,tokenMetaDataFromIdMap[tokenId].timeStamp,tokenMetaDataFromIdMap[tokenId].tokenURI);
-    }*/
-=======
->>>>>>> Stashed changes
 }
