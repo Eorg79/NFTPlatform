@@ -80,7 +80,7 @@ contract SalesHandler is Ownable, CollectionHandler, IERC721Receiver {
         
         _collectionMap[collectionAddress].safeTransferFrom(address(this), msg.sender, tokenId);
         userUnclaimedSalesRevenueMap[listing.seller] += listing.price;
-        emit TokenSold(msg.sender,listing.seller,collectionAddress,tokenId,listing.price);
+        emit TokenSold(listing.seller,msg.sender,collectionAddress,tokenId,listing.price);
         removeListing(listing);
     }
 
