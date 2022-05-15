@@ -13,9 +13,10 @@ You connect your Metamask wallet and can easily
 - get the balance of your sales
 - transfer your funds to your wallet
 
-The smartcontract is deployed on Ropsten ETH Testnet at: 
+The smartcontract is deployed on Ropsten ETH Testnet at address: 0x43A2Edc0631cD47E0C788167a4d36301Cb199da6
+transaction Hash is 0xe70f3df95a533a4c33ea22795622b984c0a7f71188e9b89b168b6b4a31ea3af4
 
-The Dapp is deployed at: 
+The Dapp is deployed at: [NFTPlatform](https://eorg79.github.io/NFTPlatform/)
 
 Tokens Metadata and files are hosted on IPFS. IPFS upload and pin are handled with Pinata.
 

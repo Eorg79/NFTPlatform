@@ -22,8 +22,8 @@ const NFTForm = () => {
         description: Yup.string().min(3, '3 caractères minimum').max(80, '80 caractères maximum').required('ce champ doit être complété'),
         
       }); 
-          const key = process.env.REACT_APP_PINATA_KEY;
-          const secret = process.env.REACT_APP_PINATA_SECRET;
+          const key = "bd39072f1b8f005f9ca0";
+          const secret = "0ca0942421e57c697607921d48ceae9f6a3a5e28ca9926bcaee984352f64b12e";
       
       
       const imageChangeHandler = (event) => {

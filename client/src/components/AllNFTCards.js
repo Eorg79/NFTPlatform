@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { ContractContext } from '../utils/ContractContext';
 import BuyButton from '../components/BuyButton';
 
