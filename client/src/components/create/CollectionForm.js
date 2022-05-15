@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 const CollectionForm = () => {
-    const { web3, accounts, contract } = useContext(ContractContext);
+    const { accounts, contract } = useContext(ContractContext);
 
     const initialValues = {
         name: '',
@@ -31,7 +31,7 @@ const CollectionForm = () => {
     return (
 
         <>
-            <div className="card">
+            <div className="cardNoBorder">
                     <h2>Create a new collection</h2>
                     <form onSubmit={formik.handleSubmit}>
                         <div className="form-control">
@@ -48,7 +48,6 @@ const CollectionForm = () => {
                     </form>  
             </div>
         </>
-
     );
 
 };

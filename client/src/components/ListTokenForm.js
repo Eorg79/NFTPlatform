@@ -9,8 +9,8 @@ const ListTokenForm = (props) => {
     const { web3, accounts, contract } = useContext(ContractContext);
     const { collections, setCollections, NFTs, setNFTs } = useContext(DataContext);
     const[listed, setListed] = useState(false);
-    const initialValues = {price: null};
-    const validationSchema = Yup.object({price: Yup.number().max(1000000, 'limite de prix atteinte').required('ce champ doit être complété')}); 
+    const initialValues = {price: undefined};
+    const validationSchema = Yup.object({price: Yup.string().max(1000000000000, 'limite de prix atteinte').required('ce champ doit être complété')}); 
     
     const onSubmit = async (values, onSubmitProps) => {
         const collectionContract = new web3.eth.Contract(CollectionContract.abi, props.collectionAddress);
@@ -21,7 +21,6 @@ const ListTokenForm = (props) => {
             setListed(true);
             onSubmitProps.resetForm();
         }  
-
         
     }
 
@@ -32,14 +31,14 @@ const ListTokenForm = (props) => {
         {!listed ?
         (<form className='listing-form' onSubmit={formik.handleSubmit}>
             <div className="form-control">
-                <label htmlFor="price">price</label>
-                <input type="number" id="price" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.price} />
+                <label htmlFor="price">price in Wei</label>
+                <input id="price" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.price} />
                 {formik.touched.price && formik.errors.price ? (<div className="error">{formik.errors.price}</div>) : (null)}
             </div>
             <button className='small-btn' type="submit">put to sale</button>
         </form>)
       : (
-        <div>prix</div>
+        <div></div>
       )}
       </>
     );

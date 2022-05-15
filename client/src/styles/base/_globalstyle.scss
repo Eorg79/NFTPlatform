@@ -31,7 +31,19 @@ body {
                 padding-bottom: 200px;
             .card {
                 @include rounded-card;
+                border: solid 0.4px $color-tertiary-dark-transp;
                 }
+            .cardNoBorder {
+                @include rounded-card;
+            }
+
+
+            .wallet-card {
+                @include rounded-card;
+                border: solid 0.4px $color-tertiary-dark-transp;
+                width: 450px;
+            }
+                
             }
             
         }
@@ -122,7 +134,7 @@ textarea {
     margin: 10px 15px 0px 15px;
 }
 
-    
+
 .btn {
     @include basic-button;
     width: 160px;

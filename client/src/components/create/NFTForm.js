@@ -63,12 +63,12 @@ const NFTForm = () => {
           mintToken();
   };
 
-      const formik = useFormik({ initialValues, onSubmit, validationSchema });
+    const formik = useFormik({ initialValues, onSubmit, validationSchema });
 
     return (
 
         <>
-            <div className="card">
+            <div className="cardNoBorder">
                     <h2>Create a new NFT</h2>
                     {!minted ?
                     (<form className="NFTForm" onSubmit={formik.handleSubmit}>

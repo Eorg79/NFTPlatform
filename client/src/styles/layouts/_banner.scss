@@ -1,5 +1,8 @@
 .banner {
     position: fixed;
+    z-index: 800;
+    height: fit-content;
+    background-color: white;
     top: 65px;
     width: 100%;
     min-width: 271px;

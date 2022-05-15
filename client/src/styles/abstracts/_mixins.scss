@@ -28,6 +28,7 @@
     font-size: 13px;
     font-weight: 600;
     font-family: "Poppins";
+    height: 25px;
     background-color: $color-tertiary;
     border-radius: 25px;
     border: hidden;
@@ -90,7 +91,7 @@
     padding: 10px;
     background-color: white;
     border-radius: 10px;
-    border: solid 0.4px $color-tertiary-dark-transp;
+    
     transition: all 400ms;
 }
 @mixin auto-height-rounded-card {

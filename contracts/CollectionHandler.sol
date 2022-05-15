@@ -18,7 +18,7 @@ contract CollectionHandler is CollectionFactory {
         return address(newCollection);
     }
 
-      function gelAllCollectionsAddresses() external view returns (Collection[] memory)  {
+      function getAllCollectionsAddresses() external view returns (Collection[] memory)  {
         return _collectionArray;
     }
 

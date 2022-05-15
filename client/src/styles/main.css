@@ -84,9 +84,63 @@ body .body-wrapper main .container .card {
   padding: 10px;
   background-color: white;
   border-radius: 10px;
-  border: solid 0.4px rgba(46, 129, 139, 0.493);
   -webkit-transition: all 400ms;
   transition: all 400ms;
+  border: solid 0.4px rgba(46, 129, 139, 0.493);
+}
+
+body .body-wrapper main .container .cardNoBorder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  min-width: 200px;
+  min-height: 252px;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+body .body-wrapper main .container .wallet-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  min-width: 200px;
+  min-height: 252px;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  border: solid 0.4px rgba(46, 129, 139, 0.493);
+  width: 450px;
 }
 
 p {
@@ -196,6 +250,7 @@ textarea {
   font-size: 13px;
   font-weight: 600;
   font-family: "Poppins";
+  height: 25px;
   background-color: #13c8e0;
   border-radius: 25px;
   border: hidden;
@@ -289,6 +344,7 @@ table td {
 /*header*/
 header {
   position: fixed;
+  z-index: 801;
   top: 0px;
   width: 100%;
   min-width: 271px;
@@ -394,6 +450,11 @@ header .wallet:focus {
 
 .banner {
   position: fixed;
+  z-index: 800;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
   top: 65px;
   width: 100%;
   min-width: 271px;
@@ -501,7 +562,7 @@ header .wallet:focus {
 .NFTCard {
   border-radius: 25px;
   padding: 5px 5px 0px 5px;
-  height: 310px;
+  height: 340px;
   width: 280px;
   -webkit-box-shadow: 0 0 30px #dddddd;
           box-shadow: 0 0 30px #dddddd;
@@ -523,7 +584,7 @@ header .wallet:focus {
 }
 
 .NFTCard .wrapper img {
-  height: 80%;
+  height: 220px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px 20px 0 0;
@@ -541,6 +602,18 @@ header .wallet:focus {
       justify-content: space-around;
 }
 
+.NFTCard .wrapper .data-container p {
+  -webkit-margin-before: 3px;
+          margin-block-start: 3px;
+  -webkit-margin-after: 3px;
+          margin-block-end: 3px;
+  padding: 0 0 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .NFTCard .wrapper .text-container {
   height: 20%;
   margin: none;
@@ -554,9 +627,17 @@ header .wallet:focus {
   -webkit-margin-after: 3px;
           margin-block-end: 3px;
   padding: 0 0 0 0;
-  font-size: 15px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.NFTCard .wrapper .text-container h4 {
+  font-size: 15px;
+}
+
+.NFTCard .wrapper .text-container p {
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .gallery-card {
@@ -581,10 +662,13 @@ header .wallet:focus {
   padding: 10px;
   background-color: white;
   border-radius: 10px;
-  border: solid 0.4px rgba(46, 129, 139, 0.493);
   -webkit-transition: all 400ms;
   transition: all 400ms;
   max-width: 673px;
+}
+
+.gallery-card .card {
+  border: none;
 }
 
 .NFT-wrapper {

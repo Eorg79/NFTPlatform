@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ContractContext } from './utils/ContractContext';
 import Contract from "./contracts/Marketplace.json";
+import CollectionContract from './contracts/Collection.json';
 import getWeb3 from "./getWeb3";
 import Router from "./components/Router";
 import headerLogo from'./assets/9XNFT.png';
@@ -11,6 +12,9 @@ const App = () => {
   const [web3, setWeb3] = useState(undefined);
   const [accounts, setAccounts] = useState([]);
   const [contract, setContract] = useState([]);
+  const [collections, setCollections] = useState([]);
+  const [NFTs, setNFTs] = useState([]);
+  const [userBalance, setUserBalance] = useState(0);
 
   useEffect(() => {
     const runInit = async () => {
@@ -35,7 +39,6 @@ const App = () => {
         await instance.events.CollectionCreated()   
         .on('data', event => console.log(event))
         .on('changed', changed => console.log(changed))
-        //.on('error', err => throw err)
         .on('connected', str => console.log(str));
 
         await instance.events.TokenListed()   
@@ -57,18 +60,86 @@ const App = () => {
           .on('data', event => console.log(event))
           .on('changed', changed => console.log(changed))
           .on('connected', str => console.log(str));
-          
+        
+      
+        await instance.getPastEvents('CollectionCreated', {
+              filter: {
+                  value: []    
+              },
+              fromBlock: 0,             
+              toBlock: 'latest'},
+             (err, events) => {
+                  events.map( async (collection) => {
+                  let Collection = {address:collection.returnValues._collectionAddress, name:collection.returnValues._collectionName, creator: collection.returnValues._creator, timestamp:collection.returnValues._timestamp};
+                  setCollections(Collections => [...Collections, Collection]);
+                });
+              });
+
+/*
+          for (let i=0; i < collections.length; i++) {  
+          const collectionContract = new web3.eth.Contract(CollectionContract.abi, collections[i].address);
+          await collectionContract.getPastEvents('TokenMinted', {
+            filter: {
+                value: []    
+            },
+            fromBlock: 0,             
+            toBlock: 'latest'},
+           (err, events) => {
+                events.map( async (token) => {
+                    const MetaJSON = `https://ipfs.io/${token.returnValues.tokenURI}`;
+                    const mjson = await fetch(MetaJSON).then((res) => res.json());
+                    const Image = `https://ipfs.io/ipfs//${mjson.image}`;
+                let Token = {uniqueKey:(collections[i].address+String(token.returnValues.tokenId)) , collectionAddress:collections[i].address, collectionName:collections[i].name, creator:collections[i].creator, id:token.returnValues.tokenId, recipient:token.returnValues.recipient, tokenURI: token.returnValues.tokenURI, image:Image,name:mjson.name, description:mjson.description, status:"minted"};
+                setNFTs(NFTs => [...NFTs, Token]);
+              });
+            });
+          }; */
+      //}; 
+
+      const newUserBalanceinWei = await instance.methods.getUserUnclaimedSalesRevenue(accounts[0]).call({from: accounts[0]});
+      const newUserBalanceinETH = web3.utils.fromWei(newUserBalanceinWei, 'ether');
+      setUserBalance(newUserBalanceinETH); 
+
         } catch (error) {
           // Catch any errors for any of the above operations.
             console.error(error);
           }
         };
        runInit();
-      }, []);
+      }, [collections, NFTs]);
+     
+const getNFTs = async () => {
+  if (collections.length > 0) {
+              collections.map(async (collection) => {
+                const collectionContract = new web3.eth.Contract(CollectionContract.abi, collection.address);
+                await collectionContract.getPastEvents('TokenMinted', {
+                  filter: {
+                      value: []    
+                  },
+                  fromBlock: 0,             
+                  toBlock: 'latest'},
+                 (err, events) => {
+                      events.map( async (token) => {
+                          const MetaJSON = `https://ipfs.io/${token.returnValues.tokenURI}`;
+                          const mjson = await fetch(MetaJSON).then((res) => res.json());
+                          const Image = `https://ipfs.io/ipfs//${mjson.image}`;
+                      let Token = {uniqueKey:(collection.address+String(token.returnValues.tokenId)), collectionAddress:collection.address, collectionName:collection.name, creator:collection.creator, id:token.returnValues.tokenId, recipient:token.returnValues.recipient, tokenURI: token.returnValues.tokenURI, image:Image,name:mjson.name, description:mjson.description, status:"minted"};
+   
+                      setNFTs(NFTs => [...NFTs, Token]);
+                    });
+                  });
+              })         
+            }
+
+      }
+  useEffect(() => {
+      getNFTs();
+      }, [collections]);
+   
 
   return (
     
-      <ContractContext.Provider value={{ web3, setWeb3, accounts, setAccounts, contract, setContract }}> 
+      <ContractContext.Provider value={{ web3, setWeb3, accounts, setAccounts, contract, setContract, collections, setCollections, NFTs, setNFTs,  userBalance, setUserBalance}}> 
         { web3 ? 
         ( <Router /> ) 
         : (

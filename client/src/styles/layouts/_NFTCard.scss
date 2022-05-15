@@ -1,7 +1,7 @@
 .NFTCard {
     border-radius: 25px;
     padding: 5px 5px 0px 5px;
-    height: 310px;
+    height: 340px;
     width: 280px;
     box-shadow: 0 0 30px #dddddd;
     margin: 15px;
@@ -11,7 +11,7 @@
         flex-direction: column;
         justify-content: flex-start;
         img {
-        height: 80%;
+        height: 220px;
         object-fit: cover;
         border-radius: 20px 20px 0 0;  
         }
@@ -19,6 +19,15 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            p {
+                margin-block-start: 3px;
+                margin-block-end: 3px;
+                padding: 0 0 0 0;
+                font-size: 16px;
+                font-weight: 600;
+                margin-left: 10px;
+                margin-right: 10px; 
+            }
         }
         .text-container {
             height: 20%;
@@ -30,12 +39,17 @@
                 margin-block-start: 3px;
                 margin-block-end: 3px;
                 padding: 0 0 0 0;
-                font-size: 15px;
+                
                 margin-left: 10px;
                 margin-right: 10px; 
             }
-            p {
 
+            h4 {
+                font-size: 15px;
+            }
+            p {
+                font-size: 12px;
+                font-weight: 400;
             } 
         }
         
