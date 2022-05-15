@@ -3,45 +3,8 @@ import { ContractContext } from '../utils/ContractContext';
 import BuyButton from '../components/BuyButton';
 
 const AllNFTCard = () => {
-    const { web3, accounts, contract, NFTs, setNFTs } = useContext(ContractContext);
-/*      
-const getTokensStatus = async () => {
-    await contract.getPastEvents('TokenListed', {
-        filter: {
-            value: []    
-        },
-        fromBlock: 0,             
-        toBlock: 'latest'},
-       (err, events) => {
-            events.map((token) => {
-                const currentUniqueKey = token.returnValues.tokenCollection+String(token.returnValues.tokenId);
-                    setNFTs(NFTs => {
-                        return NFTs.map(item => {
-                            return item.uniqueKey === currentUniqueKey ? {...item, status: "listed", seller:token.returnValues.seller, price:web3.utils.fromWei(token.returnValues.price, 'ether')} : item;
-                        })
-                    });
-            });
-          });
-
-  await contract.getPastEvents('TokenSold', {
-    filter: {
-        value: []    
-    },
-    fromBlock: 0,             
-    toBlock: 'latest'},
-   (err, events) => {
-        events.map((token) => {
-            const currentUniqueKey = token.returnValues.tokenCollection+String(token.returnValues.tokenId);
-                setNFTs(NFTs => {
-                    return NFTs.map(item => {
-                        return item.uniqueKey === currentUniqueKey ? {...item, status: "sold", buyer:token.returnValues.buyer} : item;
-                    })
-                });
-             });        
-      });            
-};
-<button onClick={getTokensStatus}>get token status</button>
-*/
+    const {  NFTs } = useContext(ContractContext);
+    
     return (
                 <>
                 

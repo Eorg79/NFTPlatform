@@ -75,27 +75,6 @@ const App = () => {
                 });
               });
 
-/*
-          for (let i=0; i < collections.length; i++) {  
-          const collectionContract = new web3.eth.Contract(CollectionContract.abi, collections[i].address);
-          await collectionContract.getPastEvents('TokenMinted', {
-            filter: {
-                value: []    
-            },
-            fromBlock: 0,             
-            toBlock: 'latest'},
-           (err, events) => {
-                events.map( async (token) => {
-                    const MetaJSON = `https://ipfs.io/${token.returnValues.tokenURI}`;
-                    const mjson = await fetch(MetaJSON).then((res) => res.json());
-                    const Image = `https://ipfs.io/ipfs//${mjson.image}`;
-                let Token = {uniqueKey:(collections[i].address+String(token.returnValues.tokenId)) , collectionAddress:collections[i].address, collectionName:collections[i].name, creator:collections[i].creator, id:token.returnValues.tokenId, recipient:token.returnValues.recipient, tokenURI: token.returnValues.tokenURI, image:Image,name:mjson.name, description:mjson.description, status:"minted"};
-                setNFTs(NFTs => [...NFTs, Token]);
-              });
-            });
-          }; */
-      //}; 
-
       const newUserBalanceinWei = await instance.methods.getUserUnclaimedSalesRevenue(accounts[0]).call({from: accounts[0]});
       const newUserBalanceinETH = web3.utils.fromWei(newUserBalanceinWei, 'ether');
       setUserBalance(newUserBalanceinETH); 
@@ -123,9 +102,10 @@ const getNFTs = async () => {
                           const MetaJSON = `https://ipfs.io/${token.returnValues.tokenURI}`;
                           const mjson = await fetch(MetaJSON).then((res) => res.json());
                           const Image = `https://ipfs.io/ipfs//${mjson.image}`;
-                      let Token = {uniqueKey:(collection.address+String(token.returnValues.tokenId)), collectionAddress:collection.address, collectionName:collection.name, creator:collection.creator, id:token.returnValues.tokenId, recipient:token.returnValues.recipient, tokenURI: token.returnValues.tokenURI, image:Image,name:mjson.name, description:mjson.description, status:"minted"};
-   
-                      setNFTs(NFTs => [...NFTs, Token]);
+                      let Token = {uniqueKey:(collection.address+String(token.returnValues.tokenId)), collectionAddress:collection.address, collectionName:collection.name, creator:collection.creator, id:token.returnValues.tokenId, recipient:token.returnValues.recipient, tokenURI: token.returnValues.tokenURI, image:Image,name:mjson.name, description:mjson.description, status:"minted"};  
+                      if (!NFTs.includes(Token.uniqueKey)) {
+                        setNFTs(NFTs => [...NFTs, Token]);
+                      } 
                     });
                   });
               })         

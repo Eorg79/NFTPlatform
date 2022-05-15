@@ -6,8 +6,6 @@ const Navbar = () => {
     const { web3, contract, NFTs, setNFTs } = useContext(ContractContext);
     const handleClick = () => setClick("clicked");
 
-
-
     const getTokensStatus = async () => {
         await contract.getPastEvents('TokenListed', {
             filter: {
