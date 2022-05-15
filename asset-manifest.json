@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/NFTPlatform/static/css/main.d341498a.chunk.css",
+    "main.js": "/NFTPlatform/static/js/main.a95cd2c4.chunk.js",
+    "main.js.map": "/NFTPlatform/static/js/main.a95cd2c4.chunk.js.map",
+    "runtime-main.js": "/NFTPlatform/static/js/runtime-main.7a8634c7.js",
+    "runtime-main.js.map": "/NFTPlatform/static/js/runtime-main.7a8634c7.js.map",
+    "static/js/2.e0fe09f2.chunk.js": "/NFTPlatform/static/js/2.e0fe09f2.chunk.js",
+    "static/js/2.e0fe09f2.chunk.js.map": "/NFTPlatform/static/js/2.e0fe09f2.chunk.js.map",
+    "index.html": "/NFTPlatform/index.html",
+    "precache-manifest.1cc1509d8e4fa947fcea3e577d6bb664.js": "/NFTPlatform/precache-manifest.1cc1509d8e4fa947fcea3e577d6bb664.js",
+    "service-worker.js": "/NFTPlatform/service-worker.js",
+    "static/css/main.d341498a.chunk.css.map": "/NFTPlatform/static/css/main.d341498a.chunk.css.map",
+    "static/media/main.css": "/NFTPlatform/static/media/background.87c06791.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a8634c7.js",
+    "static/js/2.e0fe09f2.chunk.js",
+    "static/css/main.d341498a.chunk.css",
+    "static/js/main.a95cd2c4.chunk.js"
+  ]
+}
