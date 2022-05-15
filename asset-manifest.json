@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/NFTPlatform/Client/static/css/main.518ae982.chunk.css",
-    "main.js": "/NFTPlatform/Client/static/js/main.d5dabbd3.chunk.js",
-    "main.js.map": "/NFTPlatform/Client/static/js/main.d5dabbd3.chunk.js.map",
-    "runtime-main.js": "/NFTPlatform/Client/static/js/runtime-main.2e299f6d.js",
-    "runtime-main.js.map": "/NFTPlatform/Client/static/js/runtime-main.2e299f6d.js.map",
-    "static/js/2.54f89225.chunk.js": "/NFTPlatform/Client/static/js/2.54f89225.chunk.js",
-    "static/js/2.54f89225.chunk.js.map": "/NFTPlatform/Client/static/js/2.54f89225.chunk.js.map",
-    "index.html": "/NFTPlatform/Client/index.html",
-    "precache-manifest.d8f4cc2a6eabc390b3ded53858357c10.js": "/NFTPlatform/Client/precache-manifest.d8f4cc2a6eabc390b3ded53858357c10.js",
-    "service-worker.js": "/NFTPlatform/Client/service-worker.js",
-    "static/css/main.518ae982.chunk.css.map": "/NFTPlatform/Client/static/css/main.518ae982.chunk.css.map",
-    "static/media/main.css": "/NFTPlatform/Client/static/media/background.87c06791.png"
+    "main.css": "/NFTPlatform/static/css/main.d341498a.chunk.css",
+    "main.js": "/NFTPlatform/static/js/main.b42c4d88.chunk.js",
+    "main.js.map": "/NFTPlatform/static/js/main.b42c4d88.chunk.js.map",
+    "runtime-main.js": "/NFTPlatform/static/js/runtime-main.7a8634c7.js",
+    "runtime-main.js.map": "/NFTPlatform/static/js/runtime-main.7a8634c7.js.map",
+    "static/js/2.e0fe09f2.chunk.js": "/NFTPlatform/static/js/2.e0fe09f2.chunk.js",
+    "static/js/2.e0fe09f2.chunk.js.map": "/NFTPlatform/static/js/2.e0fe09f2.chunk.js.map",
+    "index.html": "/NFTPlatform/index.html",
+    "precache-manifest.8172f6d3398dd8d518a3309ca7a97353.js": "/NFTPlatform/precache-manifest.8172f6d3398dd8d518a3309ca7a97353.js",
+    "service-worker.js": "/NFTPlatform/service-worker.js",
+    "static/css/main.d341498a.chunk.css.map": "/NFTPlatform/static/css/main.d341498a.chunk.css.map",
+    "static/media/main.css": "/NFTPlatform/static/media/background.87c06791.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2e299f6d.js",
-    "static/js/2.54f89225.chunk.js",
-    "static/css/main.518ae982.chunk.css",
-    "static/js/main.d5dabbd3.chunk.js"
+    "static/js/runtime-main.7a8634c7.js",
+    "static/js/2.e0fe09f2.chunk.js",
+    "static/css/main.d341498a.chunk.css",
+    "static/js/main.b42c4d88.chunk.js"
   ]
 }
