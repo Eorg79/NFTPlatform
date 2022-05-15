@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/NFTPlatform/Buy/static/css/main.4f2ff9b3.chunk.css",
-    "main.js": "/NFTPlatform/Buy/static/js/main.9704c819.chunk.js",
-    "main.js.map": "/NFTPlatform/Buy/static/js/main.9704c819.chunk.js.map",
-    "runtime-main.js": "/NFTPlatform/Buy/static/js/runtime-main.92aa9b8d.js",
-    "runtime-main.js.map": "/NFTPlatform/Buy/static/js/runtime-main.92aa9b8d.js.map",
-    "static/js/2.534db477.chunk.js": "/NFTPlatform/Buy/static/js/2.534db477.chunk.js",
-    "static/js/2.534db477.chunk.js.map": "/NFTPlatform/Buy/static/js/2.534db477.chunk.js.map",
-    "index.html": "/NFTPlatform/Buy/index.html",
-    "precache-manifest.3903b16201fbae029373c841bde246b2.js": "/NFTPlatform/Buy/precache-manifest.3903b16201fbae029373c841bde246b2.js",
-    "service-worker.js": "/NFTPlatform/Buy/service-worker.js",
-    "static/css/main.4f2ff9b3.chunk.css.map": "/NFTPlatform/Buy/static/css/main.4f2ff9b3.chunk.css.map",
-    "static/media/main.css": "/NFTPlatform/Buy/static/media/background.87c06791.png"
+    "main.css": "/NFTPlatform/Client/static/css/main.518ae982.chunk.css",
+    "main.js": "/NFTPlatform/Client/static/js/main.d5dabbd3.chunk.js",
+    "main.js.map": "/NFTPlatform/Client/static/js/main.d5dabbd3.chunk.js.map",
+    "runtime-main.js": "/NFTPlatform/Client/static/js/runtime-main.2e299f6d.js",
+    "runtime-main.js.map": "/NFTPlatform/Client/static/js/runtime-main.2e299f6d.js.map",
+    "static/js/2.54f89225.chunk.js": "/NFTPlatform/Client/static/js/2.54f89225.chunk.js",
+    "static/js/2.54f89225.chunk.js.map": "/NFTPlatform/Client/static/js/2.54f89225.chunk.js.map",
+    "index.html": "/NFTPlatform/Client/index.html",
+    "precache-manifest.d8f4cc2a6eabc390b3ded53858357c10.js": "/NFTPlatform/Client/precache-manifest.d8f4cc2a6eabc390b3ded53858357c10.js",
+    "service-worker.js": "/NFTPlatform/Client/service-worker.js",
+    "static/css/main.518ae982.chunk.css.map": "/NFTPlatform/Client/static/css/main.518ae982.chunk.css.map",
+    "static/media/main.css": "/NFTPlatform/Client/static/media/background.87c06791.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.92aa9b8d.js",
-    "static/js/2.534db477.chunk.js",
-    "static/css/main.4f2ff9b3.chunk.css",
-    "static/js/main.9704c819.chunk.js"
+    "static/js/runtime-main.2e299f6d.js",
+    "static/js/2.54f89225.chunk.js",
+    "static/css/main.518ae982.chunk.css",
+    "static/js/main.d5dabbd3.chunk.js"
   ]
 }
