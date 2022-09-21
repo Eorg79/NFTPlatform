@@ -11,7 +11,7 @@ module.exports = {
       port: 8545, // Standard Ethereum port (default: none)
       network_id: "*", // Any network (default: none)
       gasPrice: 2000000000,
-      gas: 30000000,
+      gas: 20000000,
     },
 
     ropsten: {
@@ -21,10 +21,24 @@ module.exports = {
           phrase: process.env.MNEMONIC
         }, providerOrUrl:`https://ropsten.infura.io/v3/${process.env.INFURA_ID}`}),
       network_id: 3,
+      //gasPrice: 2000000000,
+      //gas: 1152998,
+    },
+
+    rinkeby: {
+      provider: () =>
+      new HDWalletProvider({
+        mnemonic: {
+          phrase: process.env.MNEMONIC
+        }, providerOrUrl:`https://rinkeby.infura.io/v3/${process.env.INFURA_ID}`}),
+      network_id: 4,
+      //gasPrice: 2000000000,
+      //gas: 1152998,
     },
   },
 
   plugins: ["solidity-coverage"],
+  plugins: ['truffle-contract-size'],
 
   mocha: {
     reporter: "eth-gas-reporter",
@@ -38,14 +52,14 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.13", // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.14", // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
        settings: {          // See the solidity docs for advice about optimization and evmVersion
         optimizer: {
           enabled: true,
           runs: 200
         },
-        evmVersion: "byzantium"
+        evmVersion: "constantinople"
        }
     },
   },

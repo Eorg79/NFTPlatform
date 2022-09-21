@@ -4,9 +4,12 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@graphprotocol/graph-cli": "^0.30.1",
     "@openzeppelin/contracts": "^4.6.0",
     "@pinata/sdk": "^1.1.25",
     "@truffle/hdwallet-provider": "^2.0.8",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "solidity-coverage": "^0.7.21",
+    "truffle-contract-size": "^2.0.1"
   }
 }
